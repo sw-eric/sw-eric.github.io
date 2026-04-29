@@ -117,9 +117,21 @@ h2 {
   font-size: 1.85rem;
 }
 
-h3 {
+// Italic h3 only inside article body — not in sidebars
+article h3 {
   font-size: 1.3rem;
   font-style: italic;
+}
+
+// Right sidebar section headers (Graph View, Table of Contents, Backlinks)
+.sidebar.right h3 {
+  font-family: var(--bodyFont);
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gray);
 }
 
 .page-title {
