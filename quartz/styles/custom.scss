@@ -55,6 +55,21 @@ a.internal {
   max-width: 680px;
 }
 
+// --- Explorer font uniformity ---
+// Quartz uses headerFont (EB Garamond) for folder names and bodyFont (Inter) for
+// file links — this makes everything consistently use body font at sidebar scale.
+.explorer button.desktop-explorer h2,
+.folder-container div > a,
+.folder-container div > button span,
+.explorer-content ul li > a {
+  font-family: var(--bodyFont);
+  font-size: 0.875rem;
+}
+
+.explorer button.desktop-explorer h2 {
+  font-weight: 600;
+}
+
 // --- Breadcrumbs ---
 .breadcrumb-container {
   font-size: 0.8rem;
