@@ -62,7 +62,13 @@ article p {
 }
 
 // --- Heading scale ---
-// H1: match base.scss specificity (.page article > h1) to override its 2rem
+// Page title (ArticleTitle component — lives in .page-header, not article)
+.article-title {
+  font-size: 2.4rem;
+  margin-top: 1rem;
+}
+
+// H1 inside article body content (rare, but handle it)
 .page article > h1 {
   font-size: 2.4rem;
 }
