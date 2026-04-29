@@ -37,7 +37,14 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.Explorer(),
+    Component.SidebarNav({
+      links: [
+        { label: "Home", href: "/" },
+        { label: "Investment Mandate", href: "/thesis/investment-mandate" },
+        { label: "About", href: "/about" },
+        { label: "Disclaimer", href: "/disclaimer" },
+      ],
+    }),
   ],
   right: [
     Component.Graph(),
@@ -61,7 +68,14 @@ export const defaultListPageLayout: PageLayout = {
         { Component: Component.Darkmode() },
       ],
     }),
-    Component.Explorer(),
+    Component.SidebarNav({
+      links: [
+        { label: "Home", href: "/" },
+        { label: "Investment Mandate", href: "/thesis/investment-mandate" },
+        { label: "About", href: "/about" },
+        { label: "Disclaimer", href: "/disclaimer" },
+      ],
+    }),
   ],
   right: [],
 }

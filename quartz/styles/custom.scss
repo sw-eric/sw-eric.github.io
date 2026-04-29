@@ -331,34 +331,39 @@ a.internal {
   max-width: 680px;
 }
 
-// --- Explorer hover transitions ---
-.explorer-content ul li > a {
-  transition: opacity 0.15s ease, color 0.15s ease;
+// --- Sidebar nav ---
+.sidebar-nav {
+  margin-top: 1rem;
 
-  &:hover {
-    opacity: 1;
-    color: var(--secondary);
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
   }
-}
 
-.folder-container div > a,
-.folder-container div > button span {
-  transition: color 0.15s ease;
-}
+  .sidebar-nav-link {
+    display: block;
+    font-family: var(--bodyFont);
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--darkgray);
+    text-decoration: none;
+    padding: 0.3rem 0;
+    transition: color 0.15s ease, padding-left 0.15s ease;
 
-// --- Explorer font uniformity ---
-// Quartz uses headerFont (EB Garamond) for folder names and bodyFont (Inter) for
-// file links — this makes everything consistently use body font at sidebar scale.
-.explorer button.desktop-explorer h2,
-.folder-container div > a,
-.folder-container div > button span,
-.explorer-content ul li > a {
-  font-family: var(--bodyFont);
-  font-size: 0.875rem;
-}
+    &:hover {
+      color: var(--secondary);
+      padding-left: 0.25rem;
+    }
 
-.explorer button.desktop-explorer h2 {
-  font-weight: 600;
+    &.active {
+      color: var(--secondary);
+      font-weight: 500;
+    }
+  }
 }
 
 // --- TOC link sizing ---

@@ -24,6 +24,7 @@ import Comments from "./Comments"
 import Flex from "./Flex"
 import ConditionalRender from "./ConditionalRender"
 import CustomScripts from "./CustomScripts"
+import SidebarNav from "./SidebarNav"
 
 export {
   ArticleTitle,
@@ -52,4 +53,5 @@ export {
   Flex,
   ConditionalRender,
   CustomScripts,
+  SidebarNav,
 }
