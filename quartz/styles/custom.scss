@@ -179,8 +179,17 @@ ul.toc-content > li > a {
   margin-top: 0.75rem;
 }
 
-// --- Footer sizing ---
+// --- Footer sizing + alignment ---
+// Footer is outside .center in the grid so it doesn't inherit .center's padding-left.
+// Match it explicitly so footer text aligns with article content.
 footer {
+  font-size: 0.8rem;
+  padding-left: 2.5rem;
+}
+
+// --- Backlinks font size ---
+// Backlinks li > a inherits 18px body — match TOC and right sidebar scale
+.backlinks ul li a {
   font-size: 0.8rem;
 }
 
