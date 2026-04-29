@@ -41,10 +41,18 @@ a.internal {
 }
 
 // --- Article prose width ---
-article {
+// Pad the center container so ALL children share one consistent left edge.
+// box-sizing: border-box keeps the padding inside the column width (no overflow).
+.center {
+  box-sizing: border-box;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+// Cap prose width on wide screens — left-aligned, not centered
+.center .page-header,
+.center article {
   max-width: 680px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 // --- Paragraph spacing ---
