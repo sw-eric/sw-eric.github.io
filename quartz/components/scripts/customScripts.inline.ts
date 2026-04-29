@@ -35,25 +35,24 @@ document.addEventListener("nav", () => {
 })
 
 // Feature 3: Typewriter effect on hero-sub
+// Cursor lives in CSS ::after so it is always visible — even on hard reload.
+// JS only manipulates textContent, never innerHTML structure.
 document.addEventListener("nav", () => {
   const targets = document.querySelectorAll<HTMLElement>(".hero-sub[data-typewriter]")
   const timeoutIds: number[] = []
 
   targets.forEach((el) => {
     const text = el.getAttribute("data-typewriter") || ""
-    el.innerHTML = '<span class="type-text"></span><span class="type-cursor" aria-hidden="true">|</span>'
-    const textSpan = el.querySelector<HTMLElement>(".type-text")!
-    const cursor = el.querySelector<HTMLElement>(".type-cursor")!
+    el.textContent = ""
 
     let i = 0
     const type = () => {
       if (i < text.length) {
-        textSpan.textContent = text.slice(0, ++i)
+        el.textContent = text.slice(0, ++i)
         const id = window.setTimeout(type, 28)
         timeoutIds.push(id)
-      } else {
-        cursor.remove()
       }
+      // done — cursor keeps blinking via CSS ::after
     }
 
     const startId = window.setTimeout(type, 700)

@@ -112,12 +112,13 @@ article.hero-page {
     line-height: 1.5;
     margin-bottom: 2.5rem;
     max-width: 500px;
-  }
 
-  .type-cursor {
-    color: var(--secondary);
-    font-style: normal;
-    animation: cursor-blink 0.7s step-end infinite;
+    &::after {
+      content: "|";
+      color: var(--secondary);
+      font-style: normal;
+      animation: cursor-blink 0.7s step-end infinite;
+    }
   }
 
   .nav-cards {
