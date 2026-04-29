@@ -13,6 +13,12 @@ tbody {
   line-height: 1.7;
 }
 
+// --- Paragraph spacing ---
+article p {
+  margin-top: 0;
+  margin-bottom: 1.3rem;
+}
+
 // --- Heading scale ---
 // H1: match base.scss specificity (.page article > h1) to override its 2rem
 .page article > h1 {
