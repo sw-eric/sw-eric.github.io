@@ -85,6 +85,26 @@ a.internal {
   font-weight: 600;
 }
 
+// --- TOC link sizing ---
+ul.toc-content > li > a {
+  font-size: 0.8rem;
+}
+
+// --- Article title accent bar ---
+.article-title::after {
+  content: "";
+  display: block;
+  width: 2.5rem;
+  height: 2px;
+  background-color: var(--secondary);
+  margin-top: 0.75rem;
+}
+
+// --- Footer sizing ---
+footer {
+  font-size: 0.8rem;
+}
+
 // --- Breadcrumbs ---
 .breadcrumb-container {
   font-size: 0.8rem;
