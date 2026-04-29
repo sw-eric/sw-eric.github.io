@@ -55,6 +55,21 @@ a.internal {
   max-width: 680px;
 }
 
+// --- Explorer hover transitions ---
+.explorer-content ul li > a {
+  transition: opacity 0.15s ease, color 0.15s ease;
+
+  &:hover {
+    opacity: 1;
+    color: var(--secondary);
+  }
+}
+
+.folder-container div > a,
+.folder-container div > button span {
+  transition: color 0.15s ease;
+}
+
 // --- Explorer font uniformity ---
 // Quartz uses headerFont (EB Garamond) for folder names and bodyFont (Inter) for
 // file links — this makes everything consistently use body font at sidebar scale.
