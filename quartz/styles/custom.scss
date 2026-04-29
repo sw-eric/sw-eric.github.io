@@ -13,6 +13,17 @@ tbody {
   line-height: 1.7;
 }
 
+// --- Left sidebar separator ---
+.sidebar.left {
+  border-right: 1px solid var(--lightgray);
+
+  @media (max-width: 800px) {
+    border-right: none;
+    border-bottom: 1px solid var(--lightgray);
+    padding-bottom: 1rem;
+  }
+}
+
 // --- Link styling ---
 // Replace Quartz's default highlight-background internal links with clean underlines
 a.internal {
