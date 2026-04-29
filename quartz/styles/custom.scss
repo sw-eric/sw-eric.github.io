@@ -55,6 +55,22 @@ a.internal {
   max-width: 680px;
 }
 
+// --- Breadcrumbs ---
+.breadcrumb-container {
+  font-size: 0.8rem;
+  color: var(--gray);
+
+  a {
+    color: var(--gray);
+    font-weight: 400;
+    text-decoration: none;
+
+    &:hover {
+      color: var(--secondary);
+    }
+  }
+}
+
 // --- Content meta (date · read time) ---
 .content-meta {
   font-size: 0.8rem;
