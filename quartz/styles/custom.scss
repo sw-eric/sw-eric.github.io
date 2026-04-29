@@ -55,6 +55,15 @@ a.internal {
   max-width: 680px;
 }
 
+// --- Content meta (date · read time) ---
+.content-meta {
+  font-size: 0.8rem;
+  color: var(--gray);
+  letter-spacing: 0.02em;
+  margin-top: 0.4rem;
+  margin-bottom: 0;
+}
+
 // --- Paragraph spacing ---
 article p {
   margin-top: 0;
