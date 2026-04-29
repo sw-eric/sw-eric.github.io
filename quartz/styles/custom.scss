@@ -13,6 +13,22 @@ tbody {
   line-height: 1.7;
 }
 
+// --- Link styling ---
+// Replace Quartz's default highlight-background internal links with clean underlines
+a.internal {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  text-decoration: underline;
+  text-decoration-color: var(--secondary);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+
+  &:hover {
+    text-decoration-color: var(--tertiary);
+  }
+}
+
 // --- Article prose width ---
 article {
   max-width: 680px;
