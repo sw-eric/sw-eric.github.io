@@ -18,7 +18,7 @@ I may hold positions in any of the securities discussed on this site. Disclosure
 
 ## Employment-related restrictions
 
-I am affiliated with firms that have personal trading and outside-activity policies. I comply with all applicable policies of my employers and educational institution. Where those policies require it, I will pause public commentary, restrict trading in covered securities, or remove content from this site without notice.
+I may be affiliated with firms that have personal trading and outside-activity policies. I comply with all applicable policies of my employers and educational institution. Where those policies require it, I will pause public commentary, restrict trading in covered securities, or remove content from this site without notice.
 
 ## No solicitation
 
@@ -27,3 +27,9 @@ This site is not a solicitation to invest, an offer to sell securities, or an of
 ## Errors
 
 I write and publish this work on my own, and it will contain errors. If you find one, I would be grateful if you let me know.
+
+## Contact 
+I'm happy to hear from anyone reading this work — corrections, pushback, and conversations about the markets are all welcome. I would love to connect on LinkedIn as well!
+- **Email:** seewoo.eric.lee@gmail.com 
+- **LinkedIn:** [linkedin.com/in/seewoo-eric-lee](https://linkedin.com/in/seewoo-eric-lee)
+
