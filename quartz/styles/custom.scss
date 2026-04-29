@@ -13,6 +13,203 @@ tbody {
   line-height: 1.7;
 }
 
+// =============================================================
+// KEYFRAMES
+// =============================================================
+@keyframes accent-grow {
+  from { width: 0; }
+  to { width: 2.5rem; }
+}
+
+@keyframes accent-grow-hero {
+  from { width: 0; }
+  to { width: 4rem; }
+}
+
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+// =============================================================
+// IDEA 5: Animated accent line (replaces static width)
+// =============================================================
+// (applied on .article-title::after below — overrides static rule)
+
+// =============================================================
+// IDEA 6: Subtle grain/noise texture overlay
+// =============================================================
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9996;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 250px 250px;
+}
+
+// =============================================================
+// IDEA 7: Tag pills
+// =============================================================
+a.internal.tag-link {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  background-color: var(--highlight);
+  color: var(--secondary);
+  text-decoration: none;
+  border-bottom: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
+
+  &:hover {
+    background-color: var(--secondary);
+    color: var(--light);
+    text-decoration: none;
+  }
+}
+
+// =============================================================
+// IDEAS 1, 3, 4: Hero landing page
+// =============================================================
+body[data-slug="index"] .content-meta {
+  display: none;
+}
+
+article.hero-page {
+  .article-title {
+    font-size: 3rem;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin-bottom: 0;
+  }
+
+  .article-title::after {
+    animation-name: accent-grow-hero;
+  }
+
+  .hero-tag {
+    font-family: var(--bodyFont);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-top: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-sub {
+    font-family: var(--headerFont);
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--darkgray);
+    line-height: 1.5;
+    margin-bottom: 2.5rem;
+    max-width: 500px;
+  }
+
+  .type-cursor {
+    color: var(--secondary);
+    font-style: normal;
+    animation: cursor-blink 0.7s step-end infinite;
+  }
+
+  .nav-cards {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 2.5rem 0;
+    border-top: 1px solid var(--lightgray);
+  }
+
+  // Reset a.internal treatment for nav cards
+  .nav-card,
+  a.internal.nav-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--lightgray);
+    color: var(--dark);
+    font-weight: 400;
+    text-decoration: none;
+    background: transparent;
+    border-radius: 0;
+    transition: padding-left 0.15s ease, color 0.15s ease;
+
+    &:hover {
+      padding-left: 0.4rem;
+      color: var(--secondary);
+      text-decoration: none;
+
+      .nav-card-arrow {
+        color: var(--secondary);
+        transform: translateX(3px);
+      }
+
+      .nav-card-title {
+        color: var(--secondary);
+      }
+    }
+  }
+
+  .nav-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .nav-card-title {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--dark);
+    transition: color 0.15s ease;
+  }
+
+  .nav-card-desc {
+    font-size: 0.8rem;
+    color: var(--gray);
+  }
+
+  .nav-card-arrow {
+    color: var(--lightgray);
+    font-size: 1rem;
+    flex-shrink: 0;
+    transition: transform 0.15s ease, color 0.15s ease;
+  }
+}
+
+// =============================================================
+// IDEA 9: Custom 404
+// =============================================================
+.error-eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-bottom: 0.5rem;
+  font-family: var(--bodyFont);
+}
+
+// =============================================================
+// IDEA 10: Scroll-triggered section reveals
+// =============================================================
+.reveal-target {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.reveal-target.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 // --- Feature 1: Reading progress bar ---
 #reading-progress {
   position: fixed;
@@ -173,10 +370,11 @@ ul.toc-content > li > a {
 .article-title::after {
   content: "";
   display: block;
-  width: 2.5rem;
+  width: 0;
   height: 2px;
   background-color: var(--secondary);
   margin-top: 0.75rem;
+  animation: accent-grow 0.5s ease 0.2s forwards;
 }
 
 // --- Footer sizing + alignment ---
