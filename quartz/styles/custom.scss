@@ -1,6 +1,18 @@
 @use "./base.scss";
 
 // put your custom CSS here!
+
+// --- Body rhythm ---
+body {
+  font-size: 18px;
+}
+
+p,
+li,
+tbody {
+  line-height: 1.7;
+}
+
 .page-title {
     font-size: 0;
     background-image: url("/static/logo.png");
