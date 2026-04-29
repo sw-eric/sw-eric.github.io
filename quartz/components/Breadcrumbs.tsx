@@ -26,6 +26,10 @@ interface BreadcrumbOptions {
    * Whether to display the current page in the breadcrumbs.
    */
   showCurrentPage: boolean
+  /**
+   * Whether to show the root (Home) crumb.
+   */
+  showRoot: boolean
 }
 
 const defaultOptions: BreadcrumbOptions = {
@@ -33,6 +37,7 @@ const defaultOptions: BreadcrumbOptions = {
   rootName: "Home",
   resolveFrontmatterTitle: true,
   showCurrentPage: true,
+  showRoot: true,
 }
 
 function formatCrumb(displayName: string, baseSlug: FullSlug, currentSlug: SimpleSlug): CrumbData {
@@ -58,7 +63,7 @@ export default ((opts?: Partial<BreadcrumbOptions>) => {
       return null
     }
 
-    const crumbs: CrumbData[] = pathNodes.map((node, idx) => {
+    let crumbs: CrumbData[] = pathNodes.map((node, idx) => {
       const crumb = formatCrumb(node.displayName, fileData.slug!, simplifySlug(node.slug))
       if (idx === 0) {
         crumb.displayName = options.rootName
@@ -74,6 +79,10 @@ export default ((opts?: Partial<BreadcrumbOptions>) => {
 
     if (!options.showCurrentPage) {
       crumbs.pop()
+    }
+
+    if (!options.showRoot) {
+      crumbs = crumbs.slice(1)
     }
 
     return (

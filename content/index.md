@@ -20,17 +20,17 @@ I am Eric Lee, an Operations Research and Financial Engineering student at Colum
 <span class="nav-card-arrow">→</span>
 </a>
 
-<a href="./research" class="nav-card">
+<a href="./portfolio/research" class="nav-card">
 <span class="nav-card-body"><span class="nav-card-title">Research</span><span class="nav-card-desc">Long-form thematic memos. Updated quarterly.</span></span>
 <span class="nav-card-arrow">→</span>
 </a>
 
-<a href="./trades" class="nav-card">
+<a href="./portfolio/trades" class="nav-card">
 <span class="nav-card-body"><span class="nav-card-title">Trade Log</span><span class="nav-card-desc">Every position with a written pre-trade thesis and post-trade review.</span></span>
 <span class="nav-card-arrow">→</span>
 </a>
 
-<a href="./journal" class="nav-card">
+<a href="./portfolio/journal" class="nav-card">
 <span class="nav-card-body"><span class="nav-card-title">Journal</span><span class="nav-card-desc">Monthly reviews. What worked, what didn't, what's changing.</span></span>
 <span class="nav-card-arrow">→</span>
 </a>

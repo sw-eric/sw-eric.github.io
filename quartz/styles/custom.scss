@@ -111,7 +111,8 @@ article.hero-page {
     color: var(--darkgray);
     line-height: 1.5;
     margin-bottom: 2.5rem;
-    max-width: 500px;
+    white-space: nowrap;
+    overflow: hidden;
 
     &::after {
       content: "|";
@@ -360,9 +361,32 @@ a.internal {
       padding-left: 0.25rem;
     }
 
-    &.active {
+    &.active,
+    &.parent-active {
       color: var(--secondary);
       font-weight: 500;
+    }
+  }
+
+  .sidebar-nav-children {
+    margin: 0.1rem 0 0.25rem 0.75rem;
+    border-left: 1px solid var(--lightgray);
+    padding-left: 0.75rem;
+
+    .child-link {
+      font-size: 0.8rem;
+      color: var(--gray);
+      padding: 0.2rem 0;
+
+      &:hover {
+        color: var(--secondary);
+        padding-left: 0.2rem;
+      }
+
+      &.active {
+        color: var(--secondary);
+        font-weight: 500;
+      }
     }
   }
 }

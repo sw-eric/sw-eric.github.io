@@ -1,6 +1,35 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
 
+// Top-level pages that need no breadcrumbs at all
+const isStandalone = (slug: string) =>
+  slug === "index" ||
+  slug === "about" ||
+  slug === "disclaimer" ||
+  slug === "portfolio" ||
+  slug === "portfolio/index"
+
+// Pages whose breadcrumbs should start from their section root, not Home
+const isRootless = (slug: string) => slug.startsWith("portfolio/")
+
+const sidebarNav = Component.SidebarNav({
+  links: [
+    { label: "Home", href: "/" },
+    {
+      label: "Portfolio",
+      href: "/portfolio",
+      children: [
+        { label: "Trade Log", href: "/portfolio/trades" },
+        { label: "Research", href: "/portfolio/research" },
+        { label: "Journal", href: "/portfolio/journal" },
+        { label: "Live Dashboard", href: "https://sonsu-capital.streamlit.app", external: true },
+      ],
+    },
+    { label: "About", href: "/about" },
+    { label: "Disclaimer", href: "/disclaimer" },
+  ],
+})
+
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
@@ -18,7 +47,14 @@ export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
     Component.ConditionalRender({
       component: Component.Breadcrumbs(),
-      condition: (page) => page.fileData.slug !== "index",
+      condition: (page) => {
+        const slug = page.fileData.slug ?? ""
+        return !isStandalone(slug) && !isRootless(slug)
+      },
+    }),
+    Component.ConditionalRender({
+      component: Component.Breadcrumbs({ showRoot: false }),
+      condition: (page) => isRootless(page.fileData.slug ?? ""),
     }),
     Component.ArticleTitle(),
     Component.ContentMeta(),
@@ -37,14 +73,7 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.SidebarNav({
-      links: [
-        { label: "Home", href: "/" },
-        { label: "Investment Mandate", href: "/thesis/investment-mandate" },
-        { label: "About", href: "/about" },
-        { label: "Disclaimer", href: "/disclaimer" },
-      ],
-    }),
+    sidebarNav,
   ],
   right: [
     Component.Graph(),
@@ -55,7 +84,21 @@ export const defaultContentPageLayout: PageLayout = {
 
 // components for pages that display lists of pages  (e.g. tags or folders)
 export const defaultListPageLayout: PageLayout = {
-  beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle(), Component.ContentMeta()],
+  beforeBody: [
+    Component.ConditionalRender({
+      component: Component.Breadcrumbs(),
+      condition: (page) => {
+        const slug = page.fileData.slug ?? ""
+        return !isStandalone(slug) && !isRootless(slug)
+      },
+    }),
+    Component.ConditionalRender({
+      component: Component.Breadcrumbs({ showRoot: false }),
+      condition: (page) => isRootless(page.fileData.slug ?? ""),
+    }),
+    Component.ArticleTitle(),
+    Component.ContentMeta(),
+  ],
   left: [
     Component.PageTitle(),
     Component.MobileOnly(Component.Spacer()),
@@ -68,14 +111,7 @@ export const defaultListPageLayout: PageLayout = {
         { Component: Component.Darkmode() },
       ],
     }),
-    Component.SidebarNav({
-      links: [
-        { label: "Home", href: "/" },
-        { label: "Investment Mandate", href: "/thesis/investment-mandate" },
-        { label: "About", href: "/about" },
-        { label: "Disclaimer", href: "/disclaimer" },
-      ],
-    }),
+    sidebarNav,
   ],
   right: [],
 }
