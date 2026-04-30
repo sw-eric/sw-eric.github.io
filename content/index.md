@@ -13,6 +13,11 @@ Sonsu Capital is a personal research and trading project documenting an Asia-Pac
 
 I am Eric Lee, an Operations Research and Financial Engineering student at Columbia, currently completing military service in Korea before returning to school. I grew up between Malaysia, Bangladesh, and Korea, and have read across these markets for most of my life. This project is an attempt to bring that lived context into a disciplined investment process and to build something I can defend in an interview room.
 
+<div class="dashboard-embed">
+<div class="dashboard-embed-label">Live Dashboard</div>
+<iframe src="https://sonsu-capital.streamlit.app?embed=true" class="dashboard-frame" allowfullscreen></iframe>
+</div>
+
 <div class="nav-cards">
 
 <a href="./thesis/investment-mandate" class="nav-card">
@@ -33,11 +38,6 @@ I am Eric Lee, an Operations Research and Financial Engineering student at Colum
 <a href="./portfolio/journal" class="nav-card">
 <span class="nav-card-body"><span class="nav-card-title">Journal</span><span class="nav-card-desc">Monthly reviews. What worked, what didn't, what's changing.</span></span>
 <span class="nav-card-arrow">→</span>
-</a>
-
-<a href="https://sonsu-capital.streamlit.app" class="nav-card">
-<span class="nav-card-body"><span class="nav-card-title">Live Dashboard</span><span class="nav-card-desc">Current positions and performance metrics.</span></span>
-<span class="nav-card-arrow">↗</span>
 </a>
 
 <a href="./about" class="nav-card">
