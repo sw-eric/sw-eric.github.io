@@ -11,7 +11,7 @@ const NotFound: QuartzComponent = ({ cfg }: QuartzComponentProps) => {
       <p class="error-eyebrow">404</p>
       <h1>Position Closed</h1>
       <p>This page doesn't exist — or the position has been closed.</p>
-      <a href={baseDir}>← Return to Sonsu Capital</a>
+      <a href={baseDir}>← Return to Sonsu Research</a>
     </article>
   )
 }

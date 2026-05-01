@@ -1,5 +1,5 @@
 ---
-title: Sonsu Capital
+title: Sonsu Research
 cssclasses: [hero-page]
 ---
 
@@ -9,7 +9,7 @@ cssclasses: [hero-page]
 
 ---
 
-Sonsu Capital is a personal research and trading project documenting an Asia-Pacific approach to AI infrastructure, energy, and Korean macro markets. The project runs on $1,000 of personal capital. The deliverable is the process — written theses, post-mortems, and a public record of decisions — not the return on capital, which is too small to be statistically meaningful.
+Sonsu Research is a personal research and trading project documenting an Asia-Pacific approach to AI infrastructure, energy, and Korean macro markets. The project runs on $1,000 of personal capital. The deliverable is the process — written theses, post-mortems, and a public record of decisions — not the return on capital, which is too small to be statistically meaningful.
 
 I am Eric Lee, an Operations Research and Financial Engineering student at Columbia, currently completing military service in Korea before returning to school. I grew up between Malaysia, Bangladesh, and Korea, and have read across these markets for most of my life. This project is an attempt to bring that lived context into a disciplined investment process and to build something I can defend in an interview room.
 

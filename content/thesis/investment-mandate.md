@@ -4,7 +4,7 @@ title: Investment Mandate
 
 *Last updated: [Wednesday, April 29, 2026]*
 
-This document defines what Sonsu Capital trades, why, and the hard rules that govern position sizing, risk, and review. It is the constitution of the project. Every trade memo will reference back to this document. When I update the mandate, the prior version is preserved in the git history.
+This document defines what Sonsu Research trades, why, and the hard rules that govern position sizing, risk, and review. It is the constitution of the project. Every trade memo will reference back to this document. When I update the mandate, the prior version is preserved in the git history.
 
 ## Objective
 

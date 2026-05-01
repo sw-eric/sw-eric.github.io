@@ -4,7 +4,7 @@ title: Disclaimer
 
 ## About this site
 
-Sonsu Capital is a personal research and trading project run by a single individual. It is not a fund, an investment advisory firm, a registered investment advisor, or a regulated financial entity. No outside capital is managed. No fees are charged. No subscriptions are sold.
+Sonsu Research is a personal research and trading project run by a single individual. It is not a fund, an investment advisory firm, a registered investment advisor, or a regulated financial entity. No outside capital is managed. No fees are charged. No subscriptions are sold.
 
 ## Not investment advice
 
