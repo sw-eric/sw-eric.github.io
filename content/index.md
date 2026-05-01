@@ -20,7 +20,7 @@ I am Eric Lee, an Operations Research and Financial Engineering student at Colum
 
 <div class="nav-cards">
 
-<a href="./thesis/investment-mandate" class="nav-card">
+<a href="./investment-mandate" class="nav-card">
 <span class="nav-card-body"><span class="nav-card-title">Investment Mandate</span><span class="nav-card-desc">What I trade, what I don't, and the hard rules.</span></span>
 <span class="nav-card-arrow">→</span>
 </a>

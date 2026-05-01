@@ -6,6 +6,7 @@ const isStandalone = (slug: string) =>
   slug === "index" ||
   slug === "about" ||
   slug === "disclaimer" ||
+  slug === "investment-mandate" ||
   slug === "portfolio" ||
   slug === "portfolio/index"
 
@@ -15,6 +16,7 @@ const isRootless = (slug: string) => slug.startsWith("portfolio/")
 const sidebarNav = Component.SidebarNav({
   links: [
     { label: "Home", href: "/" },
+    { label: "Investment Mandate", href: "/investment-mandate" },
     {
       label: "Portfolio",
       href: "/portfolio",
