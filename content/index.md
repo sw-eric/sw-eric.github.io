@@ -15,7 +15,7 @@ I am Eric Lee, an Operations Research and Financial Engineering student at Colum
 
 <div class="dashboard-embed">
 <div class="dashboard-embed-label">Live Dashboard</div>
-<iframe src="https://sonsu-capital.streamlit.app?embed=true" class="dashboard-frame" allowfullscreen></iframe>
+<iframe src="https://sonsu-research.streamlit.app?embed=true" class="dashboard-frame" allowfullscreen></iframe>
 </div>
 
 <div class="nav-cards">

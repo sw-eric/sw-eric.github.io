@@ -22,7 +22,7 @@ const sidebarNav = Component.SidebarNav({
         { label: "Trade Log", href: "/portfolio/trades" },
         { label: "Research", href: "/portfolio/research" },
         { label: "Journal", href: "/portfolio/journal" },
-        { label: "Live Dashboard", href: "https://sonsu-capital.streamlit.app", external: true },
+        { label: "Live Dashboard", href: "https://sonsu-research.streamlit.app", external: true },
       ],
     },
     { label: "About", href: "/about" },
