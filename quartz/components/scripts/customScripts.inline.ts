@@ -1,3 +1,32 @@
+// Sidebar nav: active state set client-side so all pages emit identical HTML
+// (prevents Quartz SPA morph from reordering items when classes differ)
+document.addEventListener("nav", () => {
+  const currentSlug =
+    window.location.pathname.replace(/^\//, "").replace(/\/$/, "") || "index"
+
+  const toSlug = (href: string) =>
+    href.replace(/^https?:\/\/[^/]+/, "").replace(/^\//, "").replace(/\/$/, "") || "index"
+
+  // Reset all links
+  document.querySelectorAll<HTMLAnchorElement>(".sidebar-nav-link").forEach((a) => {
+    a.classList.remove("active", "parent-active")
+  })
+
+  // Mark active
+  document.querySelectorAll<HTMLAnchorElement>(".sidebar-nav-link").forEach((a) => {
+    if (toSlug(a.getAttribute("href") ?? "") === currentSlug) {
+      a.classList.add("active")
+    }
+  })
+
+  // Mark parent-active when a child is active
+  document.querySelectorAll<HTMLElement>("li.has-children").forEach((li) => {
+    const parent = li.querySelector<HTMLAnchorElement>(":scope > a.sidebar-nav-link")
+    const hasActiveChild = !!li.querySelector(".child-link.active")
+    if (parent && hasActiveChild) parent.classList.add("parent-active")
+  })
+})
+
 // Feature 1: Reading progress bar
 document.addEventListener("nav", () => {
   let bar = document.getElementById("reading-progress") as HTMLDivElement | null

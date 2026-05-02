@@ -12,22 +12,15 @@ interface SidebarNavOptions {
 }
 
 export default ((opts: SidebarNavOptions) => {
-  const SidebarNav: QuartzComponent = ({ fileData }: QuartzComponentProps) => {
-    const currentSlug = fileData.slug ?? ""
-
-    const isActive = (href: string) => {
-      const slug = href.replace(/^https?:\/\/[^/]+/, "").replace(/^\//, "").replace(/\/$/, "") || "index"
-      return currentSlug === slug
-    }
-
-    const isParentActive = (link: SidebarNavLink) =>
-      link.children?.some((child) => isActive(child.href)) || isActive(link.href)
-
+  // Active state is set client-side (see customScripts.inline.ts) so that
+  // every page produces identical sidebar HTML — prevents Quartz's SPA morph
+  // algorithm from reordering items when classes differ between pages.
+  const SidebarNav: QuartzComponent = (_props: QuartzComponentProps) => {
     const renderLink = (link: SidebarNavLink) => (
       <li class={link.children ? "has-children" : ""}>
         <a
           href={link.href}
-          class={`sidebar-nav-link${isActive(link.href) ? " active" : ""}${isParentActive(link) && link.children ? " parent-active" : ""}`}
+          class="sidebar-nav-link"
           {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
         >
           {link.label}
@@ -38,7 +31,7 @@ export default ((opts: SidebarNavOptions) => {
               <li>
                 <a
                   href={child.href}
-                  class={`sidebar-nav-link child-link${isActive(child.href) ? " active" : ""}`}
+                  class="sidebar-nav-link child-link"
                   {...(child.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                 >
                   {child.label}
