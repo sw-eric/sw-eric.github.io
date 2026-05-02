@@ -29,7 +29,8 @@ This site is not a solicitation to invest, an offer to sell securities, or an of
 I write and publish this work on my own, and it will contain errors. If you find one, I would be grateful if you let me know.
 
 ## Contact 
-I'm happy to hear from anyone reading this work — corrections, pushback, and conversations about the markets are all welcome. I would love to connect on LinkedIn as well!
+I'm happy to hear from anyone reading this work. Please feel free to email me with any corrections, pushback, and conversations about the markets. Let's connect on LinkedIn!
 - **Email:** seewoo.eric.lee@gmail.com 
 - **LinkedIn:** [linkedin.com/in/seewoo-eric-lee](https://linkedin.com/in/seewoo-eric-lee)
+
 
