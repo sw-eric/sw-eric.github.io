@@ -16,6 +16,7 @@ const isRootless = (slug: string) => slug.startsWith("portfolio/")
 const sidebarNav = Component.SidebarNav({
   links: [
     { label: "Home", href: "/" },
+    { label: "About", href: "/about" },
     { label: "Investment Mandate", href: "/investment-mandate" },
     {
       label: "Portfolio",
@@ -27,7 +28,6 @@ const sidebarNav = Component.SidebarNav({
         { label: "Live Dashboard", href: "https://sonsu-research.streamlit.app", external: true },
       ],
     },
-    { label: "About", href: "/about" },
     { label: "Disclaimer", href: "/disclaimer" },
   ],
 })
