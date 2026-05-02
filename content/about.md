@@ -10,7 +10,7 @@ I chose Financial Engineering because the quantitative framing of markets is ess
 
 I am fluent in Korean and English and have dabbled in learning Mandarin Chinese and Spanish at an elementary level. I am actively learning French at the moment! 
 
-When I'm not working on this project, I play basketball, listen to jazz music, train for a marathon, play the saxophone, work out, or play chess.
+When I'm not working on this project, I play basketball, listen to jazz music, go for a run, play the saxophone, work out, or play chess.
 
 ## Contact 
 I'm happy to hear from anyone reading this work. Let's connect on LinkedIn!
