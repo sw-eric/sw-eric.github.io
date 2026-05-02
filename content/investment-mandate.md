@@ -6,14 +6,14 @@ This document defines what Sonsu Research trades, why, and the hard rules that g
 
 ## Objective
 
-Build and document a value-oriented research and trading process focused on US and Asia-Pacific AI infrastructure, energy, and macro markets. The capital base of $1,000 is a learning vehicle; the deliverable is the process and the body of written work. **Profit is not the primary success metric.** Process quality, writeup quality, and what I learn from each cycle are what define success here.
+Build and document a value-oriented research and trading process focused on US and Asian AI infrastructure, energy, and macro markets. The capital base of $1,000 is a learning vehicle; the deliverable is the process and the body of written work. **Profit is not the primary success metric.** Process quality, writeup quality, and what I learn from each cycle are what define success here.
 
 ## Niche
 
 The investable focus is concentrated, not eclectic.
 
-- **AI infrastructure and energy (US and Asia-Pacific), ~60-70% of book.** Power generation and distribution, data center operators, cooling and electrical equipment, semiconductor supply chain names with direct exposure to AI CapEx. Both US-listed (e.g., VST, CEG, GEV, DLR, EQIX, NVDA, ASML, AMAT, TSM) and APAC-listed via ADRs and ETFs where accessible (e.g., EWY, Asian utility and industrial exposure).
-- **Asia-Pacific macro, ~20-30% of book.** APAC equity market themes, currency-related expressions where retail-accessible, Asian-listed names with US ADRs (e.g., CPNG), country and regional ETFs (EWY, EWT, EWJ).
+- **AI infrastructure and energy (US and Asia), ~60-70% of book.** Power generation and distribution, data center operators, cooling and electrical equipment, semiconductor supply chain names with direct exposure to AI CapEx. Both US-listed (e.g., VST, CEG, GEV, DLR, EQIX, NVDA, ASML, AMAT, TSM) and APAC-listed via ADRs and ETFs where accessible (e.g., EWY, Asian utility and industrial exposure).
+- **Asian macro, ~20-30% of book.** APAC equity market themes, currency-related expressions where retail-accessible, Asian-listed names with US ADRs (e.g., CPNG), country and regional ETFs (EWY, EWT, EWJ).
 - **Opportunistic, up to ~10% of book.** I will allow myself the freedom to take a small allocation in compelling situations outside the niche, on the condition that any such trade has a fully written pre-trade memo and an explicit acknowledgment of why it falls outside the mandate.
 
 ## Edge hypothesis
