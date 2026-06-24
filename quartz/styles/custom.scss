@@ -1,218 +1,73 @@
 @use "./base.scss";
 
-// put your custom CSS here!
-
-// --- Body rhythm ---
-body {
-  font-size: 18px;
+// ============================================================
+// SUPPLEMENTARY CSS CUSTOM PROPERTIES
+// ============================================================
+:root {
+  --card: #eeedeb;
+}
+:root[saved-theme="dark"] {
+  --card: #252119;
 }
 
-p,
-li,
-tbody {
+// ============================================================
+// KEYFRAMES
+// ============================================================
+@keyframes ssaccent {
+  from { transform: scaleX(0) }
+  to   { transform: scaleX(1) }
+}
+@keyframes ssblink {
+  0%, 48% { opacity: 1 }
+  49%, 100% { opacity: 0 }
+}
+@keyframes sspulse {
+  0%, 100% { opacity: 1; transform: scale(1) }
+  50%       { opacity: .35; transform: scale(.82) }
+}
+@keyframes ssrise {
+  from { opacity: 0; transform: translateY(8px) }
+  to   { opacity: 1; transform: none }
+}
+@keyframes ssdraw {
+  to { stroke-dashoffset: 0 }
+}
+
+// ============================================================
+// BASE
+// ============================================================
+body {
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: rgba(69, 96, 121, 0.22);
+}
+
+p, li, tbody {
   line-height: 1.7;
 }
 
-// =============================================================
-// KEYFRAMES
-// =============================================================
-@keyframes accent-grow {
-  from { width: 0; }
-  to { width: 2.5rem; }
-}
-
-@keyframes accent-grow-hero {
-  from { width: 0; }
-  to { width: 4rem; }
-}
-
-@keyframes cursor-blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-
-// =============================================================
-// IDEA 5: Animated accent line (replaces static width)
-// =============================================================
-// (applied on .article-title::after below — overrides static rule)
-
-// =============================================================
-// IDEA 6: Subtle grain/noise texture overlay
-// =============================================================
+// ============================================================
+// GRAIN TEXTURE
+// ============================================================
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 9996;
-  opacity: 0.025;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.028;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
   background-repeat: repeat;
-  background-size: 250px 250px;
+  background-size: 160px 160px;
 }
 
-// =============================================================
-// IDEA 7: Tag pills
-// =============================================================
-a.internal.tag-link {
-  display: inline-flex;
-  align-items: center;
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.03em;
-  padding: 0.2rem 0.65rem;
-  border-radius: 999px;
-  background-color: var(--highlight);
-  color: var(--secondary);
-  text-decoration: none;
-  border-bottom: none;
-  transition: background-color 0.15s ease, color 0.15s ease;
-
-  &:hover {
-    background-color: var(--secondary);
-    color: var(--light);
-    text-decoration: none;
-  }
-}
-
-// =============================================================
-// IDEAS 1, 3, 4: Hero landing page
-// =============================================================
-body[data-slug="index"] .content-meta {
-  display: none;
-}
-
-article.hero-page {
-  .article-title {
-    font-size: 3rem;
-    line-height: 1.1;
-    letter-spacing: -0.01em;
-    margin-bottom: 0;
-  }
-
-  .article-title::after {
-    animation-name: accent-grow-hero;
-  }
-
-  .hero-tag {
-    font-family: var(--bodyFont);
-    font-size: 0.7rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--gray);
-    margin-top: 0.75rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .hero-sub {
-    font-family: var(--headerFont);
-    font-style: italic;
-    font-size: 1.15rem;
-    color: var(--darkgray);
-    line-height: 1.5;
-    margin-bottom: 2.5rem;
-    white-space: nowrap;
-    overflow: hidden;
-
-    &::after {
-      content: "|";
-      color: var(--secondary);
-      font-style: normal;
-      animation: cursor-blink 0.7s step-end infinite;
-    }
-  }
-
-  .nav-cards {
-    display: flex;
-    flex-direction: column;
-    margin: 0 0 2.5rem 0;
-    border-top: 1px solid var(--lightgray);
-  }
-
-  // Reset a.internal treatment for nav cards
-  .nav-card,
-  a.internal.nav-card {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.85rem 0;
-    border-bottom: 1px solid var(--lightgray);
-    color: var(--dark);
-    font-weight: 400;
-    text-decoration: none;
-    background: transparent;
-    border-radius: 0;
-    transition: padding-left 0.15s ease, color 0.15s ease;
-
-    &:hover {
-      padding-left: 0.4rem;
-      color: var(--secondary);
-      text-decoration: none;
-
-      .nav-card-arrow {
-        color: var(--secondary);
-        transform: translateX(3px);
-      }
-
-      .nav-card-title {
-        color: var(--secondary);
-      }
-    }
-  }
-
-  .nav-card-body {
-    display: flex;
-    flex-direction: column;
-    gap: 0.15rem;
-  }
-
-  .nav-card-title {
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: var(--dark);
-    transition: color 0.15s ease;
-  }
-
-  .nav-card-desc {
-    font-size: 0.8rem;
-    color: var(--gray);
-  }
-
-  .nav-card-arrow {
-    color: var(--lightgray);
-    font-size: 1rem;
-    flex-shrink: 0;
-    transition: transform 0.15s ease, color 0.15s ease;
-  }
-}
-
-// =============================================================
-// IDEA 9: Custom 404
-// =============================================================
-.error-eyebrow {
-  font-size: 0.72rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--gray);
-  margin-bottom: 0.5rem;
-  font-family: var(--bodyFont);
-}
-
-// =============================================================
-// IDEA 10: Scroll-triggered section reveals
-// =============================================================
-.reveal-target {
-  opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.reveal-target.revealed {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-// --- Feature 1: Reading progress bar ---
+// ============================================================
+// READING PROGRESS BAR
+// ============================================================
 #reading-progress {
   position: fixed;
   top: 0;
@@ -222,269 +77,68 @@ article.hero-page {
   background: var(--secondary);
   z-index: 9998;
   pointer-events: none;
+  transition: width 0.12s linear;
 }
 
-// --- Feature 3: Active TOC link indicator ---
-ul.toc-content > li > a {
-  transition: opacity 0.5s ease, color 0.3s ease, padding-left 0.2s ease;
-  padding-left: 0;
-
-  &.in-view {
-    color: var(--secondary);
-    opacity: 1;
-    padding-left: 0.5rem;
-    box-shadow: inset 2px 0 0 var(--secondary);
-  }
-}
-
-// --- Feature 4: Popover (hover card) restyling ---
-.popover > .popover-inner {
-  border: 1px solid var(--lightgray);
-  border-top: 2px solid var(--secondary);
-  border-radius: 4px;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
-
-  h1 {
-    font-size: 1.1rem;
-    padding-bottom: 0.5rem;
-    margin-bottom: 0.5rem;
-    border-bottom: 1px solid var(--lightgray);
-  }
-}
-
-// --- Feature 5: Table styling ---
-thead th {
-  border-bottom: 2px solid var(--secondary);
-  font-size: 0.78rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--dark);
-}
-
-article tbody tr:nth-child(even) {
-  background-color: var(--highlight);
-}
-
-article tbody tr:hover {
-  background-color: rgba(69, 96, 121, 0.07);
-  transition: background-color 0.15s ease;
-}
-
-// --- Feature 6: Blockquote refinement ---
-blockquote {
-  border-left-width: 1px;
-  padding-left: 1.5rem;
-  margin: 1.75rem 0;
-
-  p {
-    font-family: var(--headerFont);
-    font-style: italic;
-    font-size: 1.05rem;
-    line-height: 1.65;
-  }
-}
-
-// --- Feature 7: Content meta "Updated" label ---
-.content-meta > *:first-child::before {
-  content: "Updated ";
-  font-variant: small-caps;
-  letter-spacing: 0.04em;
-}
-
-// --- Left sidebar separator ---
-.sidebar.left {
-  border-right: 1px solid var(--lightgray);
-
-  @media (max-width: 800px) {
-    border-right: none;
-    border-bottom: 1px solid var(--lightgray);
-    padding-bottom: 1rem;
-  }
-}
-
-// --- Link styling ---
-// Replace Quartz's default highlight-background internal links with clean underlines
-a.internal {
-  background-color: transparent;
-  padding: 0;
-  border-radius: 0;
-  text-decoration: underline;
-  text-decoration-color: var(--secondary);
-  text-underline-offset: 3px;
-  text-decoration-thickness: 1px;
-
-  &:hover {
-    text-decoration-color: var(--tertiary);
-  }
-}
-
-// --- Article prose width ---
-// Pad the center container so ALL children share one consistent left edge.
-// box-sizing: border-box keeps the padding inside the column width (no overflow).
-.center {
-  box-sizing: border-box;
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
-}
-
-// Cap prose width on wide screens — left-aligned, not centered
-.center .page-header,
-.center article {
-  max-width: 680px;
-}
-
-// --- Sidebar nav ---
-.sidebar-nav {
-  margin-top: 1rem;
-
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.1rem;
-  }
-
-  .sidebar-nav-link {
-    display: block;
-    font-family: var(--bodyFont);
-    font-size: 0.875rem;
-    font-weight: 400;
-    color: var(--darkgray);
-    text-decoration: none;
-    padding: 0.3rem 0;
-    transition: color 0.15s ease, padding-left 0.15s ease;
-
-    &:hover {
-      color: var(--secondary);
-      padding-left: 0.25rem;
-    }
-
-    &.active,
-    &.parent-active {
-      color: var(--secondary);
-      font-weight: 500;
-    }
-  }
-
-  .sidebar-nav-children {
-    margin: 0.1rem 0 0.25rem 0.75rem;
-    border-left: 1px solid var(--lightgray);
-    padding-left: 0.75rem;
-
-    .child-link {
-      font-size: 0.8rem;
-      color: var(--gray);
-      padding: 0.2rem 0;
-
-      &:hover {
-        color: var(--secondary);
-        padding-left: 0.2rem;
-      }
-
-      &.active {
-        color: var(--secondary);
-        font-weight: 500;
-      }
-    }
-  }
-}
-
-// --- TOC link sizing ---
-ul.toc-content > li > a {
-  font-size: 0.8rem;
-}
-
-// --- Article title accent bar ---
-.article-title::after {
-  content: "";
-  display: block;
-  width: 0;
-  height: 2px;
-  background-color: var(--secondary);
-  margin-top: 0.75rem;
-  animation: accent-grow 0.5s ease 0.2s forwards;
-}
-
-// --- Footer sizing + alignment ---
-// Footer is outside .center in the grid so it doesn't inherit .center's padding-left.
-// Match it explicitly so footer text aligns with article content.
-footer {
-  font-size: 0.8rem;
-  padding-left: 2.5rem;
-}
-
-// --- Backlinks font size ---
-// Backlinks li > a inherits 18px body — match TOC and right sidebar scale
-.backlinks ul li a {
-  font-size: 0.8rem;
-}
-
-// --- Breadcrumbs ---
-.breadcrumb-container {
-  font-size: 0.8rem;
-  color: var(--gray);
-
-  a {
-    color: var(--gray);
-    font-weight: 400;
-    text-decoration: none;
-
-    &:hover {
-      color: var(--secondary);
-    }
-  }
-}
-
-// --- Content meta (date · read time) ---
-.content-meta {
-  font-size: 0.8rem;
-  color: var(--gray);
-  letter-spacing: 0.02em;
-  margin-top: 0.4rem;
+// ============================================================
+// TYPOGRAPHY — HEADING SCALE
+// ============================================================
+.article-title {
+  font-size: 2.875rem;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  margin-top: 12px;
   margin-bottom: 0;
 }
 
-// --- Paragraph spacing ---
-article p {
-  margin-top: 0;
-  margin-bottom: 1.3rem;
-}
-
-// --- Heading scale ---
-// Page title (ArticleTitle component — lives in .page-header, not article)
-.article-title {
-  font-size: 2.4rem;
-  margin-top: 1rem;
-}
-
-// H1 inside article body content (rare, but handle it)
-.page article > h1 {
-  font-size: 2.4rem;
+// Animated accent bar under article title
+.article-title::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 40px;
+  background: var(--secondary);
+  transform-origin: left;
+  animation: ssaccent 0.9s 0.2s ease both;
+  margin-top: 18px;
+  margin-bottom: 0;
 }
 
 h2 {
   font-size: 1.85rem;
 }
 
-// Italic h3 only inside article body — not in sidebars
+// Article body h3 — section header style
 article h3 {
-  font-size: 1.3rem;
-  font-style: italic;
+  font-family: var(--headerFont);
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--dark);
+  border-bottom: 2px solid var(--secondary);
+  padding-bottom: 7px;
+  margin-bottom: 14px;
+  font-style: normal;
 }
 
-// Right sidebar section headers (Graph View, Table of Contents, Backlinks)
+// Right sidebar h3 labels (Graph View, Table of Contents, Backlinks)
 .sidebar.right h3 {
   font-family: var(--bodyFont);
-  font-size: 0.75rem;
+  font-size: 0.69rem;
   font-style: normal;
   font-weight: 600;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--gray);
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 12px;
 }
 
+// ============================================================
+// LOGO / PAGE TITLE
+// ============================================================
 .page-title {
   font-size: 0;
   background-image: url("/static/logo.png");
@@ -504,7 +158,713 @@ article h3 {
   height: 100%;
 }
 
-// --- Dashboard embed ---
+// ============================================================
+// LEFT SIDEBAR
+// ============================================================
+.sidebar.left {
+  border-right: 1px solid var(--lightgray);
+
+  @media (max-width: 800px) {
+    border-right: none;
+    border-bottom: 1px solid var(--lightgray);
+    padding-bottom: 1rem;
+  }
+}
+
+// ============================================================
+// SIDEBAR NAV
+// ============================================================
+.sidebar-nav {
+  margin-top: 1rem;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+
+  // Section label (no href — renders as <span>, not <a>)
+  .sidebar-nav-section {
+    font-family: var(--codeFont);
+    font-size: 0.625rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gray);
+    font-weight: 400;
+    margin-top: 14px;
+    margin-bottom: 4px;
+    pointer-events: none;
+    cursor: default;
+
+    &:hover {
+      transform: none;
+      color: var(--gray);
+
+      &::before { background: transparent; }
+    }
+  }
+
+  .sidebar-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--bodyFont);
+    font-size: 0.905rem;
+    font-weight: 500;
+    color: var(--darkgray);
+    text-decoration: none;
+    padding: 7px 0;
+    border-radius: 3px;
+    transition: transform 0.2s ease, color 0.2s ease;
+
+    // Left vertical bar via ::before pseudo-element (flex child)
+    &::before {
+      content: '';
+      display: block;
+      width: 3px;
+      flex: none;
+      align-self: stretch;
+      min-height: 1rem;
+      border-radius: 2px;
+      background: transparent;
+      transition: background 0.25s ease;
+    }
+
+    &:hover {
+      color: var(--dark);
+      transform: translateX(4px);
+      text-decoration: none;
+
+      &::before {
+        background: var(--lightgray);
+      }
+    }
+
+    &.active,
+    &.parent-active {
+      color: var(--secondary);
+      font-weight: 600;
+      transform: translateX(4px);
+
+      &::before {
+        background: var(--secondary);
+      }
+    }
+  }
+
+  // Child links (Trade Log, Research, Journal, Live Dashboard)
+  .sidebar-nav-children {
+    margin: 1px 0 4px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding-left: 0;
+
+    li { list-style: none; }
+
+    .child-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: var(--gray);
+      text-decoration: none;
+      padding: 5px 0;
+      transition: transform 0.2s ease, color 0.2s ease;
+
+      &::before {
+        content: '';
+        display: block;
+        width: 3px;
+        flex: none;
+        align-self: stretch;
+        min-height: 0.875rem;
+        border-radius: 2px;
+        background: transparent;
+        transition: background 0.25s ease;
+      }
+
+      &:hover {
+        color: var(--secondary);
+        transform: translateX(4px);
+
+        &::before { background: var(--lightgray); }
+      }
+
+      &.active {
+        color: var(--secondary);
+        font-weight: 500;
+        transform: translateX(4px);
+
+        &::before { background: var(--secondary); }
+      }
+    }
+  }
+}
+
+// ============================================================
+// CENTER CONTENT
+// ============================================================
+.center {
+  box-sizing: border-box;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+.center .page-header,
+.center article {
+  max-width: 680px;
+}
+
+// ============================================================
+// PARAGRAPH SPACING
+// ============================================================
+article p {
+  margin-top: 0;
+  margin-bottom: 1.3rem;
+}
+
+// ============================================================
+// INTERNAL LINKS
+// ============================================================
+a.internal {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  text-decoration: underline;
+  text-decoration-color: var(--secondary);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+
+  &:hover {
+    text-decoration-color: var(--tertiary);
+  }
+}
+
+// ============================================================
+// BREADCRUMBS
+// ============================================================
+.breadcrumb-container {
+  font-size: 0.75rem;
+  color: var(--gray);
+
+  a {
+    color: var(--gray);
+    font-weight: 400;
+    text-decoration: none;
+
+    &:hover { color: var(--secondary); }
+  }
+}
+
+// ============================================================
+// CONTENT META
+// ============================================================
+.content-meta {
+  font-family: var(--codeFont);
+  font-size: 0.625rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+body[data-slug="index"] .content-meta {
+  display: none;
+}
+
+// ============================================================
+// TAG PILLS
+// ============================================================
+a.internal.tag-link {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--codeFont);
+  font-size: 0.69rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  background-color: var(--highlight);
+  color: var(--secondary);
+  text-decoration: none;
+  border-bottom: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
+
+  &:hover {
+    background-color: var(--secondary);
+    color: var(--light);
+    text-decoration: none;
+  }
+}
+
+// ============================================================
+// BLOCKQUOTE
+// ============================================================
+blockquote {
+  border-left: 1px solid var(--secondary);
+  padding-left: 1.375rem;
+  margin: 1.75rem 0;
+
+  p {
+    font-family: var(--headerFont);
+    font-style: italic;
+    font-size: 1.3rem;
+    line-height: 1.5;
+  }
+}
+
+// ============================================================
+// TABLE
+// ============================================================
+thead th {
+  border-bottom: 2px solid var(--secondary);
+  font-family: var(--codeFont);
+  font-size: 0.69rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--dark);
+}
+
+article tbody tr:nth-child(even) {
+  background-color: var(--highlight);
+}
+
+article tbody tr:hover {
+  background-color: rgba(69, 96, 121, 0.07);
+  transition: background-color 0.15s ease;
+}
+
+// ============================================================
+// HERO PAGE (index)
+// ============================================================
+article.hero-page {
+  // Larger title on hero
+  .article-title {
+    font-size: 4rem;
+    line-height: 1.02;
+  }
+
+  .article-title::after {
+    width: 64px;
+    margin-bottom: 0;
+  }
+
+  // Eyebrow label
+  .hero-tag {
+    font-family: var(--codeFont);
+    font-size: 0.69rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gray);
+    display: inline-flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+  }
+
+  // Typewriter subtitle
+  .hero-sub {
+    font-family: var(--headerFont);
+    font-style: italic;
+    font-size: 1.4375rem;
+    line-height: 1.5;
+    color: var(--darkgray);
+    margin: 0 0 1.125rem 0;
+    min-height: 2.16rem;
+    white-space: normal;
+    overflow: visible;
+
+    // Blinking cursor — inline block at end of typed text
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 2px;
+      height: 0.95em;
+      background: var(--secondary);
+      margin-left: 2px;
+      vertical-align: -2px;
+      animation: ssblink 1s step-end infinite;
+    }
+  }
+
+  // Hide content-meta on hero
+  .content-meta { display: none; }
+
+  // Nav cards — auto-fill grid
+  .nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1px;
+    background: var(--lightgray);
+    border: 1px solid var(--lightgray);
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 0 0 2.5rem 0;
+  }
+
+  .nav-card,
+  a.internal.nav-card {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 22px;
+    background: var(--card, var(--light));
+    color: var(--dark);
+    text-decoration: none;
+    transition: background 0.25s ease;
+    border: none;
+    border-radius: 0;
+    gap: 12px;
+
+    &:hover {
+      background: var(--highlight);
+      text-decoration: none;
+
+      .nav-card-title { color: var(--secondary); }
+      .nav-card-arrow { transform: translateX(5px); color: var(--secondary); }
+    }
+  }
+
+  .nav-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .nav-card-title {
+    font-family: var(--headerFont);
+    font-size: 1.375rem;
+    font-weight: 500;
+    color: var(--dark);
+    transition: color 0.25s ease;
+  }
+
+  .nav-card-desc {
+    font-family: var(--bodyFont);
+    font-size: 0.845rem;
+    line-height: 1.55;
+    color: var(--gray);
+  }
+
+  .nav-card-arrow {
+    font-size: 1.125rem;
+    color: var(--dark);
+    flex-shrink: 0;
+    transition: transform 0.25s ease, color 0.25s ease;
+    align-self: flex-start;
+    line-height: 1.375rem;
+  }
+}
+
+// ============================================================
+// PORTFOLIO SNAPSHOT CARD (home hero — JS-injected)
+// ============================================================
+.portfolio-snapshot {
+  background: var(--card, #eeedeb);
+  border: 1px solid var(--lightgray);
+  border-radius: 4px;
+  padding: 24px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+  margin: 1.75rem 0;
+
+  .snapshot-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+  }
+
+  .snapshot-label {
+    font-family: var(--codeFont);
+    font-size: 0.625rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+
+  .snapshot-live {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--codeFont);
+    font-size: 0.625rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--secondary);
+
+    .live-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--secondary);
+      animation: sspulse 1.8s ease-in-out infinite;
+      flex: none;
+    }
+  }
+
+  .snapshot-curve {
+    width: 100%;
+    height: 150px;
+    display: block;
+    margin: 6px 0 4px 0;
+  }
+
+  .snapshot-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--lightgray);
+    border: 1px solid var(--lightgray);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-top: 14px;
+  }
+
+  .snapshot-stat {
+    background: var(--card, #eeedeb);
+    padding: 14px;
+
+    .stat-value {
+      font-family: var(--codeFont);
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--dark);
+      display: block;
+
+      &.positive { color: var(--secondary); }
+    }
+
+    .stat-label {
+      font-family: var(--codeFont);
+      font-size: 0.594rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-top: 5px;
+      display: block;
+    }
+  }
+
+  .snapshot-note {
+    font-family: var(--codeFont);
+    font-size: 0.594rem;
+    line-height: 1.6;
+    color: var(--gray);
+    margin: 12px 0 0 0;
+  }
+}
+
+// ============================================================
+// MANDATE — ALLOCATION BARS (JS-injected or in content)
+// ============================================================
+.alloc-item {
+  margin-bottom: 20px;
+
+  .alloc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 6px;
+  }
+
+  .alloc-name {
+    font-size: 0.94rem;
+    font-weight: 500;
+    color: var(--dark);
+  }
+
+  .alloc-range {
+    font-family: var(--codeFont);
+    font-size: 0.8125rem;
+    color: var(--secondary);
+  }
+
+  .alloc-track {
+    height: 8px;
+    background: var(--highlight);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .alloc-fill {
+    height: 100%;
+    background: var(--secondary);
+    border-radius: 6px;
+    transform-origin: left;
+    animation: ssaccent 1.1s 0.25s cubic-bezier(0.6, 0, 0.2, 1) both;
+  }
+
+  .alloc-note {
+    font-size: 0.845rem;
+    line-height: 1.6;
+    color: var(--gray);
+    margin-top: 7px;
+    display: block;
+  }
+}
+
+// ============================================================
+// TRADE LOG — FILTER PILLS + TABLE
+// ============================================================
+.trade-filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  margin-top: 24px;
+
+  .filter-pill {
+    font-family: var(--codeFont);
+    font-size: 0.69rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 7px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--lightgray);
+    background: transparent;
+    color: var(--gray);
+    transition: all 0.2s ease;
+
+    &:hover { color: var(--secondary); border-color: var(--secondary); }
+    &.active { background: var(--secondary); color: var(--light); border-color: var(--secondary); }
+  }
+}
+
+// ============================================================
+// RESEARCH LIST
+// ============================================================
+.research-list {
+  margin-top: 24px;
+
+  .research-item {
+    display: block;
+    border-bottom: 1px solid var(--lightgray);
+    padding: 22px 0;
+    cursor: pointer;
+    transition: padding-left 0.25s ease;
+    text-decoration: none;
+    color: inherit;
+
+    &:hover { padding-left: 10px; }
+
+    .research-date {
+      font-family: var(--codeFont);
+      font-size: 0.625rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .research-title {
+      font-family: var(--headerFont);
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--dark);
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .research-tags {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+
+    .research-tag {
+      font-family: var(--codeFont);
+      font-size: 0.625rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      padding: 0.2rem 0.5rem;
+      border-radius: 999px;
+      background-color: var(--highlight);
+      color: var(--secondary);
+    }
+
+    .research-excerpt {
+      font-size: 0.905rem;
+      line-height: 1.6;
+      color: var(--darkgray);
+      display: block;
+    }
+  }
+}
+
+// ============================================================
+// JOURNAL TIMELINE
+// ============================================================
+.journal-timeline {
+  position: relative;
+  padding-left: 30px;
+  margin-top: 24px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 6px;
+    bottom: 6px;
+    width: 1px;
+    background: var(--lightgray);
+  }
+
+  .timeline-entry {
+    position: relative;
+    padding-bottom: 34px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: -30px;
+      top: 5px;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: var(--light);
+      border: 2px solid var(--secondary);
+      box-sizing: border-box;
+    }
+
+    .entry-date {
+      font-family: var(--codeFont);
+      font-size: 0.656rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--secondary);
+      display: block;
+    }
+
+    .entry-title {
+      font-family: var(--headerFont);
+      font-weight: 500;
+      font-size: 1.5rem;
+      margin: 6px 0 6px 0;
+      color: var(--dark);
+      display: block;
+    }
+
+    .entry-text {
+      font-size: 0.94rem;
+      line-height: 1.7;
+      color: var(--darkgray);
+      display: block;
+    }
+  }
+}
+
+// ============================================================
+// DASHBOARD EMBED
+// ============================================================
 .dashboard-embed {
   margin: 2rem 0 2.5rem 0;
   border: 1px solid var(--lightgray);
@@ -512,18 +872,18 @@ article h3 {
   overflow: hidden;
 
   .dashboard-embed-label {
-    font-family: var(--bodyFont);
-    font-size: 0.68rem;
+    font-family: var(--codeFont);
+    font-size: 0.625rem;
     font-weight: 600;
-    letter-spacing: 0.07em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--gray);
-    padding: 0.5rem 0.85rem;
+    padding: 11px 16px;
     border-bottom: 1px solid var(--lightgray);
-    background: var(--light);
+    background: var(--card, var(--light));
     display: flex;
     align-items: center;
-    gap: 0.4rem;
+    gap: 9px;
 
     &::before {
       content: "";
@@ -532,6 +892,8 @@ article h3 {
       height: 6px;
       border-radius: 50%;
       background: var(--secondary);
+      animation: sspulse 1.8s ease-in-out infinite;
+      flex: none;
     }
   }
 
@@ -540,6 +902,105 @@ article h3 {
     width: 100%;
     height: 680px;
     border: none;
-    background: #eae9e7;
+    background: var(--card, #eae9e7);
   }
+}
+
+// ============================================================
+// ACTIVE TOC INDICATOR
+// ============================================================
+ul.toc-content > li > a {
+  font-size: 0.8rem;
+  transition: opacity 0.5s ease, color 0.3s ease, padding-left 0.2s ease;
+  padding-left: 0;
+
+  &.in-view {
+    color: var(--secondary);
+    opacity: 1;
+    padding-left: 0.5rem;
+    box-shadow: inset 2px 0 0 var(--secondary);
+  }
+}
+
+// ============================================================
+// POPOVER (hover card)
+// ============================================================
+.popover > .popover-inner {
+  border: 1px solid var(--lightgray);
+  border-top: 2px solid var(--secondary);
+  border-radius: 4px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+
+  h1 {
+    font-size: 1.1rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid var(--lightgray);
+  }
+}
+
+// ============================================================
+// BACKLINKS
+// ============================================================
+.backlinks ul li a {
+  font-size: 0.8rem;
+  color: var(--secondary);
+  text-decoration: underline;
+  text-decoration-color: var(--lightgray);
+  text-underline-offset: 3px;
+}
+
+// ============================================================
+// FOOTER
+// ============================================================
+footer {
+  font-size: 0.75rem;
+  padding-left: 2.5rem;
+}
+
+// ============================================================
+// SCROLL REVEALS
+// ============================================================
+.reveal-target {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.reveal-target.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+// ============================================================
+// TRADE TABLE — STATUS AND P&L COLORING
+// ============================================================
+.trade-status {
+  font-family: var(--codeFont);
+  font-size: 0.69rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  &.open  { color: var(--secondary); }
+  &.closed { color: var(--gray); }
+}
+
+.trade-pnl {
+  font-family: var(--codeFont);
+  font-size: 0.875rem;
+  font-weight: 500;
+
+  &.up   { color: var(--secondary); }
+  &.down { color: #a8584e; }
+}
+
+// ============================================================
+// 404 PAGE
+// ============================================================
+.error-eyebrow {
+  font-family: var(--codeFont);
+  font-size: 0.69rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-bottom: 0.5rem;
 }

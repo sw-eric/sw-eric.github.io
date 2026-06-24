@@ -2,7 +2,7 @@ import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } fro
 
 interface SidebarNavLink {
   label: string
-  href: string
+  href?: string
   external?: boolean
   children?: SidebarNavLink[]
 }
@@ -18,13 +18,17 @@ export default ((opts: SidebarNavOptions) => {
   const SidebarNav: QuartzComponent = (_props: QuartzComponentProps) => {
     const renderLink = (link: SidebarNavLink) => (
       <li class={link.children ? "has-children" : ""}>
-        <a
-          href={link.href}
-          class="sidebar-nav-link"
-          {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-        >
-          {link.label}
-        </a>
+        {link.href ? (
+          <a
+            href={link.href}
+            class="sidebar-nav-link"
+            {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+          >
+            {link.label}
+          </a>
+        ) : (
+          <span class="sidebar-nav-link sidebar-nav-section">{link.label}</span>
+        )}
         {link.children && (
           <ul class="sidebar-nav-children">
             {link.children.map((child) => (

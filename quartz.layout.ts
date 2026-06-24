@@ -20,7 +20,6 @@ const sidebarNav = Component.SidebarNav({
     { label: "Investment Mandate", href: "/investment-mandate" },
     {
       label: "Portfolio",
-      href: "/portfolio",
       children: [
         { label: "Trade Log", href: "/portfolio/trades" },
         { label: "Research", href: "/portfolio/research" },
