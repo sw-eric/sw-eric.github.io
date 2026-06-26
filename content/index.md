@@ -3,7 +3,7 @@ title: Sonsu Research
 cssclasses: [hero-page]
 ---
 
-<p class="hero-tag">Research and Trading Journal · Personal Capital · $1,000</p>
+<p class="hero-tag">Research and Trading Journal · Personal Capital · $1,500</p>
 
 <p class="hero-sub" data-typewriter="A documentation of AI infrastructure, energy, and macro plays in US and Asian markets.">A documentation of AI infrastructure, energy, and macro plays in US and Asian markets.</p>
 

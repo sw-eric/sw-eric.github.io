@@ -128,7 +128,7 @@ document.addEventListener("nav", () => {
         <span class="stat-label">Win rate</span>
       </div>
       <div class="snapshot-stat">
-        <span class="stat-value" data-val="1000" data-dec="0" data-pre="$">$1,000</span>
+        <span class="stat-value" data-val="1500" data-dec="0" data-pre="$">$1,500</span>
         <span class="stat-label">Personal capital</span>
       </div>
     </div>
@@ -327,7 +327,7 @@ document.addEventListener("nav", () => {
   if (!article) return
 
   const entries = [
-    { date: "Oct 2025", title: "Funded the account",      text: "Opened a $1,000 personal book with one rule: document every decision well enough that a stranger could grade it." },
+    { date: "Oct 2025", title: "Funded the account",      text: "Opened a $1,500 personal book with one rule: document every decision well enough that a stranger could grade it." },
     { date: "Dec 2025", title: "First real framework",    text: "Stopped trading headlines. Started writing a one-page thesis, a variant view, and an explicit invalidation level before entering anything." },
     { date: "Feb 2026", title: "The AI + energy thesis",  text: "Connected compute demand to power demand and built the core of the book around it — the trade I still have the highest conviction in." },
     { date: "Apr 2026", title: "Options discipline",      text: "After a sloppy put, rewrote the options rules: defined risk only, a monthly premium budget, and no using leverage to paper over weak conviction." },
