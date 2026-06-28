@@ -229,7 +229,7 @@ document.addEventListener("nav", () => {
 
 // --- RESEARCH: List ---
 document.addEventListener("nav", () => {
-  if (document.body.getAttribute("data-slug") !== "portfolio/research") return
+  if (document.body.getAttribute("data-slug") !== "portfolio/research/index") return
   if (document.querySelector(".research-list")) return
 
   const article = document.querySelector("article")
@@ -237,40 +237,23 @@ document.addEventListener("nav", () => {
 
   const items = [
     {
-      title: "Memory is the bottleneck, not compute",
+      title: "Map of the AI Compute Stack",
       date: "Jun 2026",
-      tags: ["AI Infra", "HBM", "Samsung"],
-      excerpt: "HBM supply is the real constraint on AI scaling. A look at who captures the pricing power as memory becomes the gating resource.",
-    },
-    {
-      title: "Power as a derivative on AI capex",
-      date: "May 2026",
-      tags: ["Energy", "IPPs", "Thesis"],
-      excerpt: "Independent power producers are an indirect way to own data-center demand without paying the multiple on the chips themselves.",
-    },
-    {
-      title: "The yen, the carry, and Asian tech",
-      date: "Apr 2026",
-      tags: ["Macro", "FX", "Japan"],
-      excerpt: "How a normalizing BOJ reprices the carry trade — and what it means for the equities I hold across the region.",
-    },
-    {
-      title: "Reading the semi-cycle in 2026",
-      date: "Mar 2026",
-      tags: ["AI Infra", "Cyclical"],
-      excerpt: "Inventory, lead times, and capex guidance: a framework for timing exposure to the most reflexive part of the market.",
+      tags: ["AI Infra", "Semiconductors", "Thesis"],
+      excerpt: "From purified sand to model inference — a layer-by-layer breakdown of who controls each choke point, what variable decides the margin, and where the blast radius lands in adjacent industries.",
+      href: "/portfolio/research/ai-compute-stack",
     },
   ]
 
   const list = document.createElement("div")
   list.className = "research-list"
   list.innerHTML = items.map(r => `
-    <div class="research-item" data-reveal>
+    <a href="${r.href}" class="research-item" data-reveal style="text-decoration:none;display:block">
       <span class="research-date">${r.date}</span>
       <span class="research-title">${r.title}</span>
       <div class="research-tags">${r.tags.map(t => `<span class="research-tag">${t}</span>`).join("")}</div>
       <span class="research-excerpt">${r.excerpt}</span>
-    </div>
+    </a>
   `).join("")
 
   article.appendChild(list)
@@ -279,7 +262,7 @@ document.addEventListener("nav", () => {
 
 // --- JOURNAL: Timeline ---
 document.addEventListener("nav", () => {
-  if (document.body.getAttribute("data-slug") !== "portfolio/journal") return
+  if (document.body.getAttribute("data-slug") !== "portfolio/journal/index") return
   if (document.querySelector(".journal-timeline")) return
 
   const article = document.querySelector("article")
@@ -303,7 +286,7 @@ document.addEventListener("nav", () => {
   const timeline = document.createElement("div")
   timeline.className = "journal-timeline"
   timeline.innerHTML = entries.map(e => `
-    <a href="${e.href}" class="timeline-entry" data-reveal style="text-decoration:none;display:block">
+    <a href="${e.href}" class="timeline-entry" data-reveal>
       <span class="entry-date">${e.date}</span>
       <span class="entry-title">${e.title}</span>
       <span class="entry-text">${e.text}</span>

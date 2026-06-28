@@ -788,6 +788,14 @@ article.hero-page {
 }
 
 // ============================================================
+// SUPPRESS DEFAULT FOLDER LISTING ON CUSTOM-INJECTED PAGES
+// ============================================================
+body[data-slug="portfolio/research/index"] .page-listing,
+body[data-slug="portfolio/journal/index"] .page-listing {
+  display: none;
+}
+
+// ============================================================
 // JOURNAL TIMELINE
 // ============================================================
 .journal-timeline {
@@ -808,6 +816,22 @@ article.hero-page {
   .timeline-entry {
     position: relative;
     padding-bottom: 34px;
+    padding-left: 4px;
+    transition: padding-left 0.2s ease;
+    color: inherit;
+    text-decoration: none !important;
+
+    &:hover {
+      padding-left: 10px;
+
+      .entry-title {
+        color: var(--secondary);
+      }
+
+      &::before {
+        background: var(--secondary);
+      }
+    }
 
     &::before {
       content: '';
@@ -820,6 +844,7 @@ article.hero-page {
       background: var(--light);
       border: 2px solid var(--secondary);
       box-sizing: border-box;
+      transition: background 0.2s ease;
     }
 
     .entry-date {
@@ -838,6 +863,7 @@ article.hero-page {
       margin: 6px 0 6px 0;
       color: var(--dark);
       display: block;
+      transition: color 0.2s ease;
     }
 
     .entry-text {
