@@ -790,8 +790,8 @@ article.hero-page {
 // ============================================================
 // SUPPRESS DEFAULT FOLDER LISTING ON CUSTOM-INJECTED PAGES
 // ============================================================
-body[data-slug="portfolio/research/index"] .page-listing,
-body[data-slug="portfolio/journal/index"] .page-listing {
+body[data-slug="portfolio/research"] .page-listing,
+body[data-slug="portfolio/journal"] .page-listing {
   display: none;
 }
 

@@ -229,7 +229,7 @@ document.addEventListener("nav", () => {
 
 // --- RESEARCH: List ---
 document.addEventListener("nav", () => {
-  if (document.body.getAttribute("data-slug") !== "portfolio/research/index") return
+  if (document.body.getAttribute("data-slug") !== "portfolio/research") return
   if (document.querySelector(".research-list")) return
 
   const article = document.querySelector("article")
@@ -262,7 +262,7 @@ document.addEventListener("nav", () => {
 
 // --- JOURNAL: Timeline ---
 document.addEventListener("nav", () => {
-  if (document.body.getAttribute("data-slug") !== "portfolio/journal/index") return
+  if (document.body.getAttribute("data-slug") !== "portfolio/journal") return
   if (document.querySelector(".journal-timeline")) return
 
   const article = document.querySelector("article")
