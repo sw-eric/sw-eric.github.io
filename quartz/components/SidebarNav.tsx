@@ -55,4 +55,4 @@ export default ((opts: SidebarNavOptions) => {
   }
 
   return SidebarNav
-}) satisfies QuartzComponentConstructor
+}) satisfies QuartzComponentConstructor<SidebarNavOptions>
