@@ -195,75 +195,34 @@ document.addEventListener("nav", () => {
   })
 })
 
-// --- TRADE LOG: Filter Pills + Table ---
+// --- TRADE LOG: Live data note ---
 document.addEventListener("nav", () => {
   if (document.body.getAttribute("data-slug") !== "portfolio/trades") return
-  if (document.querySelector(".trade-filters")) return
+  if (document.querySelector(".trade-live-note")) return
 
   const article = document.querySelector("article")
   if (!article) return
 
-  const trades = [
-    { date: "2026·06·12", ticker: "NVDA",   name: "NVIDIA",         dir: "Long", sector: "AI Infra", size: "12%", status: "Open",   pnl: "+6.2%",  up: true  },
-    { date: "2026·05·28", ticker: "VST",    name: "Vistra",         dir: "Long", sector: "Energy",   size: "9%",  status: "Open",   pnl: "+11.4%", up: true  },
-    { date: "2026·05·15", ticker: "TSM",    name: "Taiwan Semi",    dir: "Call", sector: "AI Infra", size: "6%",  status: "Closed", pnl: "+22.8%", up: true  },
-    { date: "2026·04·30", ticker: "CEG",    name: "Constellation",  dir: "Long", sector: "Energy",   size: "8%",  status: "Closed", pnl: "+4.1%",  up: true  },
-    { date: "2026·04·08", ticker: "SMH",    name: "Semis ETF",      dir: "Put",  sector: "AI Infra", size: "4%",  status: "Closed", pnl: "−3.6%",  up: false },
-    { date: "2026·03·22", ticker: "005930", name: "Samsung Elec",   dir: "Long", sector: "AI Infra", size: "7%",  status: "Open",   pnl: "+2.9%",  up: true  },
-    { date: "2026·03·05", ticker: "UUP",    name: "USD Bull ETF",   dir: "Long", sector: "Macro",    size: "5%",  status: "Closed", pnl: "+1.8%",  up: true  },
-    { date: "2026·02·18", ticker: "EWJ",    name: "Japan ETF",      dir: "Long", sector: "Macro",    size: "6%",  status: "Closed", pnl: "−2.2%",  up: false },
-  ]
-
-  const filters = ["All", "AI Infra", "Energy", "Macro", "Open", "Closed"]
-  let active = "All"
-
   const container = document.createElement("div")
-
-  const renderFilters = () => filters.map(f =>
-    `<button class="filter-pill${f === active ? " active" : ""}" data-filter="${f}">${f}</button>`
-  ).join("")
-
-  const renderRows = () => trades
-    .filter(t => active === "All" || t.sector === active || t.status === active)
-    .map(t => `
-      <tr data-sector="${t.sector}" data-status="${t.status}">
-        <td style="font-family:var(--codeFont);font-size:0.8rem;color:var(--gray)">${t.date}</td>
-        <td style="font-family:var(--codeFont);font-weight:600">${t.ticker}</td>
-        <td>${t.name}</td>
-        <td style="font-family:var(--codeFont);font-size:0.8rem">${t.dir}</td>
-        <td style="font-family:var(--codeFont);font-size:0.75rem;color:var(--gray)">${t.sector}</td>
-        <td style="font-family:var(--codeFont);font-size:0.8rem">${t.size}</td>
-        <td><span class="trade-status ${t.status.toLowerCase()}">${t.status}</span></td>
-        <td><span class="trade-pnl ${t.up ? "up" : "down"}">${t.pnl}</span></td>
-      </tr>
-    `).join("")
-
-  const render = () => {
-    container.innerHTML = `
-      <p style="font-family:var(--bodyFont);font-size:1rem;line-height:1.7;color:var(--darkgray);max-width:620px;margin:0 0 0 0">
-        Every position, dated and tagged to its thesis. Filters by sector or open/closed status.
+  container.className = "trade-live-note"
+  container.innerHTML = `
+    <p style="font-family:var(--bodyFont);font-size:1rem;line-height:1.7;color:var(--darkgray);max-width:620px;margin:0 0 1.5rem 0">
+      Every position, dated and tagged to its thesis. Live trade data is pulled directly from IBKR via the dashboard below.
+    </p>
+    <div class="trade-ibkr-info" style="background:var(--card);border:1px solid var(--lightgray);border-radius:4px;padding:1.25rem 1.5rem;margin-bottom:2rem">
+      <div style="font-family:var(--codeFont);font-size:0.625rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gray);margin-bottom:0.75rem">How the trade log works</div>
+      <p style="margin:0 0 0.75rem 0;font-size:0.9rem;line-height:1.6;color:var(--darkgray)">
+        Trade data is sourced from IBKR via the <strong>Flex Web Service</strong>. The Sonsu Research Streamlit dashboard connects to your account and displays the full trade log with filtering by sector, status, and direction.
       </p>
-      <div class="trade-filters">${renderFilters()}</div>
-      <div class="trade-table-wrap">
-        <table>
-          <thead><tr>
-            <th>Date</th><th>Ticker</th><th>Name</th><th>Direction</th>
-            <th>Sector</th><th>Size</th><th>Status</th><th>P&amp;L</th>
-          </tr></thead>
-          <tbody>${renderRows()}</tbody>
-        </table>
-      </div>
-    `
-    // Re-attach filter click handlers after re-render
-    container.querySelectorAll<HTMLButtonElement>(".filter-pill").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        active = btn.getAttribute("data-filter") || "All"
-        render()
-      })
-    })
-  }
+      <p style="margin:0 0 1rem 0;font-size:0.9rem;line-height:1.6;color:var(--darkgray)">
+        To add trades here in the future, export a <strong>Flex Query CSV</strong> from IBKR Account Management, commit it to <code>content/portfolio/trades.csv</code>, and this page will render it automatically.
+      </p>
+      <a href="https://sonsu-research.streamlit.app" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:6px;font-family:var(--codeFont);font-size:0.75rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--secondary);text-decoration:none">
+        Open live dashboard →
+      </a>
+    </div>
+  `
 
-  render()
   article.appendChild(container)
   window.addCleanup(() => container.remove())
 })
@@ -327,21 +286,28 @@ document.addEventListener("nav", () => {
   if (!article) return
 
   const entries = [
-    { date: "Oct 2025", title: "Funded the account",      text: "Opened a $1,500 personal book with one rule: document every decision well enough that a stranger could grade it." },
-    { date: "Dec 2025", title: "First real framework",    text: "Stopped trading headlines. Started writing a one-page thesis, a variant view, and an explicit invalidation level before entering anything." },
-    { date: "Feb 2026", title: "The AI + energy thesis",  text: "Connected compute demand to power demand and built the core of the book around it — the trade I still have the highest conviction in." },
-    { date: "Apr 2026", title: "Options discipline",      text: "After a sloppy put, rewrote the options rules: defined risk only, a monthly premium budget, and no using leverage to paper over weak conviction." },
-    { date: "Jun 2026", title: "Systematizing review",    text: "Began a weekly position review and a monthly book post-mortem, scored against the original thesis rather than the P&L." },
+    {
+      date: "Apr 2026",
+      title: "Sonsu Research is founded",
+      text: "The project takes shape — a public record of learning to allocate capital with discipline, documented from day one.",
+      href: "/portfolio/journal/founding",
+    },
+    {
+      date: "Jun 2026",
+      title: "Funded with $1,500",
+      text: "Personal capital deployed. The account is live and the process begins in earnest.",
+      href: "/portfolio/journal/funded",
+    },
   ]
 
   const timeline = document.createElement("div")
   timeline.className = "journal-timeline"
   timeline.innerHTML = entries.map(e => `
-    <div class="timeline-entry" data-reveal>
+    <a href="${e.href}" class="timeline-entry" data-reveal style="text-decoration:none;display:block">
       <span class="entry-date">${e.date}</span>
       <span class="entry-title">${e.title}</span>
       <span class="entry-text">${e.text}</span>
-    </div>
+    </a>
   `).join("")
 
   article.appendChild(timeline)
