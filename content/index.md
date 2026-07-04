@@ -52,6 +52,5 @@ Sonsu Research is a personal research and trading project documenting my learnin
 </div>
 
 ---
-This is a public record of my own thinking. I fully expect to be wrong sometimes. Being wrong in writing is how I plan to get less wrong over time.
 
 *Nothing on this site is investment advice. See [full disclaimer](./disclaimer).*
