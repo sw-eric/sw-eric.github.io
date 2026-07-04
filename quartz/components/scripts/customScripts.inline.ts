@@ -276,6 +276,12 @@ document.addEventListener("nav", () => {
       href: "/portfolio/journal/founding",
     },
     {
+      date: "May 2026",
+      title: "Investment mandate established",
+      text: "The rules of the book are written down — what I trade, why, and the constraints I commit to before putting capital at risk.",
+      href: "/portfolio/journal/mandate",
+    },
+    {
       date: "Jun 2026",
       title: "Funded with $1,500",
       text: "Personal capital deployed. The account is live and the process begins in earnest.",
