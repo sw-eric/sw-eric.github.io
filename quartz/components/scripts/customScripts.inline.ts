@@ -81,62 +81,6 @@ document.addEventListener("nav", () => {
 // registered below.
 // ============================================================
 
-// --- HOME: Portfolio Snapshot Card ---
-document.addEventListener("nav", () => {
-  if (document.body.getAttribute("data-slug") !== "index") return
-  if (document.querySelector(".portfolio-snapshot")) return
-
-  const dashEmbed = document.querySelector(".dashboard-embed")
-  if (!dashEmbed) return
-
-  const vals = [0,1.5,1,2.6,4,3.4,5.2,7,6.3,8.4,7.8,10.2,12,11.3,13.5,15.2,14.4,13.6,16.4,18.1,17.2,19.4,21,20.3,22.6,21.8,24.1,26]
-  const W = 600, H = 200, n = vals.length, maxV = 28
-  const X = (i: number) => ((i / (n - 1)) * W).toFixed(1)
-  const Y = (v: number) => (188 - (v / maxV) * 168).toFixed(1)
-  let lp = `M ${X(0)} ${Y(vals[0])}`
-  for (let i = 1; i < n; i++) lp += ` L ${X(i)} ${Y(vals[i])}`
-  const ap = lp + ` L ${W} ${H} L 0 ${H} Z`
-
-  const card = document.createElement("div")
-  card.className = "portfolio-snapshot"
-  card.innerHTML = `
-    <div class="snapshot-header">
-      <span class="snapshot-label">Portfolio Snapshot</span>
-      <span class="snapshot-live"><span class="live-dot"></span>Live soon</span>
-    </div>
-    <svg class="snapshot-curve" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">
-      <defs>
-        <linearGradient id="ss-fill" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="var(--secondary)" stop-opacity="0.16"/>
-          <stop offset="100%" stop-color="var(--secondary)" stop-opacity="0"/>
-        </linearGradient>
-      </defs>
-      <path d="${ap}" fill="url(#ss-fill)"/>
-      <path d="${lp}" data-draw fill="none" stroke="var(--secondary)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-    </svg>
-    <div class="snapshot-stats">
-      <div class="snapshot-stat">
-        <span class="stat-value positive" data-val="18.4" data-dec="1" data-pre="+" data-suf="%">+18.4%</span>
-        <span class="stat-label">Return · inception</span>
-      </div>
-      <div class="snapshot-stat">
-        <span class="stat-value" data-val="27" data-dec="0">27</span>
-        <span class="stat-label">Closed trades</span>
-      </div>
-      <div class="snapshot-stat">
-        <span class="stat-value" data-val="63" data-dec="0" data-suf="%">63%</span>
-        <span class="stat-label">Win rate</span>
-      </div>
-      <div class="snapshot-stat">
-        <span class="stat-value" data-val="1500" data-dec="0" data-pre="$">$1,500</span>
-        <span class="stat-label">Personal capital</span>
-      </div>
-    </div>
-    <p class="snapshot-note">Illustrative figures. A live IBKR-linked dashboard connects here soon.</p>
-  `
-  dashEmbed.parentElement?.insertBefore(card, dashEmbed)
-  window.addCleanup(() => card.remove())
-})
 
 // --- INVESTMENT MANDATE: Allocation Bars ---
 document.addEventListener("nav", () => {
