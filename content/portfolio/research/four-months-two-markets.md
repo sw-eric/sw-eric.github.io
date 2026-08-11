@@ -1,5 +1,5 @@
 ---
-title: "Three Months, Two Markets: May to August 2026"
+title: "Four Months, Two Markets: May to August 2026"
 date: 2026-08-07
 tags:
   - research
@@ -17,7 +17,7 @@ tags:
 
 On August 3 the Dow closed at an all-time high of 53,178.41, with the S&P 500 at 7,600.50 and the Nasdaq Composite at 25,913.9. Three days later, on August 6, SK Hynix fell 10.37% in Seoul, the KOSPI dropped 4.58%, 124 stocks printed new lows, and a sell-side circuit breaker triggered at 10:18 in the morning. The trigger was SanDisk guiding below expectations on NAND, followed by target cuts from Citigroup and Wells Fargo.
 
-Two markets levered to the same industry, moving opposite directions in the same week: that is the defining feature of the last three months.
+Two markets levered to the same industry, moving opposite directions in the same week: that is the defining feature of the last four months.
 
 ## Volatility
 

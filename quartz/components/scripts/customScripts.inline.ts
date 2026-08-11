@@ -182,11 +182,11 @@ document.addEventListener("nav", () => {
 
   const items = [
     {
-      title: "Three Months, Two Markets: May to August 2026",
+      title: "Four Months, Two Markets: May to August 2026",
       date: "Aug 2026",
       tags: ["Macro", "Memory", "Semiconductors"],
       excerpt: "Two markets levered to the same memory cycle moved in opposite directions the same week — record earnings that missed consensus, a Fed hold under its most one-directional dissent in years, and two landmark IPOs funding the next leg of HBM supply.",
-      href: "/portfolio/research/three-months-two-markets",
+      href: "/portfolio/research/four-months-two-markets",
     },
     {
       title: "Map of the AI Compute Stack",
