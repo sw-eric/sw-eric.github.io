@@ -1,7 +1,12 @@
 ---
 title: Map of the AI Compute Stack
 date: 2026-06-01
-tags: [research, AI Infra, Semiconductors, Thesis]
+tags:
+  - research
+  - AI Infra
+  - thesis
+  - semiconductors
+  - ai_infrastructure
 ---
 
 *June 2026 · AI Infrastructure · Semiconductors*
