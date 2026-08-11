@@ -173,13 +173,21 @@ document.addEventListener("nav", () => {
 
 // --- RESEARCH: List ---
 document.addEventListener("nav", () => {
-  if (document.body.getAttribute("data-slug") !== "portfolio/research") return
+  const slug = document.body.getAttribute("data-slug")
+  if (slug !== "portfolio/research" && slug !== "portfolio/research/index") return
   if (document.querySelector(".research-list")) return
 
   const article = document.querySelector("article")
   if (!article) return
 
   const items = [
+    {
+      title: "Three Months, Two Markets: May to August 2026",
+      date: "Aug 2026",
+      tags: ["Macro", "Memory", "Semiconductors"],
+      excerpt: "Two markets levered to the same memory cycle moved in opposite directions the same week — record earnings that missed consensus, a Fed hold under its most one-directional dissent in years, and two landmark IPOs funding the next leg of HBM supply.",
+      href: "/portfolio/research/three-months-two-markets",
+    },
     {
       title: "Map of the AI Compute Stack",
       date: "Jun 2026",
@@ -206,7 +214,8 @@ document.addEventListener("nav", () => {
 
 // --- JOURNAL: Timeline ---
 document.addEventListener("nav", () => {
-  if (document.body.getAttribute("data-slug") !== "portfolio/journal") return
+  const journalSlug = document.body.getAttribute("data-slug")
+  if (journalSlug !== "portfolio/journal" && journalSlug !== "portfolio/journal/index") return
   if (document.querySelector(".journal-timeline")) return
 
   const article = document.querySelector("article")
