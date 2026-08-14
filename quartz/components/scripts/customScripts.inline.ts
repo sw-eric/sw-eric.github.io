@@ -139,6 +139,38 @@ document.addEventListener("nav", () => {
   })
 })
 
+// --- TRADE MEMO: Ticker header ---
+// Titles on individual trade pages follow "Type: TICKER"
+// (e.g. "Pre-Trade Memo: SKHY"). Split that into a big ticker
+// headline with a small type subheader underneath.
+document.addEventListener("nav", () => {
+  const slug = document.body.getAttribute("data-slug") ?? ""
+  if (!slug.startsWith("portfolio/trades/") || slug === "portfolio/trades/index") return
+  if (document.querySelector(".trade-type-subheader")) return
+
+  const h1 = document.querySelector("h1.article-title") as HTMLElement | null
+  if (!h1) return
+
+  const fullTitle = h1.textContent?.trim() ?? ""
+  const colonIndex = fullTitle.indexOf(":")
+  if (colonIndex === -1) return
+
+  const type = fullTitle.slice(0, colonIndex).trim()
+  const ticker = fullTitle.slice(colonIndex + 1).trim()
+  if (!type || !ticker) return
+
+  h1.textContent = ticker
+
+  const sub = document.createElement("div")
+  sub.className = "trade-type-subheader"
+  sub.textContent = type
+  h1.after(sub)
+
+  window.addCleanup(() => {
+    h1.textContent = fullTitle
+    sub.remove()
+  })
+})
 
 // --- RESEARCH: List ---
 document.addEventListener("nav", () => {

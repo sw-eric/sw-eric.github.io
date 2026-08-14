@@ -697,30 +697,43 @@ article.hero-page {
 }
 
 // ============================================================
-// TRADE LOG — FILTER PILLS + TABLE
+// TRADE MEMO — TICKER HEADER
+// Applies to individual trade pages (portfolio/trades/<slug>),
+// not the trades/index listing. JS splits the "Type: TICKER"
+// title into a big ticker headline + a small type subheader;
+// this just styles the pieces it produces.
 // ============================================================
-.trade-filters {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
-  margin-top: 24px;
+body[data-slug^="portfolio/trades/"]:not([data-slug="portfolio/trades/index"]) {
+  .article-title {
+    font-family: var(--headerFont);
+    font-size: 3.75rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
 
-  .filter-pill {
+  .article-title::after {
+    margin-top: 14px;
+  }
+
+  .trade-type-subheader {
     font-family: var(--codeFont);
-    font-size: 0.69rem;
-    letter-spacing: 0.05em;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    cursor: pointer;
-    padding: 7px 14px;
-    border-radius: 20px;
-    border: 1px solid var(--lightgray);
-    background: transparent;
-    color: var(--gray);
-    transition: all 0.2s ease;
+    color: var(--secondary);
+    margin-top: 12px;
+  }
 
-    &:hover { color: var(--secondary); border-color: var(--secondary); }
-    &.active { background: var(--secondary); color: var(--light); border-color: var(--secondary); }
+  .content-meta {
+    margin-top: 0.6rem;
+  }
+
+  .tags {
+    margin-top: 1.75rem;
+    padding-top: 1.1rem;
+    border-top: 1px solid var(--lightgray);
   }
 }
 
