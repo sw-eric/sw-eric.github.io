@@ -24,7 +24,7 @@ Sonsu Research was established to help me develop skills and aptitude in the fin
 
 The downstream of the constraints leaves behind the investment strategy Sonsu Research employs: **long-biased, fundamentally-driven, discretionary equity work in a concentrated book, with listed options used tactically for protection or specific bearish views, and macro themes expressed through ETFs as a crude approximation**. 
 
-Holding periods range from one to twelve months. The portfolio is concentrated: typically three to five long equity positions plus any active hedges and macro positions. I prefer fewer, better-researched positions to a diversified book since concentration is the only way to express a real view with such a small capital base. This project is an experiment in whether disciplined research within the constraints can produce work worth taking seriously.
+Holding periods range from one to twelve months. The portfolio is concentrated: typically five to eight long equity positions plus any active hedges and macro positions. I prefer fewer, better-researched positions to a diversified book since concentration is the only way to express a real view with such a small capital base. This project is an experiment in whether disciplined research within the constraints can produce work worth taking seriously.
 
 ## Position Sizing and Risk Limits
 
