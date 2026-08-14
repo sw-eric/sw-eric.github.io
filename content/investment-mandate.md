@@ -14,8 +14,8 @@ The capital base is too small and the sample size will be too low to draw statis
 
 The investable focus is concentrated and categorized as follows:
 
-- **AI infrastructure and energy (US and Asia), ~60-70% of book.** Power generation and distribution, data center operators, cooling and electrical equipment, semiconductor supply chain names with direct exposure to AI CapEx. Both US-listed and APAC-listed via ADRs and ETFs where accessible.
-- **Global macro (US and Asia), ~20-30% of book.** Asian equity market themes, currency-related expressions where retail-accessible, Asian-listed names with US ADRs, country and regional ETFs.
+- **AI infrastructure and energy, ~60-70% of book.** Power generation and distribution, data center operators, cooling and electrical equipment, semiconductor supply chain names with direct exposure to AI CapEx. Both US-listed and APAC-listed via ADRs and ETFs where accessible.
+- **Global macro (Asia), ~20-30% of book.** Asian equity market themes, currency-related expressions where retail-accessible, Asian-listed names with US ADRs, country and regional ETFs.
 - **Opportunistic, up to ~10% of book.** I will allow myself the freedom to take a small allocation in compelling situations outside the niche, on the condition that the trade has a fully written pre-trade memo and an explicit acknowledgment of why it falls outside the mandate. Until such opportunities arise, a small portion of the portfolio will carry dry powder.
 
 ## Investment Style
