@@ -139,37 +139,6 @@ document.addEventListener("nav", () => {
   })
 })
 
-// --- TRADE LOG: Live data note ---
-document.addEventListener("nav", () => {
-  if (document.body.getAttribute("data-slug") !== "portfolio/trades") return
-  if (document.querySelector(".trade-live-note")) return
-
-  const article = document.querySelector("article")
-  if (!article) return
-
-  const container = document.createElement("div")
-  container.className = "trade-live-note"
-  container.innerHTML = `
-    <p style="font-family:var(--bodyFont);font-size:1rem;line-height:1.7;color:var(--darkgray);max-width:620px;margin:0 0 1.5rem 0">
-      Every position, dated and tagged to its thesis. Live trade data is pulled directly from IBKR via the dashboard below.
-    </p>
-    <div class="trade-ibkr-info" style="background:var(--card);border:1px solid var(--lightgray);border-radius:4px;padding:1.25rem 1.5rem;margin-bottom:2rem">
-      <div style="font-family:var(--codeFont);font-size:0.625rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gray);margin-bottom:0.75rem">How the trade log works</div>
-      <p style="margin:0 0 0.75rem 0;font-size:0.9rem;line-height:1.6;color:var(--darkgray)">
-        Trade data is sourced from IBKR via the <strong>Flex Web Service</strong>. The Sonsu Research Streamlit dashboard connects to your account and displays the full trade log with filtering by sector, status, and direction.
-      </p>
-      <p style="margin:0 0 1rem 0;font-size:0.9rem;line-height:1.6;color:var(--darkgray)">
-        To add trades here in the future, export a <strong>Flex Query CSV</strong> from IBKR Account Management, commit it to <code>content/portfolio/trades.csv</code>, and this page will render it automatically.
-      </p>
-      <a href="https://sonsu-research.streamlit.app" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:6px;font-family:var(--codeFont);font-size:0.75rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--secondary);text-decoration:none">
-        Open live dashboard →
-      </a>
-    </div>
-  `
-
-  article.appendChild(container)
-  window.addCleanup(() => container.remove())
-})
 
 // --- RESEARCH: List ---
 document.addEventListener("nav", () => {
