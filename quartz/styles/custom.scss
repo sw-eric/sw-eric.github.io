@@ -738,6 +738,80 @@ body[data-slug^="portfolio/trades/"]:not([data-slug="portfolio/trades/index"]) {
 }
 
 // ============================================================
+// TRADE LIST
+// Ticker-first listing on portfolio/trades/index, built by JS
+// from the same data as the default folder listing.
+// ============================================================
+.trade-list {
+  margin-top: 24px;
+
+  .trade-item {
+    display: block;
+    border-bottom: 1px solid var(--lightgray);
+    padding: 22px 0;
+    cursor: pointer;
+    transition: padding-left 0.25s ease;
+    text-decoration: none;
+    color: inherit;
+
+    &:hover { padding-left: 10px; }
+
+    .trade-item-top {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .trade-item-ticker {
+      font-family: var(--headerFont);
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--dark);
+    }
+
+    .trade-item-type {
+      font-family: var(--codeFont);
+      font-size: 0.625rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--secondary);
+      background-color: var(--highlight);
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+    }
+
+    .trade-item-date {
+      font-family: var(--codeFont);
+      font-size: 0.625rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-left: auto;
+    }
+
+    .trade-item-tags {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .trade-item-tag {
+      font-family: var(--codeFont);
+      font-size: 0.625rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      padding: 0.2rem 0.5rem;
+      border-radius: 999px;
+      background-color: var(--highlight);
+      color: var(--secondary);
+    }
+  }
+}
+
+// ============================================================
 // RESEARCH LIST
 // ============================================================
 .research-list {
@@ -806,7 +880,8 @@ body[data-slug^="portfolio/trades/"]:not([data-slug="portfolio/trades/index"]) {
 body[data-slug="portfolio/research"] .page-listing,
 body[data-slug="portfolio/research/index"] .page-listing,
 body[data-slug="portfolio/journal"] .page-listing,
-body[data-slug="portfolio/journal/index"] .page-listing {
+body[data-slug="portfolio/journal/index"] .page-listing,
+body[data-slug="portfolio/trades/index"] .page-listing {
   display: none;
 }
 

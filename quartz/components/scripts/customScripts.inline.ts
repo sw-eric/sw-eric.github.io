@@ -172,6 +172,65 @@ document.addEventListener("nav", () => {
   })
 })
 
+// --- TRADE LOG: Position list ---
+// Reads the same data the default folder listing already has
+// (title, date, tags) and re-renders it ticker-first. Unlike the
+// research list / journal timeline, this isn't hardcoded — new
+// trade pages show up automatically as long as their title follows
+// "Type: TICKER".
+document.addEventListener("nav", () => {
+  if (document.body.getAttribute("data-slug") !== "portfolio/trades/index") return
+  if (document.querySelector(".trade-list")) return
+
+  const article = document.querySelector("article")
+  const defaultListing = document.querySelector(".page-listing")
+  if (!article || !defaultListing) return
+
+  const entries = Array.from(defaultListing.querySelectorAll<HTMLLIElement>(".section-li"))
+    .map((li) => {
+      const link = li.querySelector<HTMLAnchorElement>(".desc h3 a")
+      if (!link) return null
+
+      const fullTitle = link.textContent?.trim() ?? ""
+      const colonIndex = fullTitle.indexOf(":")
+      const type = colonIndex === -1 ? null : fullTitle.slice(0, colonIndex).trim()
+      const ticker = colonIndex === -1 ? fullTitle : fullTitle.slice(colonIndex + 1).trim()
+
+      return {
+        href: link.getAttribute("href") ?? "#",
+        ticker,
+        type,
+        date: li.querySelector("time")?.textContent?.trim() ?? "",
+        tags: Array.from(li.querySelectorAll<HTMLAnchorElement>(".tags .tag-link")).map(
+          (t) => t.textContent?.trim() ?? "",
+        ),
+      }
+    })
+    .filter((e): e is NonNullable<typeof e> => e !== null)
+
+  if (entries.length === 0) return
+
+  const list = document.createElement("div")
+  list.className = "trade-list"
+  list.innerHTML = entries
+    .map(
+      (e) => `
+    <a href="${e.href}" class="trade-item" data-reveal>
+      <div class="trade-item-top">
+        <span class="trade-item-ticker">${e.ticker}</span>
+        ${e.type ? `<span class="trade-item-type">${e.type}</span>` : ""}
+        <span class="trade-item-date">${e.date}</span>
+      </div>
+      <div class="trade-item-tags">${e.tags.map((t) => `<span class="trade-item-tag">${t}</span>`).join("")}</div>
+    </a>
+  `,
+    )
+    .join("")
+
+  article.appendChild(list)
+  window.addCleanup(() => list.remove())
+})
+
 // --- RESEARCH: List ---
 document.addEventListener("nav", () => {
   const slug = document.body.getAttribute("data-slug")
