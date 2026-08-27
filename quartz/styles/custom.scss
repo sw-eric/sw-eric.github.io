@@ -238,14 +238,16 @@ article h3 {
     }
 
     // Collapsed by default — expanded via the .nav-open class set by
-    // customScripts.inline.ts on toggle click.
-    > ul {
+    // customScripts.inline.ts on toggle click. :not(.nav-open) beats
+    // the unconditional ".sidebar-nav ul { display: flex }" rule below
+    // on specificity (both are otherwise a tie), so this reliably wins
+    // regardless of source order.
+    &:not(.nav-open) > ul {
       display: none;
     }
 
     &.nav-open {
       > ul {
-        display: flex;
         margin-top: 14px;
       }
 
