@@ -89,6 +89,10 @@ body::before {
   letter-spacing: -0.01em;
   margin-top: 12px;
   margin-bottom: 0;
+
+  @media (max-width: 800px) {
+    font-size: 2rem;
+  }
 }
 
 // Animated accent bar under article title
@@ -106,6 +110,10 @@ body::before {
 
 h2 {
   font-size: 1.85rem;
+
+  @media (max-width: 800px) {
+    font-size: 1.5rem;
+  }
 }
 
 // Article body h3 — section header style
@@ -152,7 +160,14 @@ article h3 {
   @media (max-width: 800px) {
     border-right: none;
     border-bottom: 1px solid var(--lightgray);
-    padding-bottom: 1rem;
+    padding-bottom: 1.25rem;
+
+    // Base Quartz lays this row out as [title ... spacer ... icons],
+    // sized for a short toggle button. Our sidebar-nav is a full nav
+    // list, not a toggle — wrapping it lets title+icons keep their
+    // row while the nav drops to its own full-width line beneath.
+    flex-wrap: wrap;
+    row-gap: 1rem;
   }
 }
 
@@ -161,6 +176,14 @@ article h3 {
 // ============================================================
 .sidebar-nav {
   margin-top: 1rem;
+
+  @media (max-width: 800px) {
+    // Force onto its own line below the title/icons row (see
+    // .sidebar.left flex-wrap above) instead of being squeezed
+    // into a sliver next to them.
+    flex: 1 1 100%;
+    margin-top: 0;
+  }
 
   ul {
     list-style: none;
@@ -298,6 +321,15 @@ article h3 {
   box-sizing: border-box;
   padding-left: 2.5rem;
   padding-right: 2.5rem;
+
+  // #quartz-body already adds 1rem of its own padding below desktop
+  // width (base.scss). Stacking our 2.5rem on top of that left only
+  // ~260px of readable width on a phone screen — drop it so .center
+  // lines up flush with the sidebar instead.
+  @media (max-width: 800px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .center .page-header,
@@ -435,6 +467,10 @@ article.hero-page {
     line-height: 1.02;
     letter-spacing: -0.01em;
     font-weight: 600;
+
+    @media (max-width: 800px) {
+      font-size: 2.5rem;
+    }
   }
 
   .article-title::after {
@@ -478,6 +514,10 @@ article.hero-page {
       vertical-align: -2px;
       animation: ssblink 1s step-end infinite;
     }
+
+    @media (max-width: 800px) {
+      font-size: 1.125rem;
+    }
   }
 
   // Hide content-meta on hero
@@ -493,6 +533,10 @@ article.hero-page {
     border-radius: 4px;
     overflow: hidden;
     margin: 0 0 2.5rem 0;
+
+    @media (max-width: 800px) {
+      grid-template-columns: 1fr;
+    }
   }
 
   .nav-card,
@@ -658,6 +702,11 @@ article.hero-page {
     justify-content: space-between;
     align-items: baseline;
     margin-bottom: 6px;
+
+    @media (max-width: 800px) {
+      flex-wrap: wrap;
+      row-gap: 2px;
+    }
   }
 
   .alloc-name {
@@ -710,6 +759,10 @@ body[data-slug^="portfolio/trades/"]:not([data-slug="portfolio/trades/index"]) {
     font-weight: 700;
     letter-spacing: -0.02em;
     line-height: 1;
+
+    @media (max-width: 800px) {
+      font-size: 2.5rem;
+    }
   }
 
   .article-title::after {
@@ -761,6 +814,11 @@ body[data-slug^="portfolio/trades/"]:not([data-slug="portfolio/trades/index"]) {
       align-items: baseline;
       gap: 12px;
       margin-bottom: 10px;
+
+      @media (max-width: 800px) {
+        flex-wrap: wrap;
+        row-gap: 6px;
+      }
     }
 
     .trade-item-ticker {
@@ -790,6 +848,13 @@ body[data-slug^="portfolio/trades/"]:not([data-slug="portfolio/trades/index"]) {
       text-transform: uppercase;
       color: var(--gray);
       margin-left: auto;
+
+      // With .trade-item-top wrapping on mobile, margin-left:auto would
+      // strand this alone on its own right-aligned line — let it just
+      // flow after the ticker/type pill instead.
+      @media (max-width: 800px) {
+        margin-left: 0;
+      }
     }
 
     .trade-item-tags {
@@ -1007,6 +1072,10 @@ body[data-slug="portfolio/trades/index"] .page-listing {
     height: 680px;
     border: none;
     background: var(--card, #eae9e7);
+
+    @media (max-width: 800px) {
+      height: 460px;
+    }
   }
 }
 
@@ -1060,6 +1129,12 @@ ul.toc-content > li > a {
 footer {
   font-size: 0.75rem;
   padding-left: 2.5rem;
+
+  // Match .center's mobile inset so footer text lines up with the
+  // article column instead of sitting ~2.5rem further right.
+  @media (max-width: 800px) {
+    padding-left: 0;
+  }
 }
 
 // ============================================================
