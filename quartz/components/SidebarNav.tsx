@@ -49,7 +49,20 @@ export default ((opts: SidebarNavOptions) => {
 
     return (
       <nav class="sidebar-nav">
-        <ul>{opts.links.map(renderLink)}</ul>
+        {/* Mobile-only: collapses the list below into an accordion.
+            Hidden entirely on desktop via CSS (see custom.scss). */}
+        <button
+          type="button"
+          class="sidebar-nav-toggle"
+          aria-expanded="false"
+          aria-controls="sidebar-nav-list"
+        >
+          <span class="sidebar-nav-toggle-label">Menu</span>
+          <span class="sidebar-nav-toggle-icon" aria-hidden="true">
+            <span></span>
+          </span>
+        </button>
+        <ul id="sidebar-nav-list">{opts.links.map(renderLink)}</ul>
       </nav>
     )
   }

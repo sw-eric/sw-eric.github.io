@@ -23,6 +23,49 @@ document.addEventListener("nav", () => {
 })
 
 // ============================================================
+// SIDEBAR NAV — mobile collapse toggle
+// Desktop always shows the full list (see custom.scss — the button
+// is display:none there); on mobile it starts collapsed and expands
+// as an accordion under the title/icon row.
+// ============================================================
+document.addEventListener("nav", () => {
+  const nav = document.querySelector<HTMLElement>(".sidebar-nav")
+  const toggle = nav?.querySelector<HTMLButtonElement>(".sidebar-nav-toggle")
+  if (!nav || !toggle) return
+
+  const setOpen = (open: boolean) => {
+    nav.classList.toggle("nav-open", open)
+    toggle.setAttribute("aria-expanded", String(open))
+  }
+
+  const onToggleClick = () => setOpen(!nav.classList.contains("nav-open"))
+  toggle.addEventListener("click", onToggleClick)
+
+  // Collapse immediately on link click so the (persisted) nav arrives
+  // at the next page already closed, instead of staying open through
+  // the SPA transition.
+  const onNavClick = (e: MouseEvent) => {
+    if ((e.target as HTMLElement).closest(".sidebar-nav-link")) setOpen(false)
+  }
+  nav.addEventListener("click", onNavClick)
+
+  // Resizing past the mobile breakpoint (e.g. rotating a tablet)
+  // shouldn't leave it stuck mid-accordion once desktop always-show
+  // styles take over.
+  const mobileQuery = window.matchMedia("(max-width: 800px)")
+  const onBreakpointChange = () => {
+    if (!mobileQuery.matches) setOpen(false)
+  }
+  mobileQuery.addEventListener("change", onBreakpointChange)
+
+  window.addCleanup(() => {
+    toggle.removeEventListener("click", onToggleClick)
+    nav.removeEventListener("click", onNavClick)
+    mobileQuery.removeEventListener("change", onBreakpointChange)
+  })
+})
+
+// ============================================================
 // READING PROGRESS BAR
 // ============================================================
 document.addEventListener("nav", () => {
