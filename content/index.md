@@ -9,18 +9,13 @@ cssclasses: [hero-page]
 
 ---
 
-Sonsu Research is derived from the Korean word *sonsu* (손수), meaning "with one's own hands."
+Sonsu Research is derived from the Korean word _sonsu_ (손수), meaning "with one's own hands."
 
 I am Eric Lee, an undergraduate student at Columbia University studying Operations Research and Financial Engineering with minors in Artificial Intelligence and Psychology. I grew up across Korea, Malaysia, and Bangladesh, which gave me a real view of how capital moves between economies. Sonsu Research is an attempt to bring that lived context into a disciplined investment process and to build something of my own from scratch.
 
 Sonsu Research is a personal research and trading project documenting my learning process while investing in the financial markets. The portfolio mainly operates in US and Asian markets, reflecting my background and past exposures to these economies. The [[investment mandate]] and portfolio strategy can be boiled down to a long-biased discretionary book with thematic plays on AI infrastructure and energy equities with a tactical use of options, as well as global macro plays concentrated on the US and various Asian emerging markets. The project runs on personal capital that I have saved up through my time serving in the military. The main deliverable of Sonsu Research is the process, which includes written theses, post-mortems, and a documented record of decisions, not the return on capital, which is too small to be statistically meaningful.
 
-
-
-<div class="dashboard-embed">
-<div class="dashboard-embed-label">Live Dashboard</div>
-<iframe src="https://sonsu-research.streamlit.app?embed=true" class="dashboard-frame" allowfullscreen></iframe>
-</div>
+<div class="portfolio-dashboard" id="portfolio-dashboard"></div>
 
 <div class="nav-cards">
 
@@ -53,4 +48,4 @@ Sonsu Research is a personal research and trading project documenting my learnin
 
 ---
 
-*Nothing on this site is investment advice. See [full disclaimer](./disclaimer).*
+_Nothing on this site is investment advice. See [full disclaimer](./disclaimer)._
