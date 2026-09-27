@@ -78,9 +78,19 @@ def earliest_trade_dates(xml_root: ET.Element) -> dict[str, str]:
 
 def parse_positions(xml_root: ET.Element) -> list[dict]:
     opened_by_symbol = earliest_trade_dates(xml_root)
+
+    raw = [p.attrib for p in xml_root.iter("OpenPosition")]
+
+    # "Breakout by Day" (needed for a daily equity curve) makes every
+    # section repeat once per report date, not just Open Positions — so
+    # keep only the most recent day's snapshot instead of summing history.
+    report_dates = {a.get("reportDate") for a in raw if a.get("reportDate")}
+    if report_dates:
+        latest = max(report_dates)
+        raw = [a for a in raw if a.get("reportDate") == latest]
+
     positions = []
-    for p in xml_root.iter("OpenPosition"):
-        a = p.attrib
+    for a in raw:
         symbol = a.get("symbol")
         qty = float(a.get("position", 0))
         avg_cost = float(a.get("costBasisPrice", 0))
@@ -105,15 +115,23 @@ def parse_positions(xml_root: ET.Element) -> list[dict]:
 
 
 def parse_equity_curve(xml_root: ET.Element) -> list[dict]:
-    curve = []
+    # Keyed by date to collapse duplicate rows (e.g. one per currency
+    # segment for a single-currency account — same total either way).
+    by_date: dict[str, float] = {}
     for node in xml_root.iter("EquitySummaryByReportDateInBase"):
         d = node.attrib.get("reportDate", "")
         nav = float(node.attrib.get("total", 0))
         if len(d) == 8:
             d = f"{d[0:4]}-{d[4:6]}-{d[6:8]}"
-        curve.append(dict(date=d, nav=round(nav, 2)))
-    curve.sort(key=lambda x: x["date"])
-    return curve
+        if d:
+            by_date[d] = nav
+
+    curve = [dict(date=d, nav=round(nav, 2)) for d, nav in sorted(by_date.items())]
+
+    # Drop the leading zero-NAV stretch before the account actually held
+    # any cash — a 365-day lookback period predates most accounts.
+    first_real = next((i for i, p in enumerate(curve) if p["nav"] != 0), 0)
+    return curve[first_real:]
 
 
 def parse_realized_pnl(xml_root: ET.Element) -> float:
