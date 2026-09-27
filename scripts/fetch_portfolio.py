@@ -9,10 +9,12 @@ dashboard, which is built for that cadence rather than tick-by-tick data.
 Setup (one-time, in IBKR Account Management):
   Reports -> Flex Queries -> Create a query with sections:
     - Open Positions
-    - Equity Summary by Report Date in Base
-    - Trades (Executed Trades, all fields)
+    - Trades
+    - Net Asset Value (NAV) in Base
   Then set these as repo secrets (Settings -> Secrets and variables -> Actions):
-    IBKR_FLEX_TOKEN
+    the Flex access token (named SONSUDASHBOARD2 in this repo's secrets —
+      the workflow maps it to IBKR_FLEX_TOKEN internally; use any name
+      you like, just keep the workflow's `env:` mapping in sync)
     IBKR_FLEX_QUERY_ID
 
 Run manually with:

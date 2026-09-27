@@ -15,7 +15,7 @@ jobs:
     env:
       # `secrets` can't be referenced directly inside `if:` conditions —
       # stash the check in a job-level env var and branch on that instead.
-      HAS_FLEX_SECRETS: ${{ secrets.IBKR_FLEX_TOKEN != '' && secrets.IBKR_FLEX_QUERY_ID != '' }}
+      HAS_FLEX_SECRETS: ${{ secrets.SONSUDASHBOARD2 != '' && secrets.IBKR_FLEX_QUERY_ID != '' }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -32,13 +32,13 @@ jobs:
       - name: Fetch latest portfolio snapshot
         if: ${{ env.HAS_FLEX_SECRETS == 'true' }}
         env:
-          IBKR_FLEX_TOKEN: ${{ secrets.IBKR_FLEX_TOKEN }}
+          IBKR_FLEX_TOKEN: ${{ secrets.SONSUDASHBOARD2 }}
           IBKR_FLEX_QUERY_ID: ${{ secrets.IBKR_FLEX_QUERY_ID }}
         run: python3 scripts/fetch_portfolio.py
 
       - name: Skip (secrets not configured yet)
         if: ${{ env.HAS_FLEX_SECRETS != 'true' }}
-        run: echo "IBKR_FLEX_TOKEN/IBKR_FLEX_QUERY_ID not set — see scripts/fetch_portfolio.py for setup. Skipping refresh."
+        run: echo "SONSUDASHBOARD2 (Flex token) / IBKR_FLEX_QUERY_ID not set — see scripts/fetch_portfolio.py for setup. Skipping refresh."
 
       - name: Commit updated data
         if: ${{ env.HAS_FLEX_SECRETS == 'true' }}
