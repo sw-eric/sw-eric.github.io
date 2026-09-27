@@ -12,6 +12,10 @@ permissions:
 jobs:
   refresh:
     runs-on: ubuntu-22.04
+    env:
+      # `secrets` can't be referenced directly inside `if:` conditions —
+      # stash the check in a job-level env var and branch on that instead.
+      HAS_FLEX_SECRETS: ${{ secrets.IBKR_FLEX_TOKEN != '' && secrets.IBKR_FLEX_QUERY_ID != '' }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -22,22 +26,22 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        if: ${{ secrets.IBKR_FLEX_TOKEN != '' && secrets.IBKR_FLEX_QUERY_ID != '' }}
+        if: ${{ env.HAS_FLEX_SECRETS == 'true' }}
         run: pip install -r scripts/requirements.txt
 
       - name: Fetch latest portfolio snapshot
-        if: ${{ secrets.IBKR_FLEX_TOKEN != '' && secrets.IBKR_FLEX_QUERY_ID != '' }}
+        if: ${{ env.HAS_FLEX_SECRETS == 'true' }}
         env:
           IBKR_FLEX_TOKEN: ${{ secrets.IBKR_FLEX_TOKEN }}
           IBKR_FLEX_QUERY_ID: ${{ secrets.IBKR_FLEX_QUERY_ID }}
         run: python3 scripts/fetch_portfolio.py
 
       - name: Skip (secrets not configured yet)
-        if: ${{ secrets.IBKR_FLEX_TOKEN == '' || secrets.IBKR_FLEX_QUERY_ID == '' }}
+        if: ${{ env.HAS_FLEX_SECRETS != 'true' }}
         run: echo "IBKR_FLEX_TOKEN/IBKR_FLEX_QUERY_ID not set — see scripts/fetch_portfolio.py for setup. Skipping refresh."
 
       - name: Commit updated data
-        if: ${{ secrets.IBKR_FLEX_TOKEN != '' && secrets.IBKR_FLEX_QUERY_ID != '' }}
+        if: ${{ env.HAS_FLEX_SECRETS == 'true' }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
