@@ -556,6 +556,7 @@ interface PdPosition {
 
 interface PdData {
   as_of: string
+  data_date?: string | null
   inception_date: string
   base_currency: string
   account: {
@@ -764,7 +765,7 @@ function pdRender(mount: HTMLElement, data: PdData) {
   mount.innerHTML = `
     <div class="pd-topline">
       <span class="pd-topline-label"><span class="pd-pulse-dot"></span>Portfolio Snapshot</span>
-      <span class="pd-updated">Updated ${pdFormatUpdated(data.as_of)}</span>
+      <span class="pd-updated">${data.data_date ? `As of ${pdFormatShortDate(data.data_date)} close` : `Updated ${pdFormatUpdated(data.as_of)}`}</span>
     </div>
     <div class="pd-stats">
       <div class="pd-stat">

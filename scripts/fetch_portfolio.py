@@ -224,6 +224,9 @@ def main() -> None:
 
     data = dict(
         as_of=datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
+        # Last trading day the Flex statement covers — as_of is only when
+        # this script ran, which can be a day or more after the data itself.
+        data_date=equity_curve[-1]["date"] if equity_curve else None,
         inception_date=equity_curve[0]["date"] if equity_curve else None,
         base_currency="USD",
         account=account,

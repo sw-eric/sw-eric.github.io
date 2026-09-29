@@ -2,8 +2,10 @@ name: Refresh portfolio dashboard data
 
 on:
   schedule:
-    # 21:30 UTC, Mon-Fri — after the US market close
-    - cron: "30 21 * * 1-5"
+    # 10:00 UTC, Tue-Sat — the morning after each US session. Flex only
+    # reports days IBKR has finished end-of-day processing for, so an
+    # evening run just after the close still returns the prior day.
+    - cron: "0 10 * * 2-6"
   workflow_dispatch: {}
 
 permissions:
