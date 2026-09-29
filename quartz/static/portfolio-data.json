@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-09-27T02:42:29Z",
+  "as_of": "2026-09-29T01:06:10Z",
   "inception_date": "2026-06-24",
   "base_currency": "USD",
   "account": {
@@ -299,7 +299,7 @@
       "unrealized_pnl": -1.9,
       "unrealized_pct": -0.42,
       "weight_pct": 29.1,
-      "days_held": 41,
+      "days_held": 43,
       "daily_pnl": null
     },
     {
@@ -313,7 +313,7 @@
       "unrealized_pnl": 41.64,
       "unrealized_pct": 12.19,
       "weight_pct": 24.83,
-      "days_held": 44,
+      "days_held": 46,
       "daily_pnl": null
     },
     {
@@ -327,7 +327,7 @@
       "unrealized_pnl": 3.2,
       "unrealized_pct": 1.59,
       "weight_pct": 13.23,
-      "days_held": 44,
+      "days_held": 46,
       "daily_pnl": null
     }
   ],
@@ -335,6 +335,6 @@
     "Up 2.88% since inception ($1,500 \u2192 $1,543.15 net liquidation) across 3 open positions \u2014 realized P&L is $0.00, so the gain is unrealized, not locked in.",
     "SK HYNIX INC-ADR (SKHY) is doing the work: +12.2% unrealized on a $383 position, while GOOGL \u2014 the largest position at 29% of NAV \u2014 is at -0.4%. Position size isn't tracking conviction yet.",
     "32.8% of the book ($506.75) is sitting in cash. For a thesis built on concentrated long equity, that's a meaningful drag if it stays idle much longer.",
-    "No trades since Aug 17 \u2014 41+ days of pure holding with no adds, trims, or exits across any position."
+    "No trades since Aug 17 \u2014 43+ days of pure holding with no adds, trims, or exits across any position."
   ]
 }
