@@ -1,16 +1,17 @@
 {
-  "as_of": "2026-09-29T01:06:10Z",
+  "as_of": "2026-09-29T19:34:47Z",
+  "data_date": "2026-09-28",
   "inception_date": "2026-06-24",
   "base_currency": "USD",
   "account": {
     "starting_capital": 1500.0,
-    "net_liquidation": 1543.15,
-    "total_return_pct": 2.88,
-    "cash": 506.75,
-    "invested": 1036.4,
-    "cash_pct": 32.84,
-    "invested_pct": 67.16,
-    "unrealized_pnl": 42.94,
+    "net_liquidation": 1517.56,
+    "total_return_pct": 1.17,
+    "cash": 102.83,
+    "invested": 1414.73,
+    "cash_pct": 6.78,
+    "invested_pct": 93.22,
+    "unrealized_pnl": 17.35,
     "realized_pnl": 0.0
   },
   "equity_curve": [
@@ -285,6 +286,10 @@
     {
       "date": "2026-09-25",
       "nav": 1543.15
+    },
+    {
+      "date": "2026-09-28",
+      "nav": 1517.56
     }
   ],
   "positions": [
@@ -294,11 +299,11 @@
       "opened": "2026-08-17",
       "qty": 1.3058,
       "avg_cost": 345.38,
-      "price": 343.92,
-      "market_value": 449.09,
-      "unrealized_pnl": -1.9,
-      "unrealized_pct": -0.42,
-      "weight_pct": 29.1,
+      "price": 342.75,
+      "market_value": 447.56,
+      "unrealized_pnl": -3.43,
+      "unrealized_pct": -0.76,
+      "weight_pct": 29.49,
       "days_held": 43,
       "daily_pnl": null
     },
@@ -308,11 +313,11 @@
       "opened": "2026-08-14",
       "qty": 2.0,
       "avg_cost": 170.74,
-      "price": 191.56,
-      "market_value": 383.12,
-      "unrealized_pnl": 41.64,
-      "unrealized_pct": 12.19,
-      "weight_pct": 24.83,
+      "price": 181.92,
+      "market_value": 363.84,
+      "unrealized_pnl": 22.36,
+      "unrealized_pct": 6.55,
+      "weight_pct": 23.98,
       "days_held": 46,
       "daily_pnl": null
     },
@@ -322,19 +327,31 @@
       "opened": "2026-08-14",
       "qty": 0.4796,
       "avg_cost": 419.07,
-      "price": 425.76,
-      "market_value": 204.19,
-      "unrealized_pnl": 3.2,
-      "unrealized_pct": 1.59,
-      "weight_pct": 13.23,
+      "price": 417.61,
+      "market_value": 200.29,
+      "unrealized_pnl": -0.7,
+      "unrealized_pct": -0.35,
+      "weight_pct": 13.2,
       "days_held": 46,
+      "daily_pnl": null
+    },
+    {
+      "symbol": "USFR",
+      "name": "WISDOMTREE FLOATING RATE TRE",
+      "opened": "2026-09-28",
+      "qty": 8.0,
+      "avg_cost": 50.49,
+      "price": 50.38,
+      "market_value": 403.04,
+      "unrealized_pnl": -0.88,
+      "unrealized_pct": -0.22,
+      "weight_pct": 26.56,
+      "days_held": 1,
       "daily_pnl": null
     }
   ],
   "insights": [
-    "Up 2.88% since inception ($1,500 \u2192 $1,543.15 net liquidation) across 3 open positions \u2014 realized P&L is $0.00, so the gain is unrealized, not locked in.",
-    "SK HYNIX INC-ADR (SKHY) is doing the work: +12.2% unrealized on a $383 position, while GOOGL \u2014 the largest position at 29% of NAV \u2014 is at -0.4%. Position size isn't tracking conviction yet.",
-    "32.8% of the book ($506.75) is sitting in cash. For a thesis built on concentrated long equity, that's a meaningful drag if it stays idle much longer.",
-    "No trades since Aug 17 \u2014 43+ days of pure holding with no adds, trims, or exits across any position."
+    "Up 1.17% since inception ($1,500 \u2192 $1,517.56 net liquidation) across 4 open positions \u2014 realized P&L is $0.00, so the gain is unrealized, not locked in.",
+    "SK HYNIX INC-ADR (SKHY) is doing the work: +6.5% unrealized on a $364 position, while GOOGL \u2014 the largest position at 29% of NAV \u2014 is at -0.8%. Position size isn't tracking conviction yet."
   ]
 }
