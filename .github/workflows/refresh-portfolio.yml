@@ -2,10 +2,14 @@ name: Refresh portfolio dashboard data
 
 on:
   schedule:
-    # 10:00 UTC, Tue-Sat — the morning after each US session. Flex only
-    # reports days IBKR has finished end-of-day processing for, so an
-    # evening run just after the close still returns the prior day.
-    - cron: "0 10 * * 2-6"
+    # Tue-Sat, the morning after each US session. Flex only reports days
+    # IBKR has finished end-of-day processing for, so an evening run just
+    # after the close still returns the prior day.
+    # GitHub often starts scheduled runs hours late, worst on the hour, so
+    # both slots sit off the hour and the second is a backup: if the first
+    # already ran, the data is unchanged and it commits/redeploys nothing.
+    - cron: "17 10 * * 2-6"
+    - cron: "17 13 * * 2-6"
   workflow_dispatch: {}
 
 permissions:
