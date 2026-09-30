@@ -624,6 +624,7 @@ function pdRenderTable(mount: HTMLElement, positions: PdPosition[]) {
       const nameEl = document.createElement("span")
       nameEl.className = "pd-symbol-name"
       nameEl.textContent = p.name
+      nameEl.title = p.name
       symTd.append(symEl, nameEl)
 
       const heldTd = document.createElement("td")
@@ -664,97 +665,303 @@ function pdRenderInsights(mount: HTMLElement, insights: string[]) {
   })
 }
 
-function pdRenderChart(mount: HTMLElement, curve: { date: string; nav: number }[]) {
-  const svg = mount.querySelector<SVGSVGElement>(".pd-chart-svg")
+type PdPoint = { date: string; nav: number }
+type PdRange = "1M" | "3M" | "ALL"
+
+function pdParseDate(iso: string): number {
+  const [y, m, d] = iso.split("-").map(Number)
+  return Date.UTC(y, m - 1, d)
+}
+
+// Slice the curve to a trailing window, keeping the last point at or
+// before the cutoff so the line starts at the window edge, not after it.
+function pdSliceRange(curve: PdPoint[], range: PdRange): PdPoint[] {
+  if (range === "ALL" || curve.length < 2) return curve
+  const end = new Date(pdParseDate(curve[curve.length - 1].date))
+  end.setUTCMonth(end.getUTCMonth() - (range === "1M" ? 1 : 3))
+  const cutoff = end.getTime()
+  let first = curve.findIndex((p) => pdParseDate(p.date) >= cutoff)
+  if (first === -1) first = curve.length - 1
+  if (first > 0 && pdParseDate(curve[first].date) > cutoff) first -= 1
+  const sliced = curve.slice(first)
+  return sliced.length >= 2 ? sliced : curve.slice(-2)
+}
+
+// Round tick step (1 / 2 / 2.5 / 5 x 10^k) giving roughly `target` ticks.
+function pdNiceStep(span: number, target: number): number {
+  const raw = span / target
+  const mag = Math.pow(10, Math.floor(Math.log10(raw)))
+  const norm = raw / mag
+  const nice = norm <= 1 ? 1 : norm <= 2 ? 2 : norm <= 2.5 ? 2.5 : norm <= 5 ? 5 : 10
+  return nice * mag
+}
+
+function pdFormatAxisUSD(n: number): string {
+  return `$${n.toLocaleString("en-US", { maximumFractionDigits: 0 })}`
+}
+
+function pdRenderChart(mount: HTMLElement, fullCurve: PdPoint[], startingCapital: number) {
   const wrap = mount.querySelector<HTMLElement>(".pd-chart-wrap")
+  const svg = mount.querySelector<SVGSVGElement>(".pd-chart-svg")
   const crosshair = mount.querySelector<HTMLElement>(".pd-crosshair")
   const tooltip = mount.querySelector<HTMLElement>(".pd-chart-tooltip")
   const tooltipDate = mount.querySelector<HTMLElement>(".pd-tooltip-date")
   const tooltipValue = mount.querySelector<HTMLElement>(".pd-tooltip-value")
-  if (!svg || !wrap || !crosshair || !tooltip || !tooltipDate || !tooltipValue) return
-  if (curve.length < 2) return
-
-  const W = 760
-  const H = 200
-  const padL = 8
-  const padR = 8
-  const padT = 16
-  const padB = 8
-
-  const values = curve.map((p) => p.nav)
-  const min = Math.min(...values)
-  const max = Math.max(...values)
-  const span = max - min || 1
-  const start = values[0]
-
-  const xAt = (i: number) => padL + (i / (curve.length - 1)) * (W - padL - padR)
-  const yAt = (v: number) => padT + (1 - (v - min) / span) * (H - padT - padB)
-
-  const linePath = curve
-    .map((p, i) => `${i === 0 ? "M" : "L"}${xAt(i).toFixed(2)},${yAt(p.nav).toFixed(2)}`)
-    .join(" ")
+  const tooltipChange = mount.querySelector<HTMLElement>(".pd-tooltip-change")
+  const periodEl = mount.querySelector<HTMLElement>(".pd-chart-period")
+  const rangeBtns = Array.from(mount.querySelectorAll<HTMLButtonElement>(".pd-range-btn"))
+  if (!wrap || !svg || !crosshair || !tooltip || !tooltipDate || !tooltipValue || !tooltipChange)
+    return
+  if (fullCurve.length < 2) return
 
   const ns = "http://www.w3.org/2000/svg"
-  svg.setAttribute("viewBox", `0 0 ${W} ${H}`)
-  while (svg.firstChild) svg.removeChild(svg.firstChild)
+  const H = 220
+  const m = { top: 14, right: 16, bottom: 28, left: 58 }
 
-  const baseline = document.createElementNS(ns, "line")
-  baseline.setAttribute("x1", String(padL))
-  baseline.setAttribute("x2", String(W - padR))
-  baseline.setAttribute("y1", String(yAt(start)))
-  baseline.setAttribute("y2", String(yAt(start)))
-  baseline.setAttribute("class", "pd-chart-baseline")
+  let range: PdRange = "ALL"
+  let curve = fullCurve
+  let activeIdx = -1
+  // Set per draw; the hover handlers read them.
+  let xAt = (_i: number) => 0
+  let yAt = (_v: number) => 0
+  let hoverDot: SVGCircleElement | null = null
 
-  const path = document.createElementNS(ns, "path")
-  path.setAttribute("d", linePath)
-  path.setAttribute("class", "pd-chart-line")
-
-  const endGain = values[values.length - 1] >= start
-  const endCx = xAt(curve.length - 1)
-  const endCy = yAt(values[values.length - 1])
-
-  const endRing = document.createElementNS(ns, "circle")
-  endRing.setAttribute("cx", String(endCx))
-  endRing.setAttribute("cy", String(endCy))
-  endRing.setAttribute("r", "6")
-  endRing.setAttribute("class", "pd-chart-end-ring")
-
-  const endDot = document.createElementNS(ns, "circle")
-  endDot.setAttribute("cx", String(endCx))
-  endDot.setAttribute("cy", String(endCy))
-  endDot.setAttribute("r", "4")
-  endDot.setAttribute("class", `pd-chart-end-dot ${endGain ? "pd-gain-fill" : "pd-loss-fill"}`)
-
-  svg.append(baseline, path, endRing, endDot)
-
-  const onMove = (e: PointerEvent) => {
-    const rect = wrap.getBoundingClientRect()
-    const relX = ((e.clientX - rect.left) / rect.width) * W
-    let idx = Math.round(((relX - padL) / (W - padL - padR)) * (curve.length - 1))
-    idx = Math.max(0, Math.min(curve.length - 1, idx))
-
-    const leftPct = (xAt(idx) / W) * 100
-    const topPct = (yAt(curve[idx].nav) / H) * 100
-
-    crosshair.style.left = `${leftPct}%`
-    crosshair.hidden = false
-    tooltip.hidden = false
-    tooltip.style.left = `${leftPct}%`
-    tooltip.style.top = `${topPct}%`
-    tooltipDate.textContent = pdFormatShortDate(curve[idx].date)
-    tooltipValue.textContent = pdFormatUSD(curve[idx].nav)
+  const el = <K extends keyof SVGElementTagNameMap>(
+    tag: K,
+    attrs: Record<string, string | number>,
+  ): SVGElementTagNameMap[K] => {
+    const node = document.createElementNS(ns, tag)
+    for (const [k, v] of Object.entries(attrs)) node.setAttribute(k, String(v))
+    return node
   }
-  const onLeave = () => {
+
+  // SVG elements have no offsetLeft/Top; measure against the wrap instead.
+  const svgOffset = () => {
+    const s = svg.getBoundingClientRect()
+    const w = wrap.getBoundingClientRect()
+    return { left: s.left - w.left, top: s.top - w.top, width: s.width }
+  }
+
+  const updatePeriod = () => {
+    if (!periodEl) return
+    const first = curve[0].nav
+    const last = curve[curve.length - 1].nav
+    const diff = last - first
+    const pct = first ? (diff / first) * 100 : 0
+    periodEl.className = `pd-chart-period ${diff >= 0 ? "pd-gain" : "pd-loss"}`
+    periodEl.textContent = `${pdFormatUSD(diff, { sign: true })} (${pdFormatPct(pct)})`
+  }
+
+  const draw = () => {
+    const W = Math.max(280, Math.round(svg.getBoundingClientRect().width))
+    const plotW = W - m.left - m.right
+    const plotH = H - m.top - m.bottom
+    const narrow = W < 480
+
+    svg.setAttribute("viewBox", `0 0 ${W} ${H}`)
+    svg.setAttribute("height", String(H))
+    while (svg.firstChild) svg.removeChild(svg.firstChild)
+
+    // Y domain: the visible data plus headroom, snapped out to round ticks,
+    // so the scale re-fits whatever window is showing as new days arrive.
+    const values = curve.map((p) => p.nav)
+    let lo = Math.min(...values)
+    let hi = Math.max(...values)
+    const pad = Math.max((hi - lo) * 0.12, hi * 0.004, 1)
+    lo -= pad
+    hi += pad
+    const step = pdNiceStep(hi - lo, narrow ? 3 : 4)
+    lo = Math.floor(lo / step) * step
+    hi = Math.ceil(hi / step) * step
+
+    // X is by trading day (index), so weekends don't leave flat gaps.
+    const n = curve.length
+    xAt = (i: number) => m.left + (n === 1 ? plotW : (i / (n - 1)) * plotW)
+    yAt = (v: number) => m.top + (1 - (v - lo) / (hi - lo)) * plotH
+
+    // Gradient wash under the line.
+    const gradId = "pd-area-grad"
+    const defs = el("defs", {})
+    const grad = el("linearGradient", { id: gradId, x1: 0, y1: 0, x2: 0, y2: 1 })
+    grad.append(
+      el("stop", { offset: "0%", class: "pd-area-stop-top" }),
+      el("stop", { offset: "100%", class: "pd-area-stop-bottom" }),
+    )
+    defs.append(grad)
+    svg.append(defs)
+
+    // Gridlines + y labels.
+    const grid = el("g", { class: "pd-chart-grid" })
+    for (let v = lo; v <= hi + step / 2; v += step) {
+      const y = yAt(v)
+      grid.append(el("line", { x1: m.left, x2: W - m.right, y1: y, y2: y }))
+      const t = el("text", { x: m.left - 10, y, class: "pd-axis-label pd-axis-y" })
+      t.textContent = pdFormatAxisUSD(v)
+      grid.append(t)
+    }
+    svg.append(grid)
+
+    // X labels: month starts on long windows, spaced dates on short ones.
+    const xLabels = el("g", {})
+    const spanDays = (pdParseDate(curve[n - 1].date) - pdParseDate(curve[0].date)) / 864e5
+    const minGap = narrow ? 48 : 64
+    let lastX = -Infinity
+    curve.forEach((p, i) => {
+      const mo = Number(p.date.split("-")[1])
+      let label = ""
+      if (spanDays > 50) {
+        const prevMo = i > 0 ? Number(curve[i - 1].date.split("-")[1]) : -1
+        if (mo !== prevMo && i > 0)
+          label = new Date(Date.UTC(2000, mo - 1, 1)).toLocaleDateString("en-US", {
+            month: "short",
+            timeZone: "UTC",
+          })
+      } else if (i % Math.max(1, Math.round(n / (narrow ? 3 : 5))) === 0) {
+        label = pdFormatShortDate(p.date)
+      }
+      const x = xAt(i)
+      if (!label || x - lastX < minGap || x > W - m.right - 20) return
+      lastX = x
+      const t = el("text", { x, y: H - 8, class: "pd-axis-label pd-axis-x" })
+      t.textContent = label
+      xLabels.append(t)
+    })
+    svg.append(xLabels)
+
+    // Starting-capital reference, only when it falls inside the window.
+    if (startingCapital >= lo && startingCapital <= hi) {
+      const y = yAt(startingCapital)
+      svg.append(
+        el("line", { x1: m.left, x2: W - m.right, y1: y, y2: y, class: "pd-chart-baseline" }),
+      )
+    }
+
+    const pts = curve.map((p, i) => `${xAt(i).toFixed(2)},${yAt(p.nav).toFixed(2)}`)
+    const bottom = (m.top + plotH).toFixed(2)
+    svg.append(
+      el("path", {
+        d: `M${xAt(0).toFixed(2)},${bottom} L${pts.join(" L")} L${xAt(n - 1).toFixed(2)},${bottom} Z`,
+        fill: `url(#${gradId})`,
+        class: "pd-chart-area",
+      }),
+      el("path", { d: `M${pts.join(" L")}`, class: "pd-chart-line" }),
+    )
+
+    // End marker: a soft halo behind a solid dot in the line's own color,
+    // so the last segment visibly runs into today's point.
+    const endX = xAt(n - 1)
+    const endY = yAt(curve[n - 1].nav)
+    svg.insertBefore(
+      el("circle", { cx: endX, cy: endY, r: 9, class: "pd-chart-end-halo" }),
+      svg.lastChild,
+    )
+    svg.append(el("circle", { cx: endX, cy: endY, r: 3.5, class: "pd-chart-end-dot" }))
+
+    hoverDot = el("circle", { r: 4, class: "pd-chart-hover-dot", visibility: "hidden" })
+    svg.append(hoverDot)
+
+    crosshair.style.top = `${svgOffset().top + m.top}px`
+    crosshair.style.height = `${plotH}px`
+    if (activeIdx >= 0) show(activeIdx)
+  }
+
+  const show = (idx: number) => {
+    activeIdx = idx
+    const p = curve[idx]
+    const off = svgOffset()
+    const x = off.left + (xAt(idx) / svg.viewBox.baseVal.width) * off.width
+    const y = off.top + yAt(p.nav)
+
+    crosshair.style.left = `${x}px`
+    crosshair.hidden = false
+    if (hoverDot) {
+      hoverDot.setAttribute("cx", String(xAt(idx)))
+      hoverDot.setAttribute("cy", String(yAt(p.nav)))
+      hoverDot.setAttribute("visibility", "visible")
+    }
+
+    const diff = p.nav - curve[0].nav
+    tooltipDate.textContent = pdFormatShortDate(p.date)
+    tooltipValue.textContent = pdFormatUSD(p.nav)
+    tooltipChange.textContent =
+      idx === 0 ? "range start" : `${pdFormatUSD(diff, { sign: true })} vs. range start`
+    tooltip.hidden = false
+
+    // Keep the tooltip inside the card: clamp horizontally, and drop it
+    // below the point when there isn't room above.
+    const tw = tooltip.offsetWidth
+    const th = tooltip.offsetHeight
+    const left = Math.min(Math.max(x - tw / 2, 4), wrap.clientWidth - tw - 4)
+    const top = y - th - 12 >= 0 ? y - th - 12 : y + 12
+    tooltip.style.left = `${left}px`
+    tooltip.style.top = `${top}px`
+  }
+
+  const hide = () => {
+    activeIdx = -1
     crosshair.hidden = true
     tooltip.hidden = true
+    hoverDot?.setAttribute("visibility", "hidden")
   }
 
-  wrap.addEventListener("pointermove", onMove)
-  wrap.addEventListener("pointerleave", onLeave)
-  window.addCleanup(() => {
-    wrap.removeEventListener("pointermove", onMove)
-    wrap.removeEventListener("pointerleave", onLeave)
+  const onMove = (e: PointerEvent) => {
+    const rect = svg.getBoundingClientRect()
+    const vx = ((e.clientX - rect.left) / rect.width) * svg.viewBox.baseVal.width
+    const plotW = svg.viewBox.baseVal.width - m.left - m.right
+    const idx = Math.round(((vx - m.left) / plotW) * (curve.length - 1))
+    show(Math.max(0, Math.min(curve.length - 1, idx)))
+  }
+
+  const onKey = (e: KeyboardEvent) => {
+    if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return
+    e.preventDefault()
+    const base = activeIdx < 0 ? curve.length - 1 : activeIdx
+    show(Math.max(0, Math.min(curve.length - 1, base + (e.key === "ArrowLeft" ? -1 : 1))))
+  }
+
+  const setRange = (r: PdRange) => {
+    range = r
+    curve = pdSliceRange(fullCurve, range)
+    rangeBtns.forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.range === r)))
+    hide()
+    updatePeriod()
+    draw()
+  }
+
+  const onRangeClick = (e: Event) => {
+    const r = (e.currentTarget as HTMLButtonElement).dataset.range as PdRange
+    if (r && r !== range) setRange(r)
+  }
+
+  // Short windows only make sense once there's enough history to differ
+  // from "All"; hide buttons that would show the same thing.
+  const spanDays =
+    (pdParseDate(fullCurve[fullCurve.length - 1].date) - pdParseDate(fullCurve[0].date)) / 864e5
+  rangeBtns.forEach((b) => {
+    if (
+      (b.dataset.range === "3M" && spanDays <= 92) ||
+      (b.dataset.range === "1M" && spanDays <= 31)
+    )
+      b.hidden = true
+    b.addEventListener("click", onRangeClick)
   })
+
+  const ro = new ResizeObserver(() => draw())
+  ro.observe(wrap)
+  wrap.addEventListener("pointermove", onMove)
+  wrap.addEventListener("pointerleave", hide)
+  wrap.addEventListener("keydown", onKey)
+  wrap.addEventListener("blur", hide)
+  window.addCleanup(() => {
+    ro.disconnect()
+    wrap.removeEventListener("pointermove", onMove)
+    wrap.removeEventListener("pointerleave", hide)
+    wrap.removeEventListener("keydown", onKey)
+    wrap.removeEventListener("blur", hide)
+    rangeBtns.forEach((b) => b.removeEventListener("click", onRangeClick))
+  })
+
+  setRange("ALL")
 }
 
 function pdRender(mount: HTMLElement, data: PdData) {
@@ -783,19 +990,31 @@ function pdRender(mount: HTMLElement, data: PdData) {
         <span class="pd-stat-sub">realized ${pdFormatUSD(a.realized_pnl, { sign: true })}</span>
       </div>
       <div class="pd-stat">
-        <span class="pd-stat-label">Cash / invested</span>
-        <span class="pd-stat-value">${a.cash_pct.toFixed(0)}% / ${a.invested_pct.toFixed(0)}%</span>
+        <span class="pd-stat-label">Invested</span>
+        <span class="pd-stat-value">${a.invested_pct.toFixed(0)}%</span>
+        <span class="pd-stat-sub">${a.cash_pct.toFixed(0)}% cash &middot; ${pdFormatUSD(a.cash)}</span>
         <div class="pd-alloc-bar"><span class="pd-alloc-invested" style="width:${a.invested_pct}%"></span></div>
       </div>
     </div>
     <div class="pd-card pd-chart-card">
-      <div class="pd-card-head"><span class="pd-card-title">Equity curve &middot; since inception</span></div>
-      <div class="pd-chart-wrap">
-        <svg class="pd-chart-svg"></svg>
+      <div class="pd-card-head pd-chart-head">
+        <div class="pd-chart-head-left">
+          <span class="pd-card-title">Equity curve</span>
+          <span class="pd-chart-period"></span>
+        </div>
+        <div class="pd-range" role="group" aria-label="Chart range">
+          <button type="button" class="pd-range-btn" data-range="1M" aria-pressed="false">1M</button>
+          <button type="button" class="pd-range-btn" data-range="3M" aria-pressed="false">3M</button>
+          <button type="button" class="pd-range-btn" data-range="ALL" aria-pressed="true">All</button>
+        </div>
+      </div>
+      <div class="pd-chart-wrap" tabindex="0" aria-label="Net liquidation value over time. Use left and right arrow keys to read values.">
+        <svg class="pd-chart-svg" role="img" aria-label="Equity curve"></svg>
         <div class="pd-crosshair" hidden></div>
         <div class="pd-chart-tooltip" hidden>
           <span class="pd-tooltip-date"></span>
           <span class="pd-tooltip-value"></span>
+          <span class="pd-tooltip-change"></span>
         </div>
       </div>
     </div>
@@ -820,7 +1039,7 @@ function pdRender(mount: HTMLElement, data: PdData) {
 
   pdRenderTable(mount, data.positions)
   pdRenderInsights(mount, data.insights)
-  pdRenderChart(mount, data.equity_curve)
+  pdRenderChart(mount, data.equity_curve, a.starting_capital)
 }
 
 document.addEventListener("nav", () => {
