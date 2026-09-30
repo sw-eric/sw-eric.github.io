@@ -235,6 +235,19 @@ def main() -> None:
         insights=build_insights(account, positions, last_trade_date),
     )
 
+    # as_of changes on every run, so compare everything else — otherwise
+    # the backup cron slot would commit and redeploy identical data.
+    if OUTPUT_PATH.exists():
+        try:
+            previous = json.loads(OUTPUT_PATH.read_text())
+        except json.JSONDecodeError:
+            previous = None
+        if previous is not None:
+            strip = lambda d: {k: v for k, v in d.items() if k != "as_of"}
+            if strip(previous) == strip(json.loads(json.dumps(data))):
+                print(f"No new data since {data['data_date']}; leaving {OUTPUT_PATH} unchanged")
+                return
+
     OUTPUT_PATH.write_text(json.dumps(data, indent=2) + "\n")
     print(f"Wrote {OUTPUT_PATH}")
 
