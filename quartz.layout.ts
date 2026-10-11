@@ -8,10 +8,14 @@ const isStandalone = (slug: string) =>
   slug === "disclaimer" ||
   slug === "investment-mandate" ||
   slug === "portfolio" ||
-  slug === "portfolio/index"
+  slug === "portfolio/index" ||
+  slug === "desk" ||
+  slug === "workshop" ||
+  slug === "workshop/index"
 
 // Pages whose breadcrumbs should start from their section root, not Home
-const isRootless = (slug: string) => slug.startsWith("portfolio/")
+const isRootless = (slug: string) =>
+  (slug.startsWith("portfolio/") || slug.startsWith("workshop/")) && slug !== "workshop/index"
 
 const sidebarNav = Component.SidebarNav({
   links: [
@@ -27,6 +31,8 @@ const sidebarNav = Component.SidebarNav({
         { label: "Live Dashboard", href: "/#portfolio-dashboard" },
       ],
     },
+    { label: "Market Desk", href: "/desk" },
+    { label: "Workshop", href: "/workshop" },
     { label: "Disclaimer", href: "/disclaimer" },
   ],
 })
@@ -35,7 +41,7 @@ const sidebarNav = Component.SidebarNav({
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
-  afterBody: [Component.CustomScripts()],
+  afterBody: [Component.CustomScripts(), Component.MarketDesk(), Component.Workshop()],
   footer: Component.Footer({
     links: {
       GitHub: "https://github.com/sw-eric/sw-eric.github.io",
