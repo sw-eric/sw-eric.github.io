@@ -1,0 +1,142 @@
+name: Refresh dashboard and market data
+
+on:
+  schedule:
+    # Tue-Sat, the morning after each US session. IBKR Flex only reports
+    # days it has finished end-of-day processing for, and Treasury/FRED/ECB
+    # publish the prior session overnight, so an evening run just after the
+    # close would still return the day before.
+    # GitHub often starts scheduled runs hours late, worst on the hour, so
+    # both slots sit off the hour and the second is a backup: if the first
+    # already ran, the data is unchanged and it commits/redeploys nothing.
+    - cron: "17 10 * * 2-6"
+    - cron: "17 13 * * 2-6"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  actions: write
+
+# A late first slot can overlap the backup; queue rather than race on push.
+concurrency:
+  group: refresh-data
+  cancel-in-progress: false
+
+jobs:
+  # Each fetch runs in its own job so one failing source can't block the
+  # other. Both hand their output files to `publish` as artifacts, which
+  # makes one commit and one deploy instead of two racing pushes.
+  portfolio:
+    runs-on: ubuntu-22.04
+    env:
+      # `secrets` can't be referenced directly inside `if:` conditions —
+      # stash the check in a job-level env var and branch on that instead.
+      HAS_FLEX_SECRETS: ${{ secrets.SONSUDASHBOARD2 != '' && secrets.IBKR_FLEX_QUERY_ID != '' }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        if: ${{ env.HAS_FLEX_SECRETS == 'true' }}
+        run: pip install requests
+
+      - name: Fetch latest portfolio snapshot
+        if: ${{ env.HAS_FLEX_SECRETS == 'true' }}
+        env:
+          IBKR_FLEX_TOKEN: ${{ secrets.SONSUDASHBOARD2 }}
+          IBKR_FLEX_QUERY_ID: ${{ secrets.IBKR_FLEX_QUERY_ID }}
+        run: python3 scripts/fetch_portfolio.py
+
+      - name: Skip (secrets not configured yet)
+        if: ${{ env.HAS_FLEX_SECRETS != 'true' }}
+        run: echo "SONSUDASHBOARD2 (Flex token) / IBKR_FLEX_QUERY_ID not set — see scripts/fetch_portfolio.py for setup. Skipping refresh."
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: portfolio-data
+          path: quartz/static/portfolio-data.json
+          retention-days: 1
+
+  markets:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      # Both keys are optional: without FRED_API_KEY the script uses FRED's
+      # public CSV endpoint, and without ECOS_API_KEY it uses ECOS's
+      # rate-limited sample key. Source failures are printed as warnings
+      # and never overwrite the last good values.
+      - name: Fetch market data
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+          ECOS_API_KEY: ${{ secrets.ECOS_API_KEY }}
+        run: python3 scripts/fetch_markets.py
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: market-data
+          path: |
+            quartz/static/market-data.json
+            quartz/static/market-history.json
+          retention-days: 1
+
+  publish:
+    needs: [portfolio, markets]
+    # Publish whichever fetch succeeded, even if the other failed.
+    if: ${{ always() && (needs.portfolio.result == 'success' || needs.markets.result == 'success') }}
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: v4
+
+      - name: Collect portfolio data
+        if: ${{ needs.portfolio.result == 'success' }}
+        uses: actions/download-artifact@v4
+        with:
+          name: portfolio-data
+          path: quartz/static
+
+      - name: Collect market data
+        if: ${{ needs.markets.result == 'success' }}
+        uses: actions/download-artifact@v4
+        with:
+          name: market-data
+          path: quartz/static
+
+      - name: Commit updated data
+        id: commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add quartz/static/portfolio-data.json quartz/static/market-data.json quartz/static/market-history.json
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git commit -m "Refresh dashboard and market data"
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      # A push made with the default GITHUB_TOKEN doesn't trigger other
+      # workflows (GitHub's anti-recursion guard), so deploy.yml would
+      # never see this update on its own — dispatch it explicitly, once.
+      - name: Trigger site redeploy
+        if: ${{ steps.commit.outputs.changed == 'true' }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run deploy.yml --ref v4
