@@ -39,6 +39,16 @@ Sonsu Research is a personal research and trading project documenting my learnin
 <span class="nav-card-arrow">→</span>
 </a>
 
+<a href="./desk" class="nav-card">
+<span class="nav-card-body"><span class="nav-card-title">Market Desk</span><span class="nav-card-desc">Prior close for rates, equities, FX and commodities.</span></span>
+<span class="nav-card-arrow">→</span>
+</a>
+
+<a href="./workshop" class="nav-card">
+<span class="nav-card-body"><span class="nav-card-title">Workshop</span><span class="nav-card-desc">Small tools and models I built.</span></span>
+<span class="nav-card-arrow">→</span>
+</a>
+
 <a href="./about" class="nav-card">
 <span class="nav-card-body"><span class="nav-card-title">About</span><span class="nav-card-desc">More on me and this project.</span></span>
 <span class="nav-card-arrow">→</span>

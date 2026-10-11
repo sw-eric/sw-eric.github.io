@@ -25,6 +25,8 @@ import Flex from "./Flex"
 import ConditionalRender from "./ConditionalRender"
 import CustomScripts from "./CustomScripts"
 import SidebarNav from "./SidebarNav"
+import MarketDesk from "./MarketDesk"
+import Workshop from "./Workshop"
 
 export {
   ArticleTitle,
@@ -54,4 +56,6 @@ export {
   ConditionalRender,
   CustomScripts,
   SidebarNav,
+  MarketDesk,
+  Workshop,
 }

@@ -1,0 +1,14 @@
+[
+  {"name": "Hull 15.6 call", "type": "call", "S": 42, "K": 40, "T": 0.5, "r": 0.10, "q": 0, "sigma": 0.20},
+  {"name": "Hull 15.6 put", "type": "put", "S": 42, "K": 40, "T": 0.5, "r": 0.10, "q": 0, "sigma": 0.20},
+  {"name": "ATM 30d call", "type": "call", "S": 100, "K": 100, "T": 0.0821917808, "r": 0.0425, "q": 0, "sigma": 0.25},
+  {"name": "ATM 30d put", "type": "put", "S": 100, "K": 100, "T": 0.0821917808, "r": 0.0425, "q": 0, "sigma": 0.25},
+  {"name": "deep ITM call", "type": "call", "S": 186.15, "K": 120, "T": 0.25, "r": 0.0425, "q": 0, "sigma": 0.55},
+  {"name": "deep OTM put", "type": "put", "S": 186.15, "K": 120, "T": 0.25, "r": 0.0425, "q": 0, "sigma": 0.55},
+  {"name": "OTM call 2y high vol", "type": "call", "S": 340.64, "K": 450, "T": 2.0, "r": 0.048, "q": 0.0026, "sigma": 0.40},
+  {"name": "ITM put with dividend", "type": "put", "S": 50.0, "K": 60.0, "T": 1.0, "r": 0.05, "q": 0.03, "sigma": 0.30},
+  {"name": "1 day ATM call", "type": "call", "S": 7811.54, "K": 7800, "T": 0.0027397260, "r": 0.0425, "q": 0.012, "sigma": 0.15},
+  {"name": "very low vol put", "type": "put", "S": 100, "K": 105, "T": 0.5, "r": 0.02, "q": 0, "sigma": 0.01},
+  {"name": "zero rate call", "type": "call", "S": 25, "K": 30, "T": 0.75, "r": 0, "q": 0, "sigma": 0.8},
+  {"name": "expired ITM put", "type": "put", "S": 90, "K": 100, "T": 0, "r": 0.04, "q": 0, "sigma": 0.3}
+]
