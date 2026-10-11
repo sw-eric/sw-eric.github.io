@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-10-10T15:54:03Z",
+  "as_of": "2026-10-11T15:45:16Z",
   "data_date": "2026-10-09",
   "inception_date": "2026-06-24",
   "base_currency": "USD",
@@ -340,7 +340,7 @@
       "unrealized_pnl": 8.21,
       "unrealized_pct": 1.82,
       "weight_pct": 29.66,
-      "days_held": 54,
+      "days_held": 55,
       "daily_pnl": null
     },
     {
@@ -354,7 +354,7 @@
       "unrealized_pnl": -3.42,
       "unrealized_pct": -1.0,
       "weight_pct": 21.84,
-      "days_held": 57,
+      "days_held": 58,
       "daily_pnl": null
     },
     {
@@ -368,7 +368,7 @@
       "unrealized_pnl": 43.6,
       "unrealized_pct": 21.69,
       "weight_pct": 15.8,
-      "days_held": 57,
+      "days_held": 58,
       "daily_pnl": null
     },
     {
@@ -382,7 +382,7 @@
       "unrealized_pnl": -0.4,
       "unrealized_pct": -0.1,
       "weight_pct": 26.06,
-      "days_held": 12,
+      "days_held": 13,
       "daily_pnl": null
     }
   ],
