@@ -55,4 +55,4 @@ The stock has risen 27.7% from its August 6 close of \$130.17. The KOSPI closed 
 
 ## Limits
 
-As seen by the [[investment-mandate]], the position is capped at 30% of the account with thesis invalidation at 25% price stop, if 2027 HBM4 contracts settle below 2026 levels, if SK Hynix posts two consecutive quarters of declining HBM revenue, or if conventional DRAM contract prices turn negative quarter over quarter.
+As seen by the [[investment-mandate]], the position is capped at 30% of the account with a 25% trailing stop, and thesis invalidation if 2027 HBM4 contracts settle below 2026 levels, if SK Hynix posts two consecutive quarters of declining HBM revenue, or if conventional DRAM contract prices turn negative quarter over quarter.

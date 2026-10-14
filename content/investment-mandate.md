@@ -32,7 +32,7 @@ These are the hard rules of the portfolio, established to manage risk and preven
 
 - **Maximum single position size:** 30% of capital at entry. Positions may grow beyond this through appreciation but I will not add to a position above 30%.
 - **Maximum sector concentration:** 70% of capital. AI infrastructure and energy are treated as one sector for this purpose.
-- **Per-trade stop loss:** -25% from entry OR explicit thesis invalidation, whichever comes first. Each pre-trade memo specifies the conditions that invalidates the thesis.
+- **Per-trade stop loss:** a 25% trailing stop from the highest price since entry OR explicit thesis invalidation, whichever comes first. Each pre-trade memo specifies the conditions that invalidates the thesis.
 - **Portfolio drawdown trigger:** A peak-to-trough drawdown of -20% triggers a 30-day pause on new positions and a written review of what went wrong before resuming.
 - **Cash floor:** A minimum of 5% in cash at all times as dry powder, except in transient periods immediately after closing a position.
 - **No trade without a written pre-trade memo.** No exceptions. The memo can be short, but it must exist before the order goes in. This restriction is for me to develop discipline and establish researched conviction before committing capital.
