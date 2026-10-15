@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "refreshed_utc": "2026-10-14T18:01:40Z",
+ "refreshed_utc": "2026-10-15T15:07:36Z",
  "tiles": {
   "UST3M": {
    "key": "UST3M",
@@ -8,17 +8,13 @@
    "group": "rates",
    "unit": "pct",
    "decimals": 2,
-   "value": 4.26,
-   "prev": 4.25,
-   "chg": 0.01,
+   "value": 4.28,
+   "prev": 4.26,
+   "chg": 0.02,
    "chg_pct": null,
-   "chg_bp": 1.0,
-   "as_of": "2026-10-13",
+   "chg_bp": 2.0,
+   "as_of": "2026-10-14",
    "spark": [
-    [
-     "2026-07-20",
-     3.86
-    ],
     [
      "2026-07-21",
      3.87
@@ -254,6 +250,10 @@
     [
      "2026-10-13",
      4.26
+    ],
+    [
+     "2026-10-14",
+     4.28
     ]
    ],
    "source": "U.S. Treasury",
@@ -261,7 +261,7 @@
    "tier": 1,
    "note": "Par yield, 3 month",
    "status": "ok",
-   "last_good": "2026-10-13",
+   "last_good": "2026-10-14",
    "error": null
   },
   "UST2Y": {
@@ -270,17 +270,13 @@
    "group": "rates",
    "unit": "pct",
    "decimals": 2,
-   "value": 4.79,
-   "prev": 4.8,
-   "chg": -0.01,
+   "value": 4.82,
+   "prev": 4.79,
+   "chg": 0.03,
    "chg_pct": null,
-   "chg_bp": -1.0,
-   "as_of": "2026-10-13",
+   "chg_bp": 3.0,
+   "as_of": "2026-10-14",
    "spark": [
-    [
-     "2026-07-20",
-     4.21
-    ],
     [
      "2026-07-21",
      4.26
@@ -516,6 +512,10 @@
     [
      "2026-10-13",
      4.79
+    ],
+    [
+     "2026-10-14",
+     4.82
     ]
    ],
    "source": "U.S. Treasury",
@@ -523,7 +523,7 @@
    "tier": 1,
    "note": "Par yield, 2 year",
    "status": "ok",
-   "last_good": "2026-10-13",
+   "last_good": "2026-10-14",
    "error": null
   },
   "UST3Y": {
@@ -532,17 +532,13 @@
    "group": "rates",
    "unit": "pct",
    "decimals": 2,
-   "value": 4.9,
-   "prev": 4.89,
-   "chg": 0.01,
+   "value": 4.92,
+   "prev": 4.9,
+   "chg": 0.02,
    "chg_pct": null,
-   "chg_bp": 1.0,
-   "as_of": "2026-10-13",
+   "chg_bp": 2.0,
+   "as_of": "2026-10-14",
    "spark": [
-    [
-     "2026-07-20",
-     4.25
-    ],
     [
      "2026-07-21",
      4.31
@@ -778,6 +774,10 @@
     [
      "2026-10-13",
      4.9
+    ],
+    [
+     "2026-10-14",
+     4.92
     ]
    ],
    "source": "U.S. Treasury",
@@ -785,7 +785,7 @@
    "tier": 1,
    "note": "Par yield, 3 year",
    "status": "ok",
-   "last_good": "2026-10-13",
+   "last_good": "2026-10-14",
    "error": null
   },
   "UST5Y": {
@@ -795,16 +795,12 @@
    "unit": "pct",
    "decimals": 2,
    "value": 5.0,
-   "prev": 5.02,
-   "chg": -0.02,
+   "prev": 5.0,
+   "chg": 0.0,
    "chg_pct": null,
-   "chg_bp": -2.0,
-   "as_of": "2026-10-13",
+   "chg_bp": 0.0,
+   "as_of": "2026-10-14",
    "spark": [
-    [
-     "2026-07-20",
-     4.33
-    ],
     [
      "2026-07-21",
      4.37
@@ -1040,6 +1036,10 @@
     [
      "2026-10-13",
      5.0
+    ],
+    [
+     "2026-10-14",
+     5.0
     ]
    ],
    "source": "U.S. Treasury",
@@ -1047,7 +1047,7 @@
    "tier": 1,
    "note": "Par yield, 5 year",
    "status": "ok",
-   "last_good": "2026-10-13",
+   "last_good": "2026-10-14",
    "error": null
   },
   "UST10Y": {
@@ -1056,17 +1056,13 @@
    "group": "rates",
    "unit": "pct",
    "decimals": 2,
-   "value": 5.21,
-   "prev": 5.24,
-   "chg": -0.03,
+   "value": 5.19,
+   "prev": 5.21,
+   "chg": -0.02,
    "chg_pct": null,
-   "chg_bp": -3.0,
-   "as_of": "2026-10-13",
+   "chg_bp": -2.0,
+   "as_of": "2026-10-14",
    "spark": [
-    [
-     "2026-07-20",
-     4.6
-    ],
     [
      "2026-07-21",
      4.63
@@ -1302,6 +1298,10 @@
     [
      "2026-10-13",
      5.21
+    ],
+    [
+     "2026-10-14",
+     5.19
     ]
    ],
    "source": "U.S. Treasury",
@@ -1309,7 +1309,7 @@
    "tier": 1,
    "note": "Par yield, 10 year",
    "status": "ok",
-   "last_good": "2026-10-13",
+   "last_good": "2026-10-14",
    "error": null
   },
   "UST30Y": {
@@ -1318,17 +1318,13 @@
    "group": "rates",
    "unit": "pct",
    "decimals": 2,
-   "value": 5.56,
-   "prev": 5.6,
+   "value": 5.52,
+   "prev": 5.56,
    "chg": -0.04,
    "chg_pct": null,
    "chg_bp": -4.0,
-   "as_of": "2026-10-13",
+   "as_of": "2026-10-14",
    "spark": [
-    [
-     "2026-07-20",
-     5.11
-    ],
     [
      "2026-07-21",
      5.13
@@ -1564,6 +1560,10 @@
     [
      "2026-10-13",
      5.56
+    ],
+    [
+     "2026-10-14",
+     5.52
     ]
    ],
    "source": "U.S. Treasury",
@@ -1571,7 +1571,7 @@
    "tier": 1,
    "note": "Par yield, 30 year",
    "status": "ok",
-   "last_good": "2026-10-13",
+   "last_good": "2026-10-14",
    "error": null
   },
   "S2S10": {
@@ -1580,17 +1580,13 @@
    "group": "rates",
    "unit": "bp",
    "decimals": 0,
-   "value": 42.0,
-   "prev": 44.0,
-   "chg": -2.0,
+   "value": 37.0,
+   "prev": 42.0,
+   "chg": -5.0,
    "chg_pct": null,
-   "chg_bp": -2.0,
-   "as_of": "2026-10-13",
+   "chg_bp": -5.0,
+   "as_of": "2026-10-14",
    "spark": [
-    [
-     "2026-07-20",
-     39.0
-    ],
     [
      "2026-07-21",
      37.0
@@ -1826,6 +1822,10 @@
     [
      "2026-10-13",
      42.0
+    ],
+    [
+     "2026-10-14",
+     37.0
     ]
    ],
    "source": "U.S. Treasury",
@@ -1833,7 +1833,7 @@
    "tier": 1,
    "note": "10Y minus 2Y par yield",
    "status": "ok",
-   "last_good": "2026-10-13",
+   "last_good": "2026-10-14",
    "error": null
   },
   "S3M10Y": {
@@ -1842,17 +1842,13 @@
    "group": "rates",
    "unit": "bp",
    "decimals": 0,
-   "value": 95.0,
-   "prev": 99.0,
+   "value": 91.0,
+   "prev": 95.0,
    "chg": -4.0,
    "chg_pct": null,
    "chg_bp": -4.0,
-   "as_of": "2026-10-13",
+   "as_of": "2026-10-14",
    "spark": [
-    [
-     "2026-07-20",
-     74.0
-    ],
     [
      "2026-07-21",
      76.0
@@ -2088,6 +2084,10 @@
     [
      "2026-10-13",
      95.0
+    ],
+    [
+     "2026-10-14",
+     91.0
     ]
    ],
    "source": "U.S. Treasury",
@@ -2095,7 +2095,7 @@
    "tier": 1,
    "note": "10Y minus 3M par yield",
    "status": "ok",
-   "last_good": "2026-10-13",
+   "last_good": "2026-10-14",
    "error": null
   },
   "SPX": {
@@ -2104,17 +2104,13 @@
    "group": "us_index",
    "unit": "level",
    "decimals": 2,
-   "value": 7805.45,
-   "prev": 7807.24,
-   "chg": -1.79,
-   "chg_pct": -0.0229,
+   "value": 7718.94,
+   "prev": 7805.45,
+   "chg": -86.51,
+   "chg_pct": -1.1083,
    "chg_bp": null,
-   "as_of": "2026-10-13",
+   "as_of": "2026-10-14",
    "spark": [
-    [
-     "2026-07-21",
-     7509.2
-    ],
     [
      "2026-07-22",
      7498.96
@@ -2350,6 +2346,10 @@
     [
      "2026-10-13",
      7805.45
+    ],
+    [
+     "2026-10-14",
+     7718.94
     ]
    ],
    "source": "S&P DJI via FRED",
@@ -2357,7 +2357,7 @@
    "tier": 1,
    "note": "© S&P Dow Jones Indices LLC",
    "status": "ok",
-   "last_good": "2026-10-13",
+   "last_good": "2026-10-14",
    "error": null
   },
   "CCMP": {
@@ -2366,17 +2366,13 @@
    "group": "us_index",
    "unit": "level",
    "decimals": 2,
-   "value": 27204.38,
-   "prev": 27245.9,
-   "chg": -41.52,
-   "chg_pct": -0.1524,
+   "value": 26692.87,
+   "prev": 27204.38,
+   "chg": -511.51,
+   "chg_pct": -1.8802,
    "chg_bp": null,
-   "as_of": "2026-10-13",
+   "as_of": "2026-10-14",
    "spark": [
-    [
-     "2026-07-21",
-     25837.21
-    ],
     [
      "2026-07-22",
      25690.9
@@ -2612,6 +2608,10 @@
     [
      "2026-10-13",
      27204.38
+    ],
+    [
+     "2026-10-14",
+     26692.87
     ]
    ],
    "source": "Nasdaq via FRED",
@@ -2619,7 +2619,7 @@
    "tier": 1,
    "note": "© Nasdaq, Inc.",
    "status": "ok",
-   "last_good": "2026-10-13",
+   "last_good": "2026-10-14",
    "error": null
   },
   "INDU": {
@@ -2628,17 +2628,13 @@
    "group": "us_index",
    "unit": "level",
    "decimals": 2,
-   "value": 51670.1,
-   "prev": 51850.55,
-   "chg": -180.45,
-   "chg_pct": -0.348,
+   "value": 51621.48,
+   "prev": 51670.1,
+   "chg": -48.62,
+   "chg_pct": -0.0941,
    "chg_bp": null,
-   "as_of": "2026-10-13",
+   "as_of": "2026-10-14",
    "spark": [
-    [
-     "2026-07-21",
-     52224.64
-    ],
     [
      "2026-07-22",
      52218.58
@@ -2874,6 +2870,10 @@
     [
      "2026-10-13",
      51670.1
+    ],
+    [
+     "2026-10-14",
+     51621.48
     ]
    ],
    "source": "S&P DJI via FRED",
@@ -2881,7 +2881,7 @@
    "tier": 1,
    "note": "© S&P Dow Jones Indices LLC",
    "status": "ok",
-   "last_good": "2026-10-13",
+   "last_good": "2026-10-14",
    "error": null
   },
   "RTY": {
@@ -2890,17 +2890,13 @@
    "group": "us_index",
    "unit": "level",
    "decimals": 2,
-   "value": 2724.9746,
-   "prev": 2783.3701,
-   "chg": -58.3955,
-   "chg_pct": -2.098,
+   "value": 2752.4629,
+   "prev": 2729.53,
+   "chg": 22.9329,
+   "chg_pct": 0.8402,
    "chg_bp": null,
-   "as_of": "2026-10-14",
+   "as_of": "2026-10-15",
    "spark": [
-    [
-     "2026-07-22",
-     2959.9399
-    ],
     [
      "2026-07-23",
      2940.1599
@@ -3135,7 +3131,11 @@
     ],
     [
      "2026-10-14",
-     2724.9746
+     2729.53
+    ],
+    [
+     "2026-10-15",
+     2752.4629
     ]
    ],
    "source": "Yahoo Finance",
@@ -3143,7 +3143,7 @@
    "tier": 2,
    "note": "FTSE Russell index",
    "status": "ok",
-   "last_good": "2026-10-14",
+   "last_good": "2026-10-15",
    "error": null
   },
   "VIX": {
@@ -3152,17 +3152,13 @@
    "group": "us_index",
    "unit": "level",
    "decimals": 2,
-   "value": 15.27,
-   "prev": 15.21,
-   "chg": 0.06,
-   "chg_pct": 0.3945,
+   "value": 16.87,
+   "prev": 15.27,
+   "chg": 1.6,
+   "chg_pct": 10.4781,
    "chg_bp": null,
-   "as_of": "2026-10-13",
+   "as_of": "2026-10-14",
    "spark": [
-    [
-     "2026-07-22",
-     16.64
-    ],
     [
      "2026-07-23",
      18.7
@@ -3398,6 +3394,10 @@
     [
      "2026-10-13",
      15.27
+    ],
+    [
+     "2026-10-14",
+     16.87
     ]
    ],
    "source": "Cboe via FRED",
@@ -3405,7 +3405,7 @@
    "tier": 1,
    "note": "© Cboe Exchange, Inc.",
    "status": "ok",
-   "last_good": "2026-10-13",
+   "last_good": "2026-10-14",
    "error": null
   },
   "KOSPI": {
@@ -3676,17 +3676,13 @@
    "group": "asia",
    "unit": "level",
    "decimals": 2,
-   "value": 67777.5234,
-   "prev": 69030.9219,
-   "chg": -1253.3985,
-   "chg_pct": -1.8157,
+   "value": 67744.2891,
+   "prev": 67777.5234,
+   "chg": -33.2343,
+   "chg_pct": -0.049,
    "chg_bp": null,
-   "as_of": "2026-10-13",
+   "as_of": "2026-10-14",
    "spark": [
-    [
-     "2026-07-14",
-     67743.5
-    ],
     [
      "2026-07-15",
      68751.5078
@@ -3922,6 +3918,10 @@
     [
      "2026-10-13",
      67777.5234
+    ],
+    [
+     "2026-10-14",
+     67744.2891
     ]
    ],
    "source": "Yahoo Finance",
@@ -3929,7 +3929,7 @@
    "tier": 2,
    "note": null,
    "status": "ok",
-   "last_good": "2026-10-13",
+   "last_good": "2026-10-14",
    "error": null
   },
   "HSI": {
@@ -3938,17 +3938,13 @@
    "group": "asia",
    "unit": "level",
    "decimals": 2,
-   "value": 24314.1699,
-   "prev": 24345.2207,
-   "chg": -31.0508,
-   "chg_pct": -0.1275,
+   "value": 24062.7207,
+   "prev": 24314.1699,
+   "chg": -251.4492,
+   "chg_pct": -1.0342,
    "chg_bp": null,
-   "as_of": "2026-10-14",
+   "as_of": "2026-10-15",
    "spark": [
-    [
-     "2026-07-22",
-     24892.6602
-    ],
     [
      "2026-07-23",
      25210.8105
@@ -4184,6 +4180,10 @@
     [
      "2026-10-14",
      24314.1699
+    ],
+    [
+     "2026-10-15",
+     24062.7207
     ]
    ],
    "source": "Yahoo Finance",
@@ -4191,7 +4191,7 @@
    "tier": 2,
    "note": null,
    "status": "ok",
-   "last_good": "2026-10-14",
+   "last_good": "2026-10-15",
    "error": null
   },
   "EURUSD": {
@@ -4200,17 +4200,13 @@
    "group": "fx",
    "unit": "fx",
    "decimals": 4,
-   "value": 1.1195,
-   "prev": 1.1188,
-   "chg": 0.0007,
-   "chg_pct": 0.0626,
+   "value": 1.1208,
+   "prev": 1.1195,
+   "chg": 0.0013,
+   "chg_pct": 0.1161,
    "chg_bp": null,
-   "as_of": "2026-10-14",
+   "as_of": "2026-10-15",
    "spark": [
-    [
-     "2026-07-23",
-     1.1392
-    ],
     [
      "2026-07-24",
      1.1377
@@ -4446,6 +4442,10 @@
     [
      "2026-10-14",
      1.1195
+    ],
+    [
+     "2026-10-15",
+     1.1208
     ]
    ],
    "source": "ECB",
@@ -4453,7 +4453,7 @@
    "tier": 1,
    "note": "14:10 CET fix, info only, not a NY close",
    "status": "ok",
-   "last_good": "2026-10-14",
+   "last_good": "2026-10-15",
    "error": null
   },
   "USDJPY": {
@@ -4462,17 +4462,13 @@
    "group": "fx",
    "unit": "fx",
    "decimals": 2,
-   "value": 158.4547,
-   "prev": 158.1248,
-   "chg": 0.3299,
-   "chg_pct": 0.2086,
+   "value": 157.9764,
+   "prev": 158.4547,
+   "chg": -0.4783,
+   "chg_pct": -0.3019,
    "chg_bp": null,
-   "as_of": "2026-10-14",
+   "as_of": "2026-10-15",
    "spark": [
-    [
-     "2026-07-23",
-     163.4744
-    ],
     [
      "2026-07-24",
      163.8217
@@ -4708,6 +4704,10 @@
     [
      "2026-10-14",
      158.4547
+    ],
+    [
+     "2026-10-15",
+     157.9764
     ]
    ],
    "source": "ECB",
@@ -4715,7 +4715,7 @@
    "tier": 1,
    "note": "14:10 CET fix, info only, not a NY close",
    "status": "ok",
-   "last_good": "2026-10-14",
+   "last_good": "2026-10-15",
    "error": null
   },
   "USDKRW": {
@@ -4724,17 +4724,13 @@
    "group": "fx",
    "unit": "fx",
    "decimals": 2,
-   "value": 1340.5,
-   "prev": 1335.8,
-   "chg": 4.7,
-   "chg_pct": 0.3518,
+   "value": 1338.6,
+   "prev": 1340.5,
+   "chg": -1.9,
+   "chg_pct": -0.1417,
    "chg_bp": null,
-   "as_of": "2026-10-14",
+   "as_of": "2026-10-15",
    "spark": [
-    [
-     "2026-07-15",
-     1492.2
-    ],
     [
      "2026-07-16",
      1488.8
@@ -4970,6 +4966,10 @@
     [
      "2026-10-14",
      1340.5
+    ],
+    [
+     "2026-10-15",
+     1338.6
     ]
    ],
    "source": "Bank of Korea ECOS",
@@ -4977,7 +4977,7 @@
    "tier": 1,
    "note": "BoK base rate, Seoul",
    "status": "ok",
-   "last_good": "2026-10-14",
+   "last_good": "2026-10-15",
    "error": null
   },
   "DXY": {
@@ -4986,17 +4986,13 @@
    "group": "fx",
    "unit": "fx",
    "decimals": 2,
-   "value": 102.732,
-   "prev": 102.18,
-   "chg": 0.552,
-   "chg_pct": 0.5402,
+   "value": 102.103,
+   "prev": 102.55,
+   "chg": -0.447,
+   "chg_pct": -0.4359,
    "chg_bp": null,
-   "as_of": "2026-10-14",
+   "as_of": "2026-10-15",
    "spark": [
-    [
-     "2026-07-22",
-     101.14
-    ],
     [
      "2026-07-23",
      101.43
@@ -5231,7 +5227,11 @@
     ],
     [
      "2026-10-14",
-     102.732
+     102.55
+    ],
+    [
+     "2026-10-15",
+     102.103
     ]
    ],
    "source": "Yahoo Finance",
@@ -5239,7 +5239,7 @@
    "tier": 2,
    "note": "ICE U.S. Dollar Index",
    "status": "ok",
-   "last_good": "2026-10-14",
+   "last_good": "2026-10-15",
    "error": null
   },
   "GOLD": {
@@ -5248,17 +5248,13 @@
    "group": "commodities",
    "unit": "level",
    "decimals": 2,
-   "value": 4103.7998,
-   "prev": 4177.2998,
-   "chg": -73.5,
-   "chg_pct": -1.7595,
+   "value": 4180.2002,
+   "prev": 4107.8999,
+   "chg": 72.3003,
+   "chg_pct": 1.76,
    "chg_bp": null,
-   "as_of": "2026-10-14",
+   "as_of": "2026-10-15",
    "spark": [
-    [
-     "2026-07-22",
-     4151.8999
-    ],
     [
      "2026-07-23",
      4050.2
@@ -5493,7 +5489,11 @@
     ],
     [
      "2026-10-14",
-     4103.7998
+     4107.8999
+    ],
+    [
+     "2026-10-15",
+     4180.2002
     ]
    ],
    "source": "Yahoo Finance",
@@ -5501,7 +5501,7 @@
    "tier": 2,
    "note": "COMEX front-month futures, not spot",
    "status": "ok",
-   "last_good": "2026-10-14",
+   "last_good": "2026-10-15",
    "error": null
   },
   "WTI": {
@@ -6030,7 +6030,7 @@
   }
  },
  "curve": {
-  "as_of": "2026-10-13",
+  "as_of": "2026-10-14",
   "tenors": [
    "1M",
    "2M",
@@ -6047,58 +6047,76 @@
    "30Y"
   ],
   "latest": [
-   4.1,
+   4.11,
    4.15,
-   4.26,
-   4.32,
-   4.34,
-   4.48,
-   4.79,
-   4.9,
+   4.28,
+   4.36,
+   4.37,
+   4.53,
+   4.82,
+   4.92,
    5.0,
-   5.11,
-   5.21,
-   5.6,
-   5.56
+   5.09,
+   5.19,
+   5.57,
+   5.52
   ],
   "week_ago": {
-   "date": "2026-10-06",
+   "date": "2026-10-07",
    "y": [
-    4.06,
-    4.13,
-    4.21,
-    4.26,
+    4.07,
+    4.14,
+    4.22,
     4.28,
-    4.46,
-    4.79,
-    4.88,
+    4.28,
+    4.42,
+    4.77,
+    4.87,
     5.03,
     5.15,
-    5.27,
-    5.68,
-    5.64
+    5.28,
+    5.71,
+    5.67
    ]
   },
   "month_ago": {
-   "date": "2026-09-11",
+   "date": "2026-09-14",
    "y": [
-    3.93,
-    4.05,
-    4.07,
-    4.15,
-    4.12,
-    4.35,
-    4.63,
-    4.69,
-    4.78,
-    4.87,
-    4.96,
-    5.38,
-    5.35
+    3.94,
+    4.06,
+    4.11,
+    4.18,
+    4.18,
+    4.37,
+    4.65,
+    4.73,
+    4.8,
+    4.88,
+    4.97,
+    5.37,
+    5.34
    ]
   }
  },
  "headlines": [
+  {
+   "title": "Bowman, Supervisory Modernization After Silicon Valley Bank",
+   "source": "Federal Reserve",
+   "date": "2026-10-15",
+   "url": "https://www.federalreserve.gov/newsevents/speech/bowman20261014a.htm"
+  },
+  {
+   "title": "Financial Market Trends in September 2026",
+   "source": "Bank of Korea",
+   "date": "2026-10-15",
+   "url": "https://www.bok.or.kr/eng/bbs/E0000634/view.do?nttId=11065633&menuNo=400423"
+  },
+  {
+   "title": "Monetary and Liquidity Aggregates (August 2026)",
+   "source": "Bank of Korea",
+   "date": "2026-10-15",
+   "url": "https://www.bok.or.kr/eng/bbs/E0000634/view.do?nttId=11065577&menuNo=400423"
+  },
   {
    "title": "CPI for all items increases 0.6% in September; gasoline rises",
    "source": "BLS",
@@ -6140,34 +6158,9 @@
    "source": "ECB",
    "date": "2026-10-08",
    "url": "https://www.ecb.europa.eu//press/inter/date/2026/html/ecb.in261008~3184e7d0d0.en.html"
-  },
-  {
-   "title": "Minutes of the Federal Open Market Committee, September 15-16, 2026",
-   "source": "Federal Reserve",
-   "date": "2026-10-07",
-   "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261007a.htm"
-  },
-  {
-   "title": "Results of the September 2026 survey on credit terms and conditions in euro-denominated securities financing and OTC derivatives markets (SESFOD)",
-   "source": "ECB",
-   "date": "2026-10-07",
-   "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261007~6447350434.en.html"
-  },
-  {
-   "title": "Balance of Payments during August 2026 (preliminary)",
-   "source": "Bank of Korea",
-   "date": "2026-10-07",
-   "url": "https://www.bok.or.kr/eng/bbs/E0000634/view.do?nttId=11065372&menuNo=400423"
   }
  ],
  "calendar": [
-  {
-   "date": "2026-10-14",
-   "time_et": "08:30",
-   "event": "CPI",
-   "source": "BLS",
-   "url": "https://www.bls.gov/schedule/news_release/"
-  },
   {
    "date": "2026-10-15",
    "time_et": "08:30",
@@ -6207,6 +6200,13 @@
    "date": "2026-11-10",
    "time_et": "08:30",
    "event": "CPI",
+   "source": "BLS",
+   "url": "https://www.bls.gov/schedule/news_release/"
+  },
+  {
+   "date": "2026-11-13",
+   "time_et": "08:30",
+   "event": "PPI",
    "source": "BLS",
    "url": "https://www.bls.gov/schedule/news_release/"
   }
