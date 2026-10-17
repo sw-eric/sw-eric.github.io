@@ -1,17 +1,17 @@
 {
-  "as_of": "2026-10-16T14:55:01Z",
-  "data_date": "2026-10-15",
+  "as_of": "2026-10-17T13:47:25Z",
+  "data_date": "2026-10-16",
   "inception_date": "2026-06-24",
   "base_currency": "USD",
   "account": {
     "starting_capital": 1500.0,
-    "net_liquidation": 1486.0,
-    "total_return_pct": -0.93,
+    "net_liquidation": 1468.26,
+    "total_return_pct": -2.12,
     "cash": 401.64,
-    "invested": 1084.36,
-    "cash_pct": 27.03,
-    "invested_pct": 72.97,
-    "unrealized_pnl": 28.46,
+    "invested": 1066.62,
+    "cash_pct": 27.35,
+    "invested_pct": 72.65,
+    "unrealized_pnl": 10.72,
     "realized_pnl": -43.71
   },
   "equity_curve": [
@@ -342,6 +342,10 @@
     {
       "date": "2026-10-15",
       "nav": 1486.0
+    },
+    {
+      "date": "2026-10-16",
+      "nav": 1468.26
     }
   ],
   "positions": [
@@ -351,12 +355,12 @@
       "opened": "2026-08-17",
       "qty": 1.3058,
       "avg_cost": 345.38,
-      "price": 349.22,
-      "market_value": 456.01,
-      "unrealized_pnl": 5.02,
-      "unrealized_pct": 1.11,
-      "weight_pct": 30.69,
-      "days_held": 60,
+      "price": 340.59,
+      "market_value": 444.74,
+      "unrealized_pnl": -6.25,
+      "unrealized_pct": -1.39,
+      "weight_pct": 30.29,
+      "days_held": 61,
       "daily_pnl": null
     },
     {
@@ -365,12 +369,12 @@
       "opened": "2026-08-14",
       "qty": 0.4796,
       "avg_cost": 419.07,
-      "price": 468.11,
-      "market_value": 224.51,
-      "unrealized_pnl": 23.52,
-      "unrealized_pct": 11.7,
-      "weight_pct": 15.11,
-      "days_held": 63,
+      "price": 454.63,
+      "market_value": 218.04,
+      "unrealized_pnl": 17.05,
+      "unrealized_pct": 8.49,
+      "weight_pct": 14.85,
+      "days_held": 64,
       "daily_pnl": null
     },
     {
@@ -383,15 +387,15 @@
       "market_value": 403.84,
       "unrealized_pnl": -0.08,
       "unrealized_pct": -0.02,
-      "weight_pct": 27.18,
-      "days_held": 18,
+      "weight_pct": 27.5,
+      "days_held": 19,
       "daily_pnl": null
     }
   ],
   "insights": [
-    "Down 0.93% since inception ($1,500 \u2192 $1,486.00 net liquidation) across 3 open positions \u2014 realized P&L is $-43.71, so part of the return is already locked in.",
-    "SYNOPSYS INC (SNPS) is doing the work: +11.7% unrealized on a $225 position, while GOOGL \u2014 the largest position at 31% of NAV \u2014 is at +1.1%. Position size isn't tracking conviction yet.",
-    "27.0% of the book ($401.64) is sitting in cash. For a thesis built on concentrated long equity, that's a meaningful drag if it stays idle much longer.",
-    "No trades since Sep 28 \u2014 18+ days of pure holding with no adds, trims, or exits across any position."
+    "Down 2.12% since inception ($1,500 \u2192 $1,468.26 net liquidation) across 3 open positions \u2014 realized P&L is $-43.71, so part of the return is already locked in.",
+    "SYNOPSYS INC (SNPS) is doing the work: +8.5% unrealized on a $218 position, while GOOGL \u2014 the largest position at 30% of NAV \u2014 is at -1.4%. Position size isn't tracking conviction yet.",
+    "27.4% of the book ($401.64) is sitting in cash. For a thesis built on concentrated long equity, that's a meaningful drag if it stays idle much longer.",
+    "No trades since Sep 28 \u2014 19+ days of pure holding with no adds, trims, or exits across any position."
   ]
 }
