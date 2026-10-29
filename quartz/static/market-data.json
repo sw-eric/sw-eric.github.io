@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "refreshed_utc": "2026-10-29T16:59:10Z",
+ "refreshed_utc": "2026-10-29T18:58:33Z",
  "tiles": {
   "UST3M": {
    "key": "UST3M",
@@ -2890,10 +2890,10 @@
    "group": "us_index",
    "unit": "level",
    "decimals": 2,
-   "value": 2860.0356,
+   "value": 2846.5,
    "prev": 2830.51,
-   "chg": 29.5256,
-   "chg_pct": 1.0431,
+   "chg": 15.99,
+   "chg_pct": 0.5649,
    "chg_bp": null,
    "as_of": "2026-10-29",
    "spark": [
@@ -3135,7 +3135,7 @@
     ],
     [
      "2026-10-29",
-     2860.0356
+     2846.5
     ]
    ],
    "source": "Yahoo Finance",
@@ -3414,17 +3414,13 @@
    "group": "asia",
    "unit": "level",
    "decimals": 2,
-   "value": 6012.44,
-   "prev": 5638.34,
-   "chg": 374.1,
-   "chg_pct": 6.6349,
+   "value": 5937.66,
+   "prev": 6012.44,
+   "chg": -74.78,
+   "chg_pct": -1.2438,
    "chg_bp": null,
-   "as_of": "2026-10-28",
+   "as_of": "2026-10-29",
    "spark": [
-    [
-     "2026-07-30",
-     5593.56
-    ],
     [
      "2026-07-31",
      6595.45
@@ -3660,6 +3656,10 @@
     [
      "2026-10-28",
      6012.44
+    ],
+    [
+     "2026-10-29",
+     5937.66
     ]
    ],
    "source": "Bank of Korea ECOS",
@@ -3667,7 +3667,7 @@
    "tier": 1,
    "note": null,
    "status": "ok",
-   "last_good": "2026-10-28",
+   "last_good": "2026-10-29",
    "error": null
   },
   "N225": {
@@ -4986,10 +4986,10 @@
    "group": "fx",
    "unit": "fx",
    "decimals": 2,
-   "value": 102.024,
+   "value": 102.027,
    "prev": 102.19,
-   "chg": -0.166,
-   "chg_pct": -0.1624,
+   "chg": -0.163,
+   "chg_pct": -0.1595,
    "chg_bp": null,
    "as_of": "2026-10-29",
    "spark": [
@@ -5231,7 +5231,7 @@
     ],
     [
      "2026-10-29",
-     102.024
+     102.027
     ]
    ],
    "source": "Yahoo Finance",
@@ -5248,10 +5248,10 @@
    "group": "commodities",
    "unit": "level",
    "decimals": 2,
-   "value": 4027.8999,
+   "value": 4020.0,
    "prev": 4051.6001,
-   "chg": -23.7002,
-   "chg_pct": -0.585,
+   "chg": -31.6001,
+   "chg_pct": -0.7799,
    "chg_bp": null,
    "as_of": "2026-10-29",
    "spark": [
@@ -5493,7 +5493,7 @@
     ],
     [
      "2026-10-29",
-     4027.8999
+     4020.0
     ]
    ],
    "source": "Yahoo Finance",
