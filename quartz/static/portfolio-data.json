@@ -1,17 +1,17 @@
 {
-  "as_of": "2026-10-30T16:43:26Z",
-  "data_date": "2026-10-29",
+  "as_of": "2026-10-31T15:45:57Z",
+  "data_date": "2026-10-30",
   "inception_date": "2026-06-24",
   "base_currency": "USD",
   "account": {
     "starting_capital": 1500.0,
-    "net_liquidation": 1412.63,
-    "total_return_pct": -5.82,
-    "cash": 403.8,
-    "invested": 1008.83,
-    "cash_pct": 28.58,
-    "invested_pct": 71.42,
-    "unrealized_pnl": -46.07,
+    "net_liquidation": 1394.07,
+    "total_return_pct": -7.06,
+    "cash": 266.89,
+    "invested": 1127.18,
+    "cash_pct": 19.14,
+    "invested_pct": 80.86,
+    "unrealized_pnl": -64.63,
     "realized_pnl": -43.71
   },
   "equity_curve": [
@@ -382,6 +382,10 @@
     {
       "date": "2026-10-29",
       "nav": 1412.63
+    },
+    {
+      "date": "2026-10-30",
+      "nav": 1394.07
     }
   ],
   "positions": [
@@ -391,12 +395,26 @@
       "opened": "2026-08-17",
       "qty": 1.3058,
       "avg_cost": 345.38,
-      "price": 283.82,
-      "market_value": 370.61,
-      "unrealized_pnl": -80.38,
-      "unrealized_pct": -17.82,
-      "weight_pct": 26.24,
-      "days_held": 74,
+      "price": 279.84,
+      "market_value": 365.42,
+      "unrealized_pnl": -85.57,
+      "unrealized_pct": -18.97,
+      "weight_pct": 26.21,
+      "days_held": 75,
+      "daily_pnl": null
+    },
+    {
+      "symbol": "SKHY",
+      "name": "SK HYNIX INC-ADR",
+      "opened": "2026-08-14",
+      "qty": 0.9,
+      "avg_cost": 152.12,
+      "price": 149.21,
+      "market_value": 134.29,
+      "unrealized_pnl": -2.62,
+      "unrealized_pct": -1.91,
+      "weight_pct": 9.63,
+      "days_held": 78,
       "daily_pnl": null
     },
     {
@@ -405,12 +423,12 @@
       "opened": "2026-08-14",
       "qty": 0.4796,
       "avg_cost": 419.07,
-      "price": 490.19,
-      "market_value": 235.1,
-      "unrealized_pnl": 34.11,
-      "unrealized_pct": 16.97,
-      "weight_pct": 16.64,
-      "days_held": 77,
+      "price": 467.61,
+      "market_value": 224.27,
+      "unrealized_pnl": 23.28,
+      "unrealized_pct": 11.58,
+      "weight_pct": 16.09,
+      "days_held": 78,
       "daily_pnl": null
     },
     {
@@ -419,19 +437,19 @@
       "opened": "2026-09-28",
       "qty": 8.0,
       "avg_cost": 50.37,
-      "price": 50.39,
-      "market_value": 403.12,
-      "unrealized_pnl": 0.2,
-      "unrealized_pct": 0.05,
-      "weight_pct": 28.54,
-      "days_held": 32,
+      "price": 50.4,
+      "market_value": 403.2,
+      "unrealized_pnl": 0.28,
+      "unrealized_pct": 0.07,
+      "weight_pct": 28.92,
+      "days_held": 33,
       "daily_pnl": null
     }
   ],
   "insights": [
-    "Down 5.82% since inception ($1,500 \u2192 $1,412.63 net liquidation) across 3 open positions \u2014 realized P&L is $-43.71, so part of the return is already locked in.",
-    "SYNOPSYS INC (SNPS) is doing the work: +17.0% unrealized on a $235 position, while USFR \u2014 the largest position at 29% of NAV \u2014 is at +0.1%. Position size isn't tracking conviction yet.",
-    "28.6% of the book ($403.80) is sitting in cash. For a thesis built on concentrated long equity, that's a meaningful drag if it stays idle much longer.",
-    "No trades since Sep 28 \u2014 32+ days of pure holding with no adds, trims, or exits across any position."
+    "Down 7.06% since inception ($1,500 \u2192 $1,394.07 net liquidation) across 4 open positions \u2014 realized P&L is $-43.71, so part of the return is already locked in.",
+    "SYNOPSYS INC (SNPS) is doing the work: +11.6% unrealized on a $224 position, while USFR \u2014 the largest position at 29% of NAV \u2014 is at +0.1%. Position size isn't tracking conviction yet.",
+    "19.1% of the book ($266.89) is sitting in cash. For a thesis built on concentrated long equity, that's a meaningful drag if it stays idle much longer.",
+    "No trades since Sep 28 \u2014 33+ days of pure holding with no adds, trims, or exits across any position."
   ]
 }
