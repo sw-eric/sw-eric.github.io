@@ -50,3 +50,15 @@ As set out in the [[investment-mandate]], the position is capped at 30% of the a
 The sector cap is the binding constraint, not the position cap. If the working SKHY and CEG buys also fill, AI infrastructure and energy reaches about 69% of the account, one point under the 70% limit. A second GEV leg would breach it. Leg two therefore only happens if the GOOGL stop fires first or another AI position is reduced.
 
 The thesis is invalidated if year-end gas backlog plus reservations comes in below 130 gigawatts or declines sequentially, if reservation cancellations are disclosed, if 2027 guidance implies Power margins below the second-half 2026 run rate, or if wind losses exceed \$500 million for the year.
+
+---
+
+## Update: November 2, after the close
+
+*Leg two is cancelled.*
+
+Every working order filled today: GEV at \$874.60, CEG at \$257.96, the second SKHY leg at \$149.99, and MUFG at \$21.51. With SK Hynix counted in the sector, AI infrastructure and energy is now 69.1% of the account, and the second GEV leg of about \$70 would take it to roughly 74%. That is an add above the cap, so it does not happen.
+
+I had also left one question loosely answered. The PM desk counted SKHY in the sector on October 29 and in the Asia bucket this morning. The [[investment-mandate]] already settles it: semiconductor supply chain names with direct exposure to AI capital expenditure belong to the AI infrastructure sleeve, whether they list in the US or in Asia. SKHY counts toward the 70% cap and not toward the Asia macro bucket. I will hold to that reading from here on.
+
+The position stays at 0.11 shares, about 7% of the account. Leg two is off the table rather than deferred. If the sector frees up later, any add to GEV gets its own memo. The stop, target, and invalidation conditions above are unchanged.
