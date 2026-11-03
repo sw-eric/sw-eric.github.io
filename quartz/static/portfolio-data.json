@@ -1,18 +1,18 @@
 {
-  "as_of": "2026-10-31T15:45:57Z",
-  "data_date": "2026-10-30",
+  "as_of": "2026-11-03T17:54:10Z",
+  "data_date": "2026-11-02",
   "inception_date": "2026-06-24",
   "base_currency": "USD",
   "account": {
     "starting_capital": 1500.0,
-    "net_liquidation": 1394.07,
-    "total_return_pct": -7.06,
-    "cash": 266.89,
-    "invested": 1127.18,
-    "cash_pct": 19.14,
-    "invested_pct": 80.86,
-    "unrealized_pnl": -64.63,
-    "realized_pnl": -43.71
+    "net_liquidation": 1384.99,
+    "total_return_pct": -7.67,
+    "cash": 43.63,
+    "invested": 1341.36,
+    "cash_pct": 3.15,
+    "invested_pct": 96.85,
+    "unrealized_pnl": -73.82,
+    "realized_pnl": -44.6
   },
   "equity_curve": [
     {
@@ -386,35 +386,81 @@
     {
       "date": "2026-10-30",
       "nav": 1394.07
+    },
+    {
+      "date": "2026-11-02",
+      "nav": 1384.99
     }
   ],
   "positions": [
+    {
+      "symbol": "CEG",
+      "name": "CONSTELLATION ENERGY",
+      "opened": "2026-11-02",
+      "qty": 0.27,
+      "avg_cost": 260.54,
+      "price": 257.25,
+      "market_value": 69.46,
+      "unrealized_pnl": -0.89,
+      "unrealized_pct": -1.26,
+      "weight_pct": 5.02,
+      "days_held": 1,
+      "daily_pnl": null
+    },
+    {
+      "symbol": "GEV",
+      "name": "GE VERNOVA INC",
+      "opened": "2026-11-02",
+      "qty": 0.11,
+      "avg_cost": 883.35,
+      "price": 862.25,
+      "market_value": 94.85,
+      "unrealized_pnl": -2.32,
+      "unrealized_pct": -2.39,
+      "weight_pct": 6.85,
+      "days_held": 1,
+      "daily_pnl": null
+    },
     {
       "symbol": "GOOGL",
       "name": "ALPHABET INC-CL A",
       "opened": "2026-08-17",
       "qty": 1.3058,
       "avg_cost": 345.38,
-      "price": 279.84,
-      "market_value": 365.42,
-      "unrealized_pnl": -85.57,
-      "unrealized_pct": -18.97,
-      "weight_pct": 26.21,
-      "days_held": 75,
+      "price": 278.99,
+      "market_value": 364.31,
+      "unrealized_pnl": -86.68,
+      "unrealized_pct": -19.22,
+      "weight_pct": 26.3,
+      "days_held": 78,
+      "daily_pnl": null
+    },
+    {
+      "symbol": "MUFG",
+      "name": "MITSUBISHI UFJ FINL-SPON ADR",
+      "opened": "2026-11-02",
+      "qty": 4.0,
+      "avg_cost": 21.73,
+      "price": 21.45,
+      "market_value": 85.8,
+      "unrealized_pnl": -1.1,
+      "unrealized_pct": -1.27,
+      "weight_pct": 6.19,
+      "days_held": 1,
       "daily_pnl": null
     },
     {
       "symbol": "SKHY",
       "name": "SK HYNIX INC-ADR",
       "opened": "2026-08-14",
-      "qty": 0.9,
-      "avg_cost": 152.12,
-      "price": 149.21,
-      "market_value": 134.29,
-      "unrealized_pnl": -2.62,
-      "unrealized_pct": -1.91,
-      "weight_pct": 9.63,
-      "days_held": 78,
+      "qty": 1.36,
+      "avg_cost": 151.91,
+      "price": 147.71,
+      "market_value": 200.89,
+      "unrealized_pnl": -5.7,
+      "unrealized_pct": -2.76,
+      "weight_pct": 14.5,
+      "days_held": 81,
       "daily_pnl": null
     },
     {
@@ -423,33 +469,31 @@
       "opened": "2026-08-14",
       "qty": 0.4796,
       "avg_cost": 419.07,
-      "price": 467.61,
-      "market_value": 224.27,
-      "unrealized_pnl": 23.28,
-      "unrealized_pct": 11.58,
-      "weight_pct": 16.09,
-      "days_held": 78,
+      "price": 466.08,
+      "market_value": 223.53,
+      "unrealized_pnl": 22.54,
+      "unrealized_pct": 11.22,
+      "weight_pct": 16.14,
+      "days_held": 81,
       "daily_pnl": null
     },
     {
       "symbol": "USFR",
       "name": "WISDOMTREE FLOATING RATE TRE",
       "opened": "2026-09-28",
-      "qty": 8.0,
+      "qty": 6.0,
       "avg_cost": 50.37,
-      "price": 50.4,
-      "market_value": 403.2,
-      "unrealized_pnl": 0.28,
-      "unrealized_pct": 0.07,
-      "weight_pct": 28.92,
-      "days_held": 33,
+      "price": 50.42,
+      "market_value": 302.52,
+      "unrealized_pnl": 0.33,
+      "unrealized_pct": 0.11,
+      "weight_pct": 21.84,
+      "days_held": 36,
       "daily_pnl": null
     }
   ],
   "insights": [
-    "Down 7.06% since inception ($1,500 \u2192 $1,394.07 net liquidation) across 4 open positions \u2014 realized P&L is $-43.71, so part of the return is already locked in.",
-    "SYNOPSYS INC (SNPS) is doing the work: +11.6% unrealized on a $224 position, while USFR \u2014 the largest position at 29% of NAV \u2014 is at +0.1%. Position size isn't tracking conviction yet.",
-    "19.1% of the book ($266.89) is sitting in cash. For a thesis built on concentrated long equity, that's a meaningful drag if it stays idle much longer.",
-    "No trades since Sep 28 \u2014 33+ days of pure holding with no adds, trims, or exits across any position."
+    "Down 7.67% since inception ($1,500 \u2192 $1,384.99 net liquidation) across 7 open positions \u2014 realized P&L is $-44.60, so part of the return is already locked in.",
+    "SYNOPSYS INC (SNPS) is doing the work: +11.2% unrealized on a $224 position, while GOOGL \u2014 the largest position at 26% of NAV \u2014 is at -19.2%. Position size isn't tracking conviction yet."
   ]
 }
