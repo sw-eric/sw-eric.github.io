@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "refreshed_utc": "2026-11-03T17:55:04Z",
+ "refreshed_utc": "2026-11-03T20:07:09Z",
  "tiles": {
   "UST3M": {
    "key": "UST3M",
@@ -2104,17 +2104,13 @@
    "group": "us_index",
    "unit": "level",
    "decimals": 2,
-   "value": 7580.07,
-   "prev": 7720.39,
-   "chg": -140.32,
-   "chg_pct": -1.8175,
+   "value": 7541.4,
+   "prev": 7580.07,
+   "chg": -38.67,
+   "chg_pct": -0.5102,
    "chg_bp": null,
-   "as_of": "2026-10-30",
+   "as_of": "2026-11-02",
    "spark": [
-    [
-     "2026-08-07",
-     7757.64
-    ],
     [
      "2026-08-10",
      7753.11
@@ -2350,6 +2346,10 @@
     [
      "2026-10-30",
      7580.07
+    ],
+    [
+     "2026-11-02",
+     7541.4
     ]
    ],
    "source": "S&P DJI via FRED",
@@ -2357,7 +2357,7 @@
    "tier": 1,
    "note": "© S&P Dow Jones Indices LLC",
    "status": "ok",
-   "last_good": "2026-10-30",
+   "last_good": "2026-11-02",
    "error": null
   },
   "CCMP": {
@@ -2890,10 +2890,10 @@
    "group": "us_index",
    "unit": "level",
    "decimals": 2,
-   "value": 2822.959,
+   "value": 2820.698,
    "prev": 2805.8799,
-   "chg": 17.0791,
-   "chg_pct": 0.6087,
+   "chg": 14.8181,
+   "chg_pct": 0.5281,
    "chg_bp": null,
    "as_of": "2026-11-03",
    "spark": [
@@ -3135,7 +3135,7 @@
     ],
     [
      "2026-11-03",
-     2822.959
+     2820.698
     ]
    ],
    "source": "Yahoo Finance",
@@ -4986,10 +4986,10 @@
    "group": "fx",
    "unit": "fx",
    "decimals": 2,
-   "value": 101.799,
+   "value": 101.86,
    "prev": 101.75,
-   "chg": 0.049,
-   "chg_pct": 0.0482,
+   "chg": 0.11,
+   "chg_pct": 0.1081,
    "chg_bp": null,
    "as_of": "2026-11-03",
    "spark": [
@@ -5231,7 +5231,7 @@
     ],
     [
      "2026-11-03",
-     101.799
+     101.86
     ]
    ],
    "source": "Yahoo Finance",
@@ -5248,10 +5248,10 @@
    "group": "commodities",
    "unit": "level",
    "decimals": 2,
-   "value": 3939.3,
+   "value": 3931.1001,
    "prev": 3969.6001,
-   "chg": -30.3001,
-   "chg_pct": -0.7633,
+   "chg": -38.5,
+   "chg_pct": -0.9699,
    "chg_bp": null,
    "as_of": "2026-11-03",
    "spark": [
@@ -5493,7 +5493,7 @@
     ],
     [
      "2026-11-03",
-     3939.3
+     3931.1001
     ]
    ],
    "source": "Yahoo Finance",
