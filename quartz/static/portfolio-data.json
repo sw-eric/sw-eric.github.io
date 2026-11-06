@@ -1,17 +1,17 @@
 {
-  "as_of": "2026-11-05T20:39:01Z",
-  "data_date": "2026-11-04",
+  "as_of": "2026-11-06T17:32:13Z",
+  "data_date": "2026-11-05",
   "inception_date": "2026-06-24",
   "base_currency": "USD",
   "account": {
     "starting_capital": 1500.0,
-    "net_liquidation": 1385.89,
-    "total_return_pct": -7.61,
+    "net_liquidation": 1328.87,
+    "total_return_pct": -11.41,
     "cash": 245.31,
-    "invested": 1140.58,
-    "cash_pct": 17.7,
-    "invested_pct": 82.3,
-    "unrealized_pnl": -73.14,
+    "invested": 1083.56,
+    "cash_pct": 18.46,
+    "invested_pct": 81.54,
+    "unrealized_pnl": -130.16,
     "realized_pnl": -45.39
   },
   "equity_curve": [
@@ -398,6 +398,10 @@
     {
       "date": "2026-11-04",
       "nav": 1385.89
+    },
+    {
+      "date": "2026-11-05",
+      "nav": 1328.87
     }
   ],
   "positions": [
@@ -407,12 +411,12 @@
       "opened": "2026-11-02",
       "qty": 0.27,
       "avg_cost": 260.54,
-      "price": 245.72,
-      "market_value": 66.34,
-      "unrealized_pnl": -4.01,
-      "unrealized_pct": -5.69,
-      "weight_pct": 4.79,
-      "days_held": 3,
+      "price": 239.65,
+      "market_value": 64.71,
+      "unrealized_pnl": -5.64,
+      "unrealized_pct": -8.01,
+      "weight_pct": 4.87,
+      "days_held": 4,
       "daily_pnl": null
     },
     {
@@ -421,12 +425,12 @@
       "opened": "2026-11-02",
       "qty": 0.11,
       "avg_cost": 883.35,
-      "price": 832.83,
-      "market_value": 91.61,
-      "unrealized_pnl": -5.56,
-      "unrealized_pct": -5.72,
-      "weight_pct": 6.61,
-      "days_held": 3,
+      "price": 770.51,
+      "market_value": 84.76,
+      "unrealized_pnl": -12.41,
+      "unrealized_pct": -12.77,
+      "weight_pct": 6.38,
+      "days_held": 4,
       "daily_pnl": null
     },
     {
@@ -435,12 +439,12 @@
       "opened": "2026-08-17",
       "qty": 1.3058,
       "avg_cost": 345.38,
-      "price": 288.93,
-      "market_value": 377.28,
-      "unrealized_pnl": -73.71,
-      "unrealized_pct": -16.34,
-      "weight_pct": 27.22,
-      "days_held": 80,
+      "price": 282.57,
+      "market_value": 368.98,
+      "unrealized_pnl": -82.01,
+      "unrealized_pct": -18.18,
+      "weight_pct": 27.77,
+      "days_held": 81,
       "daily_pnl": null
     },
     {
@@ -449,12 +453,12 @@
       "opened": "2026-11-02",
       "qty": 4.0,
       "avg_cost": 21.73,
-      "price": 21.97,
-      "market_value": 87.88,
-      "unrealized_pnl": 0.98,
-      "unrealized_pct": 1.12,
-      "weight_pct": 6.34,
-      "days_held": 3,
+      "price": 21.14,
+      "market_value": 84.56,
+      "unrealized_pnl": -2.34,
+      "unrealized_pct": -2.7,
+      "weight_pct": 6.36,
+      "days_held": 4,
       "daily_pnl": null
     },
     {
@@ -463,12 +467,12 @@
       "opened": "2026-08-14",
       "qty": 1.36,
       "avg_cost": 151.91,
-      "price": 143.07,
-      "market_value": 194.58,
-      "unrealized_pnl": -12.01,
-      "unrealized_pct": -5.82,
-      "weight_pct": 14.04,
-      "days_held": 83,
+      "price": 123.9,
+      "market_value": 168.5,
+      "unrealized_pnl": -38.09,
+      "unrealized_pct": -18.44,
+      "weight_pct": 12.68,
+      "days_held": 84,
       "daily_pnl": null
     },
     {
@@ -477,12 +481,12 @@
       "opened": "2026-08-14",
       "qty": 0.4796,
       "avg_cost": 419.07,
-      "price": 462.95,
-      "market_value": 222.03,
-      "unrealized_pnl": 21.04,
-      "unrealized_pct": 10.47,
-      "weight_pct": 16.02,
-      "days_held": 83,
+      "price": 440.31,
+      "market_value": 211.17,
+      "unrealized_pnl": 10.18,
+      "unrealized_pct": 5.07,
+      "weight_pct": 15.89,
+      "days_held": 84,
       "daily_pnl": null
     },
     {
@@ -491,18 +495,18 @@
       "opened": "2026-09-28",
       "qty": 2.0,
       "avg_cost": 50.37,
-      "price": 50.43,
-      "market_value": 100.86,
-      "unrealized_pnl": 0.13,
-      "unrealized_pct": 0.13,
-      "weight_pct": 7.28,
-      "days_held": 38,
+      "price": 50.44,
+      "market_value": 100.88,
+      "unrealized_pnl": 0.15,
+      "unrealized_pct": 0.15,
+      "weight_pct": 7.59,
+      "days_held": 39,
       "daily_pnl": null
     }
   ],
   "insights": [
-    "Down 7.61% since inception ($1,500 \u2192 $1,385.89 net liquidation) across 7 open positions \u2014 realized P&L is $-45.39, so part of the return is already locked in.",
-    "SYNOPSYS INC (SNPS) is doing the work: +10.5% unrealized on a $222 position, while GOOGL \u2014 the largest position at 27% of NAV \u2014 is at -16.3%. Position size isn't tracking conviction yet.",
-    "17.7% of the book ($245.31) is sitting in cash. For a thesis built on concentrated long equity, that's a meaningful drag if it stays idle much longer."
+    "Down 11.41% since inception ($1,500 \u2192 $1,328.87 net liquidation) across 7 open positions \u2014 realized P&L is $-45.39, so part of the return is already locked in.",
+    "SYNOPSYS INC (SNPS) is doing the work: +5.1% unrealized on a $211 position, while GOOGL \u2014 the largest position at 28% of NAV \u2014 is at -18.2%. Position size isn't tracking conviction yet.",
+    "18.5% of the book ($245.31) is sitting in cash. For a thesis built on concentrated long equity, that's a meaningful drag if it stays idle much longer."
   ]
 }
