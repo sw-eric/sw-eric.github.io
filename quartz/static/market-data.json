@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "refreshed_utc": "2026-11-06T17:33:11Z",
+ "refreshed_utc": "2026-11-06T19:57:58Z",
  "tiles": {
   "UST3M": {
    "key": "UST3M",
@@ -2890,10 +2890,10 @@
    "group": "us_index",
    "unit": "level",
    "decimals": 2,
-   "value": 2754.304,
+   "value": 2755.4084,
    "prev": 2729.8899,
-   "chg": 24.4141,
-   "chg_pct": 0.8943,
+   "chg": 25.5185,
+   "chg_pct": 0.9348,
    "chg_bp": null,
    "as_of": "2026-11-06",
    "spark": [
@@ -3135,7 +3135,7 @@
     ],
     [
      "2026-11-06",
-     2754.304
+     2755.4084
     ]
    ],
    "source": "Yahoo Finance",
@@ -4986,10 +4986,10 @@
    "group": "fx",
    "unit": "fx",
    "decimals": 2,
-   "value": 102.191,
+   "value": 102.287,
    "prev": 101.55,
-   "chg": 0.641,
-   "chg_pct": 0.6312,
+   "chg": 0.737,
+   "chg_pct": 0.7258,
    "chg_bp": null,
    "as_of": "2026-11-06",
    "spark": [
@@ -5231,7 +5231,7 @@
     ],
     [
      "2026-11-06",
-     102.191
+     102.287
     ]
    ],
    "source": "Yahoo Finance",
@@ -5248,10 +5248,10 @@
    "group": "commodities",
    "unit": "level",
    "decimals": 2,
-   "value": 4068.3,
+   "value": 4074.1001,
    "prev": 4113.5,
-   "chg": -45.2,
-   "chg_pct": -1.0988,
+   "chg": -39.3999,
+   "chg_pct": -0.9578,
    "chg_bp": null,
    "as_of": "2026-11-06",
    "spark": [
@@ -5493,7 +5493,7 @@
     ],
     [
      "2026-11-06",
-     4068.3
+     4074.1001
     ]
    ],
    "source": "Yahoo Finance",
