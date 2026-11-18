@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "refreshed_utc": "2026-11-18T18:54:03Z",
+ "refreshed_utc": "2026-11-18T21:27:13Z",
  "tiles": {
   "UST3M": {
    "key": "UST3M",
@@ -8,17 +8,13 @@
    "group": "rates",
    "unit": "pct",
    "decimals": 2,
-   "value": 4.33,
-   "prev": 4.34,
-   "chg": -0.01,
+   "value": 4.34,
+   "prev": 4.33,
+   "chg": 0.01,
    "chg_pct": null,
-   "chg_bp": -1.0,
-   "as_of": "2026-11-17",
+   "chg_bp": 1.0,
+   "as_of": "2026-11-18",
    "spark": [
-    [
-     "2026-08-21",
-     3.88
-    ],
     [
      "2026-08-24",
      3.87
@@ -254,6 +250,10 @@
     [
      "2026-11-17",
      4.33
+    ],
+    [
+     "2026-11-18",
+     4.34
     ]
    ],
    "source": "U.S. Treasury",
@@ -261,7 +261,7 @@
    "tier": 1,
    "note": "Par yield, 3 month",
    "status": "ok",
-   "last_good": "2026-11-17",
+   "last_good": "2026-11-18",
    "error": null
   },
   "UST2Y": {
@@ -271,16 +271,12 @@
    "unit": "pct",
    "decimals": 2,
    "value": 4.8,
-   "prev": 4.83,
-   "chg": -0.03,
+   "prev": 4.8,
+   "chg": 0.0,
    "chg_pct": null,
-   "chg_bp": -3.0,
-   "as_of": "2026-11-17",
+   "chg_bp": 0.0,
+   "as_of": "2026-11-18",
    "spark": [
-    [
-     "2026-08-21",
-     4.24
-    ],
     [
      "2026-08-24",
      4.24
@@ -516,6 +512,10 @@
     [
      "2026-11-17",
      4.8
+    ],
+    [
+     "2026-11-18",
+     4.8
     ]
    ],
    "source": "U.S. Treasury",
@@ -523,7 +523,7 @@
    "tier": 1,
    "note": "Par yield, 2 year",
    "status": "ok",
-   "last_good": "2026-11-17",
+   "last_good": "2026-11-18",
    "error": null
   },
   "UST3Y": {
@@ -533,16 +533,12 @@
    "unit": "pct",
    "decimals": 2,
    "value": 4.84,
-   "prev": 4.87,
-   "chg": -0.03,
+   "prev": 4.84,
+   "chg": 0.0,
    "chg_pct": null,
-   "chg_bp": -3.0,
-   "as_of": "2026-11-17",
+   "chg_bp": 0.0,
+   "as_of": "2026-11-18",
    "spark": [
-    [
-     "2026-08-21",
-     4.31
-    ],
     [
      "2026-08-24",
      4.31
@@ -778,6 +774,10 @@
     [
      "2026-11-17",
      4.84
+    ],
+    [
+     "2026-11-18",
+     4.84
     ]
    ],
    "source": "U.S. Treasury",
@@ -785,7 +785,7 @@
    "tier": 1,
    "note": "Par yield, 3 year",
    "status": "ok",
-   "last_good": "2026-11-17",
+   "last_good": "2026-11-18",
    "error": null
   },
   "UST5Y": {
@@ -794,17 +794,13 @@
    "group": "rates",
    "unit": "pct",
    "decimals": 2,
-   "value": 4.9,
-   "prev": 4.93,
-   "chg": -0.03,
+   "value": 4.89,
+   "prev": 4.9,
+   "chg": -0.01,
    "chg_pct": null,
-   "chg_bp": -3.0,
-   "as_of": "2026-11-17",
+   "chg_bp": -1.0,
+   "as_of": "2026-11-18",
    "spark": [
-    [
-     "2026-08-21",
-     4.43
-    ],
     [
      "2026-08-24",
      4.41
@@ -1040,6 +1036,10 @@
     [
      "2026-11-17",
      4.9
+    ],
+    [
+     "2026-11-18",
+     4.89
     ]
    ],
    "source": "U.S. Treasury",
@@ -1047,7 +1047,7 @@
    "tier": 1,
    "note": "Par yield, 5 year",
    "status": "ok",
-   "last_good": "2026-11-17",
+   "last_good": "2026-11-18",
    "error": null
   },
   "UST10Y": {
@@ -1056,17 +1056,13 @@
    "group": "rates",
    "unit": "pct",
    "decimals": 2,
-   "value": 5.1,
-   "prev": 5.12,
-   "chg": -0.02,
+   "value": 5.07,
+   "prev": 5.1,
+   "chg": -0.03,
    "chg_pct": null,
-   "chg_bp": -2.0,
-   "as_of": "2026-11-17",
+   "chg_bp": -3.0,
+   "as_of": "2026-11-18",
    "spark": [
-    [
-     "2026-08-21",
-     4.74
-    ],
     [
      "2026-08-24",
      4.7
@@ -1302,6 +1298,10 @@
     [
      "2026-11-17",
      5.1
+    ],
+    [
+     "2026-11-18",
+     5.07
     ]
    ],
    "source": "U.S. Treasury",
@@ -1309,7 +1309,7 @@
    "tier": 1,
    "note": "Par yield, 10 year",
    "status": "ok",
-   "last_good": "2026-11-17",
+   "last_good": "2026-11-18",
    "error": null
   },
   "UST30Y": {
@@ -1318,17 +1318,13 @@
    "group": "rates",
    "unit": "pct",
    "decimals": 2,
-   "value": 5.46,
+   "value": 5.41,
    "prev": 5.46,
-   "chg": 0.0,
+   "chg": -0.05,
    "chg_pct": null,
-   "chg_bp": 0.0,
-   "as_of": "2026-11-17",
+   "chg_bp": -5.0,
+   "as_of": "2026-11-18",
    "spark": [
-    [
-     "2026-08-21",
-     5.27
-    ],
     [
      "2026-08-24",
      5.23
@@ -1564,6 +1560,10 @@
     [
      "2026-11-17",
      5.46
+    ],
+    [
+     "2026-11-18",
+     5.41
     ]
    ],
    "source": "U.S. Treasury",
@@ -1571,7 +1571,7 @@
    "tier": 1,
    "note": "Par yield, 30 year",
    "status": "ok",
-   "last_good": "2026-11-17",
+   "last_good": "2026-11-18",
    "error": null
   },
   "S2S10": {
@@ -1580,17 +1580,13 @@
    "group": "rates",
    "unit": "bp",
    "decimals": 0,
-   "value": 30.0,
-   "prev": 29.0,
-   "chg": 1.0,
+   "value": 27.0,
+   "prev": 30.0,
+   "chg": -3.0,
    "chg_pct": null,
-   "chg_bp": 1.0,
-   "as_of": "2026-11-17",
+   "chg_bp": -3.0,
+   "as_of": "2026-11-18",
    "spark": [
-    [
-     "2026-08-21",
-     50.0
-    ],
     [
      "2026-08-24",
      46.0
@@ -1826,6 +1822,10 @@
     [
      "2026-11-17",
      30.0
+    ],
+    [
+     "2026-11-18",
+     27.0
     ]
    ],
    "source": "U.S. Treasury",
@@ -1833,7 +1833,7 @@
    "tier": 1,
    "note": "10Y minus 2Y par yield",
    "status": "ok",
-   "last_good": "2026-11-17",
+   "last_good": "2026-11-18",
    "error": null
   },
   "S3M10Y": {
@@ -1842,17 +1842,13 @@
    "group": "rates",
    "unit": "bp",
    "decimals": 0,
-   "value": 77.0,
-   "prev": 78.0,
-   "chg": -1.0,
+   "value": 73.0,
+   "prev": 77.0,
+   "chg": -4.0,
    "chg_pct": null,
-   "chg_bp": -1.0,
-   "as_of": "2026-11-17",
+   "chg_bp": -4.0,
+   "as_of": "2026-11-18",
    "spark": [
-    [
-     "2026-08-21",
-     86.0
-    ],
     [
      "2026-08-24",
      83.0
@@ -2088,6 +2084,10 @@
     [
      "2026-11-17",
      77.0
+    ],
+    [
+     "2026-11-18",
+     73.0
     ]
    ],
    "source": "U.S. Treasury",
@@ -2095,7 +2095,7 @@
    "tier": 1,
    "note": "10Y minus 3M par yield",
    "status": "ok",
-   "last_good": "2026-11-17",
+   "last_good": "2026-11-18",
    "error": null
   },
   "SPX": {
@@ -2890,10 +2890,10 @@
    "group": "us_index",
    "unit": "level",
    "decimals": 2,
-   "value": 2732.1311,
+   "value": 2714.3057,
    "prev": 2701.8701,
-   "chg": 30.261,
-   "chg_pct": 1.12,
+   "chg": 12.4356,
+   "chg_pct": 0.4603,
    "chg_bp": null,
    "as_of": "2026-11-18",
    "spark": [
@@ -3135,7 +3135,7 @@
     ],
     [
      "2026-11-18",
-     2732.1311
+     2714.3057
     ]
    ],
    "source": "Yahoo Finance",
@@ -4986,10 +4986,10 @@
    "group": "fx",
    "unit": "fx",
    "decimals": 2,
-   "value": 103.756,
+   "value": 103.795,
    "prev": 103.49,
-   "chg": 0.266,
-   "chg_pct": 0.257,
+   "chg": 0.305,
+   "chg_pct": 0.2947,
    "chg_bp": null,
    "as_of": "2026-11-18",
    "spark": [
@@ -5231,7 +5231,7 @@
     ],
     [
      "2026-11-18",
-     103.756
+     103.795
     ]
    ],
    "source": "Yahoo Finance",
@@ -5248,10 +5248,10 @@
    "group": "commodities",
    "unit": "level",
    "decimals": 2,
-   "value": 3742.8999,
+   "value": 3728.5,
    "prev": 3864.2,
-   "chg": -121.3001,
-   "chg_pct": -3.1391,
+   "chg": -135.7,
+   "chg_pct": -3.5117,
    "chg_bp": null,
    "as_of": "2026-11-18",
    "spark": [
@@ -5493,7 +5493,7 @@
     ],
     [
      "2026-11-18",
-     3742.8999
+     3728.5
     ]
    ],
    "source": "Yahoo Finance",
@@ -6030,7 +6030,7 @@
   }
  },
  "curve": {
-  "as_of": "2026-11-17",
+  "as_of": "2026-11-18",
   "tenors": [
    "1M",
    "2M",
@@ -6047,19 +6047,19 @@
    "30Y"
   ],
   "latest": [
-   4.09,
-   4.26,
-   4.33,
-   4.32,
-   4.41,
-   4.6,
+   4.1,
+   4.27,
+   4.34,
+   4.35,
+   4.43,
+   4.62,
    4.8,
    4.84,
-   4.9,
-   4.99,
-   5.1,
-   5.5,
-   5.46
+   4.89,
+   4.96,
+   5.07,
+   5.44,
+   5.41
   ],
   "week_ago": {
    "date": "2026-11-10",
@@ -6099,6 +6099,12 @@
   }
  },
  "headlines": [
+  {
+   "title": "Minutes of the Federal Open Market Committee, October 27-28, 2026",
+   "source": "Federal Reserve",
+   "date": "2026-11-18",
+   "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261118a.htm"
+  },
   {
    "title": "Barr, Investing in America’s Underserved Communities",
    "source": "Federal Reserve",
@@ -6152,12 +6158,6 @@
    "source": "Federal Reserve",
    "date": "2026-11-16",
    "url": "https://www.federalreserve.gov/newsevents/speech/barr20261116a.htm"
-  },
-  {
-   "title": "Frank Elderson: Smart supervision for small banks",
-   "source": "ECB",
-   "date": "2026-11-16",
-   "url": "https://www.ecb.europa.eu//press/inter/date/2026/html/ecb.in261116_1~11dd7f62af.en.html"
   }
  ],
  "calendar": [
