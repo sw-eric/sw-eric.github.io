@@ -1,17 +1,17 @@
 {
-  "as_of": "2026-11-17T19:13:18Z",
-  "data_date": "2026-11-16",
+  "as_of": "2026-11-18T18:52:59Z",
+  "data_date": "2026-11-17",
   "inception_date": "2026-06-24",
   "base_currency": "USD",
   "account": {
     "starting_capital": 1500.0,
-    "net_liquidation": 1352.1,
-    "total_return_pct": -9.86,
+    "net_liquidation": 1346.39,
+    "total_return_pct": -10.24,
     "cash": 954.64,
-    "invested": 397.46,
-    "cash_pct": 70.6,
-    "invested_pct": 29.4,
-    "unrealized_pnl": 8.84,
+    "invested": 391.75,
+    "cash_pct": 70.9,
+    "invested_pct": 29.1,
+    "unrealized_pnl": 3.13,
     "realized_pnl": -164.71
   },
   "equity_curve": [
@@ -430,6 +430,10 @@
     {
       "date": "2026-11-16",
       "nav": 1352.1
+    },
+    {
+      "date": "2026-11-17",
+      "nav": 1346.39
     }
   ],
   "positions": [
@@ -439,12 +443,12 @@
       "opened": "2026-11-02",
       "qty": 4.0,
       "avg_cost": 21.73,
-      "price": 21.2,
-      "market_value": 84.8,
-      "unrealized_pnl": -2.1,
-      "unrealized_pct": -2.42,
-      "weight_pct": 6.27,
-      "days_held": 15,
+      "price": 20.47,
+      "market_value": 81.88,
+      "unrealized_pnl": -5.02,
+      "unrealized_pct": -5.78,
+      "weight_pct": 6.08,
+      "days_held": 16,
       "daily_pnl": null
     },
     {
@@ -453,12 +457,12 @@
       "opened": "2026-08-14",
       "qty": 0.4796,
       "avg_cost": 419.07,
-      "price": 441.33,
-      "market_value": 211.66,
-      "unrealized_pnl": 10.67,
-      "unrealized_pct": 5.31,
-      "weight_pct": 15.65,
-      "days_held": 95,
+      "price": 435.51,
+      "market_value": 208.87,
+      "unrealized_pnl": 7.88,
+      "unrealized_pct": 3.92,
+      "weight_pct": 15.51,
+      "days_held": 96,
       "daily_pnl": null
     },
     {
@@ -471,14 +475,14 @@
       "market_value": 101.0,
       "unrealized_pnl": 0.27,
       "unrealized_pct": 0.27,
-      "weight_pct": 7.47,
-      "days_held": 50,
+      "weight_pct": 7.5,
+      "days_held": 51,
       "daily_pnl": null
     }
   ],
   "insights": [
-    "Down 9.86% since inception ($1,500 \u2192 $1,352.10 net liquidation) across 3 open positions \u2014 realized P&L is $-164.71, so part of the return is already locked in.",
-    "70.6% of the book ($954.64) is sitting in cash. For a thesis built on concentrated long equity, that's a meaningful drag if it stays idle much longer.",
-    "No trades since Nov 2 \u2014 15+ days of pure holding with no adds, trims, or exits across any position."
+    "Down 10.24% since inception ($1,500 \u2192 $1,346.39 net liquidation) across 3 open positions \u2014 realized P&L is $-164.71, so part of the return is already locked in.",
+    "70.9% of the book ($954.64) is sitting in cash. For a thesis built on concentrated long equity, that's a meaningful drag if it stays idle much longer.",
+    "No trades since Nov 2 \u2014 16+ days of pure holding with no adds, trims, or exits across any position."
   ]
 }
