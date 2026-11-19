@@ -1,18 +1,18 @@
 {
-  "as_of": "2026-11-18T18:52:59Z",
-  "data_date": "2026-11-17",
+  "as_of": "2026-11-19T19:02:12Z",
+  "data_date": "2026-11-18",
   "inception_date": "2026-06-24",
   "base_currency": "USD",
   "account": {
     "starting_capital": 1500.0,
-    "net_liquidation": 1346.39,
-    "total_return_pct": -10.24,
-    "cash": 954.64,
-    "invested": 391.75,
-    "cash_pct": 70.9,
-    "invested_pct": 29.1,
-    "unrealized_pnl": 3.13,
-    "realized_pnl": -164.71
+    "net_liquidation": 1339.84,
+    "total_return_pct": -10.68,
+    "cash": 838.46,
+    "invested": 501.38,
+    "cash_pct": 62.58,
+    "invested_pct": 37.42,
+    "unrealized_pnl": 3.53,
+    "realized_pnl": -172.48
   },
   "equity_curve": [
     {
@@ -434,35 +434,39 @@
     {
       "date": "2026-11-17",
       "nav": 1346.39
+    },
+    {
+      "date": "2026-11-18",
+      "nav": 1339.84
     }
   ],
   "positions": [
-    {
-      "symbol": "MUFG",
-      "name": "MITSUBISHI UFJ FINL-SPON ADR",
-      "opened": "2026-11-02",
-      "qty": 4.0,
-      "avg_cost": 21.73,
-      "price": 20.47,
-      "market_value": 81.88,
-      "unrealized_pnl": -5.02,
-      "unrealized_pct": -5.78,
-      "weight_pct": 6.08,
-      "days_held": 16,
-      "daily_pnl": null
-    },
     {
       "symbol": "SNPS",
       "name": "SYNOPSYS INC",
       "opened": "2026-08-14",
       "qty": 0.4796,
       "avg_cost": 419.07,
-      "price": 435.51,
-      "market_value": 208.87,
-      "unrealized_pnl": 7.88,
-      "unrealized_pct": 3.92,
-      "weight_pct": 15.51,
-      "days_held": 96,
+      "price": 434.01,
+      "market_value": 208.15,
+      "unrealized_pnl": 7.16,
+      "unrealized_pct": 3.56,
+      "weight_pct": 15.54,
+      "days_held": 97,
+      "daily_pnl": null
+    },
+    {
+      "symbol": "TSM",
+      "name": "TAIWAN SEMICONDUCTOR-SP ADR",
+      "opened": "2026-11-18",
+      "qty": 0.53,
+      "avg_cost": 370.05,
+      "price": 362.62,
+      "market_value": 192.19,
+      "unrealized_pnl": -3.94,
+      "unrealized_pct": -2.01,
+      "weight_pct": 14.34,
+      "days_held": 1,
       "daily_pnl": null
     },
     {
@@ -471,18 +475,17 @@
       "opened": "2026-09-28",
       "qty": 2.0,
       "avg_cost": 50.37,
-      "price": 50.5,
-      "market_value": 101.0,
-      "unrealized_pnl": 0.27,
-      "unrealized_pct": 0.27,
-      "weight_pct": 7.5,
-      "days_held": 51,
+      "price": 50.52,
+      "market_value": 101.04,
+      "unrealized_pnl": 0.31,
+      "unrealized_pct": 0.31,
+      "weight_pct": 7.54,
+      "days_held": 52,
       "daily_pnl": null
     }
   ],
   "insights": [
-    "Down 10.24% since inception ($1,500 \u2192 $1,346.39 net liquidation) across 3 open positions \u2014 realized P&L is $-164.71, so part of the return is already locked in.",
-    "70.9% of the book ($954.64) is sitting in cash. For a thesis built on concentrated long equity, that's a meaningful drag if it stays idle much longer.",
-    "No trades since Nov 2 \u2014 16+ days of pure holding with no adds, trims, or exits across any position."
+    "Down 10.68% since inception ($1,500 \u2192 $1,339.84 net liquidation) across 3 open positions \u2014 realized P&L is $-172.48, so part of the return is already locked in.",
+    "62.6% of the book ($838.46) is sitting in cash. For a thesis built on concentrated long equity, that's a meaningful drag if it stays idle much longer."
   ]
 }
