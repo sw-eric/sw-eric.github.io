@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "refreshed_utc": "2026-11-24T23:01:41Z",
+ "refreshed_utc": "2026-11-25T19:59:31Z",
  "tiles": {
   "UST3M": {
    "key": "UST3M",
@@ -2104,17 +2104,13 @@
    "group": "us_index",
    "unit": "level",
    "decimals": 2,
-   "value": 7237.17,
-   "prev": 6910.39,
-   "chg": 326.78,
-   "chg_pct": 4.7288,
+   "value": 7201.09,
+   "prev": 7237.17,
+   "chg": -36.08,
+   "chg_pct": -0.4985,
    "chg_bp": null,
-   "as_of": "2026-11-23",
+   "as_of": "2026-11-24",
    "spark": [
-    [
-     "2026-08-31",
-     7686.14
-    ],
     [
      "2026-09-01",
      7631.47
@@ -2350,6 +2346,10 @@
     [
      "2026-11-23",
      7237.17
+    ],
+    [
+     "2026-11-24",
+     7201.09
     ]
    ],
    "source": "S&P DJI via FRED",
@@ -2357,7 +2357,7 @@
    "tier": 1,
    "note": "© S&P Dow Jones Indices LLC",
    "status": "ok",
-   "last_good": "2026-11-23",
+   "last_good": "2026-11-24",
    "error": null
   },
   "CCMP": {
@@ -2366,25 +2366,13 @@
    "group": "us_index",
    "unit": "level",
    "decimals": 2,
-   "value": 23879.2,
-   "prev": 24429.88,
-   "chg": -550.68,
-   "chg_pct": -2.2541,
+   "value": 23733.54,
+   "prev": 24089.56,
+   "chg": -356.02,
+   "chg_pct": -1.4779,
    "chg_bp": null,
-   "as_of": "2026-11-19",
+   "as_of": "2026-11-24",
    "spark": [
-    [
-     "2026-08-27",
-     26541.35
-    ],
-    [
-     "2026-08-28",
-     26402.42
-    ],
-    [
-     "2026-08-31",
-     26370.89
-    ],
     [
      "2026-09-01",
      26099.77
@@ -2612,6 +2600,18 @@
     [
      "2026-11-19",
      23879.2
+    ],
+    [
+     "2026-11-20",
+     22617.73
+    ],
+    [
+     "2026-11-23",
+     24089.56
+    ],
+    [
+     "2026-11-24",
+     23733.54
     ]
    ],
    "source": "Nasdaq via FRED",
@@ -2619,7 +2619,7 @@
    "tier": 1,
    "note": "© Nasdaq, Inc.",
    "status": "ok",
-   "last_good": "2026-11-19",
+   "last_good": "2026-11-24",
    "error": null
   },
   "INDU": {
@@ -2628,17 +2628,13 @@
    "group": "us_index",
    "unit": "level",
    "decimals": 2,
-   "value": 49595.31,
-   "prev": 48147.33,
-   "chg": 1447.98,
-   "chg_pct": 3.0074,
+   "value": 50018.7,
+   "prev": 49595.31,
+   "chg": 423.39,
+   "chg_pct": 0.8537,
    "chg_bp": null,
-   "as_of": "2026-11-23",
+   "as_of": "2026-11-24",
    "spark": [
-    [
-     "2026-08-31",
-     53185.9
-    ],
     [
      "2026-09-01",
      52766.88
@@ -2874,6 +2870,10 @@
     [
      "2026-11-23",
      49595.31
+    ],
+    [
+     "2026-11-24",
+     50018.7
     ]
    ],
    "source": "S&P DJI via FRED",
@@ -2881,7 +2881,7 @@
    "tier": 1,
    "note": "© S&P Dow Jones Indices LLC",
    "status": "ok",
-   "last_good": "2026-11-23",
+   "last_good": "2026-11-24",
    "error": null
   },
   "RTY": {
@@ -2890,17 +2890,13 @@
    "group": "us_index",
    "unit": "level",
    "decimals": 2,
-   "value": 2684.9419,
-   "prev": 2669.6599,
-   "chg": 15.282,
-   "chg_pct": 0.5724,
+   "value": 2704.1545,
+   "prev": 2684.9399,
+   "chg": 19.2146,
+   "chg_pct": 0.7156,
    "chg_bp": null,
-   "as_of": "2026-11-24",
+   "as_of": "2026-11-25",
    "spark": [
-    [
-     "2026-09-01",
-     2920.1299
-    ],
     [
      "2026-09-02",
      2953.1699
@@ -3135,7 +3131,11 @@
     ],
     [
      "2026-11-24",
-     2684.9419
+     2684.9399
+    ],
+    [
+     "2026-11-25",
+     2704.1545
     ]
    ],
    "source": "Yahoo Finance",
@@ -3143,7 +3143,7 @@
    "tier": 2,
    "note": "FTSE Russell index",
    "status": "ok",
-   "last_good": "2026-11-24",
+   "last_good": "2026-11-25",
    "error": null
   },
   "VIX": {
@@ -3152,17 +3152,13 @@
    "group": "us_index",
    "unit": "level",
    "decimals": 2,
-   "value": 26.62,
-   "prev": 35.89,
-   "chg": -9.27,
-   "chg_pct": -25.8289,
+   "value": 26.36,
+   "prev": 26.62,
+   "chg": -0.26,
+   "chg_pct": -0.9767,
    "chg_bp": null,
-   "as_of": "2026-11-23",
+   "as_of": "2026-11-24",
    "spark": [
-    [
-     "2026-09-01",
-     16.34
-    ],
     [
      "2026-09-02",
      15.2
@@ -3398,6 +3394,10 @@
     [
      "2026-11-23",
      26.62
+    ],
+    [
+     "2026-11-24",
+     26.36
     ]
    ],
    "source": "Cboe via FRED",
@@ -3405,7 +3405,7 @@
    "tier": 1,
    "note": "© Cboe Exchange, Inc.",
    "status": "ok",
-   "last_good": "2026-11-23",
+   "last_good": "2026-11-24",
    "error": null
   },
   "KOSPI": {
@@ -3414,17 +3414,13 @@
    "group": "asia",
    "unit": "level",
    "decimals": 2,
-   "value": 5006.03,
-   "prev": 4708.54,
-   "chg": 297.49,
-   "chg_pct": 6.3181,
+   "value": 4697.51,
+   "prev": 5006.03,
+   "chg": -308.52,
+   "chg_pct": -6.163,
    "chg_bp": null,
-   "as_of": "2026-11-24",
+   "as_of": "2026-11-25",
    "spark": [
-    [
-     "2026-08-27",
-     6912.37
-    ],
     [
      "2026-08-28",
      6788.88
@@ -3660,6 +3656,10 @@
     [
      "2026-11-24",
      5006.03
+    ],
+    [
+     "2026-11-25",
+     4697.51
     ]
    ],
    "source": "Bank of Korea ECOS",
@@ -3667,7 +3667,7 @@
    "tier": 1,
    "note": null,
    "status": "ok",
-   "last_good": "2026-11-24",
+   "last_good": "2026-11-25",
    "error": null
   },
   "N225": {
@@ -3676,17 +3676,13 @@
    "group": "asia",
    "unit": "level",
    "decimals": 2,
-   "value": 56436.6484,
-   "prev": 59444.2109,
-   "chg": -3007.5625,
-   "chg_pct": -5.0595,
+   "value": 58644.6289,
+   "prev": 56436.6484,
+   "chg": 2207.9805,
+   "chg_pct": 3.9123,
    "chg_bp": null,
-   "as_of": "2026-11-20",
+   "as_of": "2026-11-24",
    "spark": [
-    [
-     "2026-08-24",
-     65528.0898
-    ],
     [
      "2026-08-25",
      65856.4297
@@ -3922,6 +3918,10 @@
     [
      "2026-11-20",
      56436.6484
+    ],
+    [
+     "2026-11-24",
+     58644.6289
     ]
    ],
    "source": "Yahoo Finance",
@@ -3929,7 +3929,7 @@
    "tier": 2,
    "note": null,
    "status": "ok",
-   "last_good": "2026-11-20",
+   "last_good": "2026-11-24",
    "error": null
   },
   "HSI": {
@@ -3938,17 +3938,13 @@
    "group": "asia",
    "unit": "level",
    "decimals": 2,
-   "value": 22383.7402,
-   "prev": 22410.8008,
-   "chg": -27.0606,
-   "chg_pct": -0.1207,
+   "value": 22219.6504,
+   "prev": 22383.7402,
+   "chg": -164.0898,
+   "chg_pct": -0.7331,
    "chg_bp": null,
-   "as_of": "2026-11-23",
+   "as_of": "2026-11-24",
    "spark": [
-    [
-     "2026-08-28",
-     25584.7891
-    ],
     [
      "2026-08-31",
      25566.9902
@@ -4184,6 +4180,10 @@
     [
      "2026-11-23",
      22383.7402
+    ],
+    [
+     "2026-11-24",
+     22219.6504
     ]
    ],
    "source": "Yahoo Finance",
@@ -4191,7 +4191,7 @@
    "tier": 2,
    "note": null,
    "status": "ok",
-   "last_good": "2026-11-23",
+   "last_good": "2026-11-24",
    "error": null
   },
   "EURUSD": {
@@ -4200,17 +4200,13 @@
    "group": "fx",
    "unit": "fx",
    "decimals": 4,
-   "value": 1.0963,
-   "prev": 1.0939,
-   "chg": 0.0024,
-   "chg_pct": 0.2194,
+   "value": 1.0935,
+   "prev": 1.0963,
+   "chg": -0.0028,
+   "chg_pct": -0.2554,
    "chg_bp": null,
-   "as_of": "2026-11-24",
+   "as_of": "2026-11-25",
    "spark": [
-    [
-     "2026-09-02",
-     1.1578
-    ],
     [
      "2026-09-03",
      1.1615
@@ -4446,6 +4442,10 @@
     [
      "2026-11-24",
      1.0963
+    ],
+    [
+     "2026-11-25",
+     1.0935
     ]
    ],
    "source": "ECB",
@@ -4453,7 +4453,7 @@
    "tier": 1,
    "note": "14:10 CET fix, info only, not a NY close",
    "status": "ok",
-   "last_good": "2026-11-24",
+   "last_good": "2026-11-25",
    "error": null
   },
   "USDJPY": {
@@ -4462,17 +4462,13 @@
    "group": "fx",
    "unit": "fx",
    "decimals": 2,
-   "value": 159.0714,
-   "prev": 159.073,
-   "chg": -0.0016,
-   "chg_pct": -0.001,
+   "value": 159.3233,
+   "prev": 159.0714,
+   "chg": 0.2519,
+   "chg_pct": 0.1584,
    "chg_bp": null,
-   "as_of": "2026-11-24",
+   "as_of": "2026-11-25",
    "spark": [
-    [
-     "2026-09-02",
-     159.5958
-    ],
     [
      "2026-09-03",
      156.0138
@@ -4708,6 +4704,10 @@
     [
      "2026-11-24",
      159.0714
+    ],
+    [
+     "2026-11-25",
+     159.3233
     ]
    ],
    "source": "ECB",
@@ -4715,7 +4715,7 @@
    "tier": 1,
    "note": "14:10 CET fix, info only, not a NY close",
    "status": "ok",
-   "last_good": "2026-11-24",
+   "last_good": "2026-11-25",
    "error": null
   },
   "USDKRW": {
@@ -4724,17 +4724,13 @@
    "group": "fx",
    "unit": "fx",
    "decimals": 2,
-   "value": 1346.6,
-   "prev": 1337.3,
-   "chg": 9.3,
-   "chg_pct": 0.6954,
+   "value": 1343.6,
+   "prev": 1346.6,
+   "chg": -3.0,
+   "chg_pct": -0.2228,
    "chg_bp": null,
-   "as_of": "2026-11-24",
+   "as_of": "2026-11-25",
    "spark": [
-    [
-     "2026-09-02",
-     1370.3
-    ],
     [
      "2026-09-03",
      1369.4
@@ -4970,6 +4966,10 @@
     [
      "2026-11-24",
      1346.6
+    ],
+    [
+     "2026-11-25",
+     1343.6
     ]
    ],
    "source": "Bank of Korea ECOS",
@@ -4977,7 +4977,7 @@
    "tier": 1,
    "note": "BoK base rate, Seoul",
    "status": "ok",
-   "last_good": "2026-11-24",
+   "last_good": "2026-11-25",
    "error": null
   },
   "DXY": {
@@ -4986,17 +4986,13 @@
    "group": "fx",
    "unit": "fx",
    "decimals": 2,
-   "value": 103.827,
-   "prev": 104.32,
-   "chg": -0.493,
-   "chg_pct": -0.4726,
+   "value": 103.645,
+   "prev": 103.81,
+   "chg": -0.165,
+   "chg_pct": -0.1589,
    "chg_bp": null,
-   "as_of": "2026-11-24",
+   "as_of": "2026-11-25",
    "spark": [
-    [
-     "2026-09-01",
-     99.67
-    ],
     [
      "2026-09-02",
      99.56
@@ -5231,7 +5227,11 @@
     ],
     [
      "2026-11-24",
-     103.827
+     103.81
+    ],
+    [
+     "2026-11-25",
+     103.645
     ]
    ],
    "source": "Yahoo Finance",
@@ -5239,7 +5239,7 @@
    "tier": 2,
    "note": "ICE U.S. Dollar Index",
    "status": "ok",
-   "last_good": "2026-11-24",
+   "last_good": "2026-11-25",
    "error": null
   },
   "GOLD": {
@@ -5248,17 +5248,13 @@
    "group": "commodities",
    "unit": "level",
    "decimals": 2,
-   "value": 3555.1001,
-   "prev": 3651.3999,
-   "chg": -96.2998,
-   "chg_pct": -2.6373,
+   "value": 3564.1001,
+   "prev": 3561.8999,
+   "chg": 2.2002,
+   "chg_pct": 0.0618,
    "chg_bp": null,
-   "as_of": "2026-11-24",
+   "as_of": "2026-11-25",
    "spark": [
-    [
-     "2026-09-01",
-     4396.3999
-    ],
     [
      "2026-09-02",
      4414.6001
@@ -5493,7 +5489,11 @@
     ],
     [
      "2026-11-24",
-     3555.1001
+     3561.8999
+    ],
+    [
+     "2026-11-25",
+     3564.1001
     ]
    ],
    "source": "Yahoo Finance",
@@ -5501,7 +5501,7 @@
    "tier": 2,
    "note": "COMEX front-month futures, not spot",
    "status": "ok",
-   "last_good": "2026-11-24",
+   "last_good": "2026-11-25",
    "error": null
   },
   "WTI": {
@@ -5510,33 +5510,13 @@
    "group": "commodities",
    "unit": "level",
    "decimals": 2,
-   "value": 89.53,
-   "prev": 89.24,
-   "chg": 0.29,
-   "chg_pct": 0.325,
+   "value": 82.24,
+   "prev": 81.42,
+   "chg": 0.82,
+   "chg_pct": 1.0071,
    "chg_bp": null,
-   "as_of": "2026-11-17",
+   "as_of": "2026-11-24",
    "spark": [
-    [
-     "2026-08-25",
-     83.9
-    ],
-    [
-     "2026-08-26",
-     83.46
-    ],
-    [
-     "2026-08-27",
-     84.81
-    ],
-    [
-     "2026-08-28",
-     84.57
-    ],
-    [
-     "2026-08-31",
-     87.03
-    ],
     [
      "2026-09-01",
      91.48
@@ -5756,6 +5736,26 @@
     [
      "2026-11-17",
      89.53
+    ],
+    [
+     "2026-11-18",
+     86.81
+    ],
+    [
+     "2026-11-19",
+     86.78
+    ],
+    [
+     "2026-11-20",
+     87.59
+    ],
+    [
+     "2026-11-23",
+     81.42
+    ],
+    [
+     "2026-11-24",
+     82.24
     ]
    ],
    "source": "EIA via FRED",
@@ -5763,7 +5763,7 @@
    "tier": 1,
    "note": "Cushing spot, $/bbl",
    "status": "ok",
-   "last_good": "2026-11-17",
+   "last_good": "2026-11-24",
    "error": null
   },
   "BRENT": {
@@ -5772,33 +5772,13 @@
    "group": "commodities",
    "unit": "level",
    "decimals": 2,
-   "value": 92.94,
-   "prev": 92.9,
-   "chg": 0.04,
-   "chg_pct": 0.0431,
+   "value": 91.8,
+   "prev": 91.2,
+   "chg": 0.6,
+   "chg_pct": 0.6579,
    "chg_bp": null,
-   "as_of": "2026-11-17",
+   "as_of": "2026-11-24",
    "spark": [
-    [
-     "2026-08-25",
-     88.24
-    ],
-    [
-     "2026-08-26",
-     87.77
-    ],
-    [
-     "2026-08-27",
-     90.18
-    ],
-    [
-     "2026-08-28",
-     89.75
-    ],
-    [
-     "2026-09-01",
-     96.02
-    ],
     [
      "2026-09-02",
      97.59
@@ -6018,6 +5998,26 @@
     [
      "2026-11-17",
      92.94
+    ],
+    [
+     "2026-11-18",
+     92.88
+    ],
+    [
+     "2026-11-19",
+     95.17
+    ],
+    [
+     "2026-11-20",
+     92.76
+    ],
+    [
+     "2026-11-23",
+     91.2
+    ],
+    [
+     "2026-11-24",
+     91.8
     ]
    ],
    "source": "EIA via FRED",
@@ -6025,7 +6025,7 @@
    "tier": 1,
    "note": "Europe spot, $/bbl",
    "status": "ok",
-   "last_good": "2026-11-17",
+   "last_good": "2026-11-24",
    "error": null
   }
  },
@@ -6100,6 +6100,42 @@
  },
  "headlines": [
   {
+   "title": "Bowman, Modernizing Banking Supervision: A Shared Agenda for the Americas",
+   "source": "Federal Reserve",
+   "date": "2026-11-25",
+   "url": "https://www.federalreserve.gov/newsevents/speech/bowman20261125a.htm"
+  },
+  {
+   "title": "GDP, (Second Estimate) and Corporate Profits, 3rd Quarter 2026",
+   "source": "BEA",
+   "date": "2026-11-25",
+   "url": "https://www.bea.gov/news/2026/gdp-second-estimate-and-corporate-profits-3rd-quarter-2026"
+  },
+  {
+   "title": "Personal Income and Outlays, October 2026",
+   "source": "BEA",
+   "date": "2026-11-25",
+   "url": "https://www.bea.gov/news/2026/personal-income-and-outlays-october-2026"
+  },
+  {
+   "title": "ECB and Sveriges Riksbank conclude agreement for Sweden to join T2",
+   "source": "ECB",
+   "date": "2026-11-25",
+   "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261125_1~6333a90f3a.en.html"
+  },
+  {
+   "title": "Card payments edge past cash in shops; euro area consumers want both",
+   "source": "ECB",
+   "date": "2026-11-25",
+   "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261125~26d1ade228.en.html"
+  },
+  {
+   "title": "Interest Rates (Oct 2026)",
+   "source": "Bank of Korea",
+   "date": "2026-11-25",
+   "url": "https://www.bok.or.kr/eng/bbs/E0000634/view.do?nttId=11066954&menuNo=400423"
+  },
+  {
    "title": "Minutes of the Board's discount rate meetings on October 19 and October 28, 2026",
    "source": "Federal Reserve",
    "date": "2026-11-24",
@@ -6122,42 +6158,6 @@
    "source": "ECB",
    "date": "2026-11-23",
    "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261123~b5816801a0.en.pdf"
-  },
-  {
-   "title": "ECB expands acceptance of DLT-based assets as eligible Eurosystem collateral",
-   "source": "ECB",
-   "date": "2026-11-23",
-   "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261123~76b6f57b74.en.html"
-  },
-  {
-   "title": "Consumer Tendency Survey for November 2026",
-   "source": "Bank of Korea",
-   "date": "2026-11-23",
-   "url": "https://www.bok.or.kr/eng/bbs/E0000634/view.do?nttId=11066920&menuNo=400423"
-  },
-  {
-   "title": "Cook, The U.S. Economy in Global Context",
-   "source": "Federal Reserve",
-   "date": "2026-11-20",
-   "url": "https://www.federalreserve.gov/newsevents/speech/cook20261120a.htm"
-  },
-  {
-   "title": "Waller, Opening Remarks",
-   "source": "Federal Reserve",
-   "date": "2026-11-20",
-   "url": "https://www.federalreserve.gov/newsevents/speech/waller20261120a.htm"
-  },
-  {
-   "title": "Activities of U.S. Multinational Enterprises, 2024",
-   "source": "BEA",
-   "date": "2026-11-20",
-   "url": "https://www.bea.gov/news/2026/activities-us-multinational-enterprises-2024"
-  },
-  {
-   "title": "Christine Lagarde: Acting in time",
-   "source": "ECB",
-   "date": "2026-11-20",
-   "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261120~e52bcc4db2.en.html"
   }
  ],
  "calendar": [

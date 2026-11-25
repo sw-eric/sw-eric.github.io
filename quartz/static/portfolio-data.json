@@ -1,17 +1,17 @@
 {
-  "as_of": "2026-11-24T20:41:39Z",
-  "data_date": "2026-11-23",
+  "as_of": "2026-11-25T19:58:25Z",
+  "data_date": "2026-11-24",
   "inception_date": "2026-06-24",
   "base_currency": "USD",
   "account": {
     "starting_capital": 1500.0,
-    "net_liquidation": 1336.99,
-    "total_return_pct": -10.87,
-    "cash": 838.46,
-    "invested": 498.53,
-    "cash_pct": 62.71,
-    "invested_pct": 37.29,
-    "unrealized_pnl": 0.68,
+    "net_liquidation": 1323.49,
+    "total_return_pct": -11.77,
+    "cash": 838.74,
+    "invested": 484.75,
+    "cash_pct": 63.37,
+    "invested_pct": 36.63,
+    "unrealized_pnl": -13.1,
     "realized_pnl": -172.48
   },
   "equity_curve": [
@@ -450,6 +450,10 @@
     {
       "date": "2026-11-23",
       "nav": 1336.99
+    },
+    {
+      "date": "2026-11-24",
+      "nav": 1323.49
     }
   ],
   "positions": [
@@ -459,12 +463,12 @@
       "opened": "2026-08-14",
       "qty": 0.4796,
       "avg_cost": 419.07,
-      "price": 426.99,
-      "market_value": 204.78,
-      "unrealized_pnl": 3.79,
-      "unrealized_pct": 1.89,
-      "weight_pct": 15.32,
-      "days_held": 102,
+      "price": 414.82,
+      "market_value": 198.95,
+      "unrealized_pnl": -2.04,
+      "unrealized_pct": -1.01,
+      "weight_pct": 15.03,
+      "days_held": 103,
       "daily_pnl": null
     },
     {
@@ -473,12 +477,12 @@
       "opened": "2026-11-18",
       "qty": 0.53,
       "avg_cost": 370.05,
-      "price": 363.6,
-      "market_value": 192.71,
-      "unrealized_pnl": -3.42,
-      "unrealized_pct": -1.74,
-      "weight_pct": 14.41,
-      "days_held": 6,
+      "price": 349.2,
+      "market_value": 185.08,
+      "unrealized_pnl": -11.05,
+      "unrealized_pct": -5.63,
+      "weight_pct": 13.98,
+      "days_held": 7,
       "daily_pnl": null
     },
     {
@@ -487,17 +491,18 @@
       "opened": "2026-09-28",
       "qty": 2.0,
       "avg_cost": 50.37,
-      "price": 50.52,
-      "market_value": 101.04,
-      "unrealized_pnl": 0.31,
-      "unrealized_pct": 0.31,
-      "weight_pct": 7.56,
-      "days_held": 57,
+      "price": 50.36,
+      "market_value": 100.72,
+      "unrealized_pnl": -0.01,
+      "unrealized_pct": -0.01,
+      "weight_pct": 7.61,
+      "days_held": 58,
       "daily_pnl": null
     }
   ],
   "insights": [
-    "Down 10.87% since inception ($1,500 \u2192 $1,336.99 net liquidation) across 3 open positions \u2014 realized P&L is $-172.48, so part of the return is already locked in.",
-    "62.7% of the book ($838.46) is sitting in cash. For a thesis built on concentrated long equity, that's a meaningful drag if it stays idle much longer."
+    "Down 11.77% since inception ($1,500 \u2192 $1,323.49 net liquidation) across 3 open positions \u2014 realized P&L is $-172.48, so part of the return is already locked in.",
+    "WISDOMTREE FLOATING RATE TRE (USFR) is doing the work: -0.0% unrealized on a $101 position, while SNPS \u2014 the largest position at 15% of NAV \u2014 is at -1.0%. Position size isn't tracking conviction yet.",
+    "63.4% of the book ($838.74) is sitting in cash. For a thesis built on concentrated long equity, that's a meaningful drag if it stays idle much longer."
   ]
 }
